@@ -59,6 +59,10 @@ body .depth-active .mcat__label { translate:calc(var(--dx,0) * 6px) calc(var(--d
   body .o-card,body .c-card,body .func,body .mcat,body .gitem__media,body .split__media,body .btn { transition:none!important; }
   body .o-card:hover img,body .c-card:hover img,body .func:hover img,body .mcat:hover img,body .gitem:hover img,body .split__media:hover img { transform:none; }
 }
+/* Italic heading accents on dark sections: the base green is too close to the background. */
+body .band .display em,body .cta-strip em,body .hero__title em { color:#9fdcb3; }
+/* Elements waiting to slide in sit off to the side; clip them so phones never scroll sideways. */
+main { overflow-x:clip; }
 /* Individual translate keeps scroll entrances separate from hover transforms. */
 body .scroll-entry { opacity:0; translate:72px 12px; transition:opacity .8s ease,translate .9s cubic-bezier(.16,1,.3,1); }
 body .scroll-entry[data-enter="left"] { translate:-72px 12px; }

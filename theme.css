@@ -192,6 +192,7 @@ p{ margin:0; }
 .o-card__body{ padding:30px 28px 34px; display:flex; flex-direction:column; flex:1; }
 .o-card__body h3{ font-size:29px; margin-bottom:14px; color:var(--ink); }
 .o-card__body address{ font-style:normal; color:var(--muted); font-size:14.5px; line-height:1.6; margin-bottom:18px; }
+.o-card__hours{ color:var(--ink); font-size:14px; font-weight:500; margin:-8px 0 14px; }
 .o-card__phone{ color:var(--green); font-weight:600; font-size:15px; margin-bottom:22px; display:inline-block; letter-spacing:0.02em; }
 .o-card__actions{ margin-top:auto; display:flex; gap:24px; flex-wrap:wrap; }
 
@@ -319,6 +320,15 @@ body.intro-active{ overflow:hidden; }
   color:rgba(245,250,245,0.55); font-family:var(--font-body); font-size:11px; letter-spacing:0.2em; text-transform:uppercase; }
 .intro__skip:hover{ color:#fff; }
 .intro__bar{ position:absolute; left:0; bottom:0; height:2px; width:0; background:linear-gradient(90deg,var(--brass-deep),var(--emerald)); z-index:3; }
+/* Logo flight (intro.js): the mark and name fly from the intro into the nav brand. */
+#intro.flying .intro__tag, #intro.flying .intro__line, #intro.flying .intro__skip, #intro.flying .intro__bar{ opacity:0; transition:opacity .35s ease; }
+.intro-flight .nav .brand__mark, .intro-flight .nav .brand__name{ opacity:0; }
+.nav .brand__mark, .nav .brand__name{ transition:opacity .28s ease; }
+.intro-flyer{ position:fixed; z-index:10000; margin:0!important; pointer-events:none; transform-origin:0 0; animation:none!important; opacity:1; white-space:nowrap; will-change:transform; }
+.intro-flyer.intro__mark::after{ animation:ringFade .7s var(--ease) forwards; }
+.intro-flyer em{ transition:color 1s ease; }
+.intro-flyer.to-nav em{ color:var(--cream); }
+@keyframes ringFade{ from{ opacity:1; transform:scale(1); } to{ opacity:0; transform:scale(1.4); } }
 @keyframes logoIn{ to{ opacity:1; transform:none; } }
 @keyframes logoUp{ to{ opacity:1; transform:none; } }
 @keyframes ringOut{ to{ opacity:1; transform:scale(1); } }
