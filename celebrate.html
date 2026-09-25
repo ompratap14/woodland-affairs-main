@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Celebrate With Us | Woodland Affairs</title>
+  <meta name="description" content="Birthdays, anniversaries, kitty parties, pre-wedding functions, Haldi and Mehendi celebrations at Woodland Affairs — a woodland-inspired garden setting in New Delhi made for gathering." />
+  <meta property="og:title" content="Celebrate With Us — Woodland Affairs" />
+  <meta property="og:description" content="Every occasion, a little wilder." />
+  <meta property="og:image" content="images/wa-celebrate.jpg" />
+  <meta name="theme-color" content="#060d09" />
+  <link rel="icon" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="image" href="images/wa-celebrate.jpg" fetchpriority="high" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script>document.documentElement.className += " js";</script>
+  <link rel="stylesheet" href="theme.css" />
+  <!-- Local venue photos keep the celebration page independent of Drive image requests. -->
+  <style>
+    .func-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:54px; }
+    .func { position:relative; border-radius:var(--radius-lg); overflow:hidden; aspect-ratio:3/3.7; border:1px solid var(--line); display:block; }
+    .func img { width:100%; height:100%; object-fit:cover; transition:transform 1.3s var(--ease); }
+    .func:hover img { transform:scale(1.08); }
+    .func__shade { position:absolute; inset:0; background:linear-gradient(180deg, rgba(6,13,9,0.05) 28%, rgba(6,13,9,0.9) 100%); }
+    .func__label { position:absolute; left:18px; right:18px; bottom:18px; z-index:2; }
+    .func__label strong { font-family:var(--font-display); font-weight:600; font-size:23px; color:var(--cream); display:block; line-height:1.05; }
+    .func__label span { font-size:12.5px; color:rgba(244,238,225,0.78); }
+    @media (max-width:900px){ .func-grid { grid-template-columns:1fr 1fr; } }
+
+    .spread { display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:1fr; gap:14px; margin-top:50px; }
+    .spread figure { margin:0; border-radius:var(--radius-lg); overflow:hidden; border:1px solid var(--line); aspect-ratio:1/1; position:relative; }
+    .spread figure.tall { grid-row:span 2; aspect-ratio:1/2.06; }
+    .spread img { width:100%; height:100%; object-fit:cover; transition:transform 1.3s var(--ease); }
+    .spread figure:hover img { transform:scale(1.07); }
+    .spread figcaption { position:absolute; left:14px; bottom:12px; z-index:2; color:var(--cream); font-family:var(--font-display); font-size:16px; text-shadow:0 2px 12px rgba(0,0,0,0.6); }
+    .spread .sc-shade { position:absolute; inset:0; background:linear-gradient(180deg,transparent 45%,rgba(6,13,9,0.75)); }
+    @media (max-width:820px){ .spread { grid-template-columns:1fr 1fr; } .spread figure.tall{ grid-row:span 1; aspect-ratio:1/1; } }
+
+    .care { display:grid; grid-template-columns:1fr 1fr; gap:0 clamp(30px,5vw,64px); border-top:1px solid var(--line); margin-top:44px; }
+    .care .item { border-bottom:1px solid var(--line); padding:28px 0; display:flex; gap:20px; }
+    .care .n { color:var(--brass); font-family:var(--font-display); font-size:16px; padding-top:3px; }
+    .care h3 { font-size:22px; margin-bottom:6px; color:var(--ink); }
+    .care p { color:var(--muted); font-size:14.5px; line-height:1.6; }
+    @media (max-width:820px){ .care { grid-template-columns:1fr; } }
+
+    .enq-phones { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:14px; }
+    .enq-phones a { display:block; background:var(--glass); border:1px solid var(--line-d); border-radius:var(--radius-lg); padding:22px 24px; color:var(--cream); transition:border-color .3s ease, transform .5s var(--ease); }
+    .enq-phones a:hover { border-color:var(--brass); transform:translateY(-4px); }
+    .enq-phones span { display:block; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:rgba(244,238,225,0.6); margin-bottom:8px; }
+    .enq-phones strong { font-family:var(--font-display); font-weight:600; font-size:24px; color:var(--brass); }
+    @media (max-width:820px){ .enq-phones { grid-template-columns:1fr; } }
+  </style>
+  <link rel="stylesheet" href="depth.css" />
+</head>
+<body>
+  <div class="frame"></div>
+  <div class="ambience"></div>
+
+<header class="nav always-solid" id="nav">
+    <div class="wrap nav__inner">
+      <a class="brand" href="index.html#top" aria-label="Woodland Affairs home"><span class="brand__mark">WA</span><span class="brand__name">Woodland Affairs</span></a>
+      <nav class="nav__links" aria-label="Main navigation">
+        <a href="index.html#outlets">Restaurants</a>
+        <a href="menu.html">Menu</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="celebrate.html" class="active" aria-current="page">Celebrate</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a class="btn btn--brass btn--sm nav__cta desktop-only" href="contact.html">Visit us</a>
+      <button class="nav__toggle" aria-label="Open navigation" aria-controls="mobile-navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+    <nav class="nav__panel" id="mobile-navigation" aria-label="Mobile navigation">
+        <a href="index.html#outlets">Restaurants</a>
+        <a href="menu.html">Menu</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="celebrate.html" class="active" aria-current="page">Celebrate</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero hero--short">
+      <div class="hero__media"><img src="images/wa-celebrate.jpg" alt="Outdoor tables beside illuminated fountains at Woodland Affairs" loading="eager" decoding="async" fetchpriority="high" width="1200" height="800" /></div>
+      <div class="hero__overlay"></div>
+      <div class="wrap hero__inner">
+        <p class="eyebrow hero__eyebrow">Celebrate with us</p>
+        <h1 class="hero__title">Every occasion,<br /><em>a little wilder.</em></h1>
+        <p class="hero__dek">Birthdays, anniversaries, reunions or a quiet win worth marking — our woodland gardens were made for gathering the people you love, under warm lights and open sky.</p>
+        <div class="hero__actions">
+          <a class="btn btn--brass" href="#enquire">Plan your celebration</a>
+          <a class="btn btn--on-dark" href="#functions">See the occasions</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTRO -->
+    <section class="section section--tight">
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <p class="eyebrow">The idea</p>
+          <h2 class="display">Some evenings<br /><em>deserve a setting.</em></h2>
+          <p class="lead">Under string lights and open sky, with plates made for passing around, Woodland Affairs turns an ordinary date on the calendar into something people remember. Tell us the occasion and how many are coming — we'll take care of the rest.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FUNCTIONS WE HOST -->
+    <section class="section section--tight" id="functions" style="padding-top:0">
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <p class="eyebrow">The occasions</p>
+          <h2 class="display">Every function,<br /><em>beautifully hosted.</em></h2>
+          <p class="lead">From an intimate birthday to a full family function, each celebration finds its own corner of the garden.</p>
+        </div>
+        <div class="func-grid">
+          <a class="func" href="#enquire" data-reveal><img src="images/wa-celebrate-3.jpg" alt="Garden table set for a celebration under warm lights" loading="lazy" decoding="async" /><span class="func__shade"></span><span class="func__label"><strong>Birthday parties</strong><span>Cake, candles &amp; a table set for the moment</span></span></a>
+          <a class="func" href="#enquire" data-reveal><img src="images/gal-hari-4.jpg" alt="Intimate indoor dining table with candles" loading="lazy" decoding="async" /><span class="func__shade"></span><span class="func__label"><strong>Anniversaries</strong><span>Warm, personal evenings for two or twenty</span></span></a>
+          <a class="func" href="#enquire" data-reveal><img src="images/amb-dwarka-dining.jpg" alt="Garden seating beneath umbrellas" loading="lazy" decoding="async" /><span class="func__shade"></span><span class="func__label"><strong>Kitty &amp; get-togethers</strong><span>Long, unhurried afternoons with friends</span></span></a>
+          <a class="func" href="#enquire" data-reveal><img src="images/gal-hari-3.jpg" alt="Long indoor table for a family gathering" loading="lazy" decoding="async" /><span class="func__shade"></span><span class="func__label"><strong>Family functions</strong><span>Room for the whole family, elders to little ones</span></span></a>
+          <a class="func" href="#enquire" data-reveal><img src="images/amb-hari-green.jpg" alt="Garden dining beneath a canopy of string lights" loading="lazy" decoding="async" /><span class="func__shade"></span><span class="func__label"><strong>Pre-wedding &amp; Roka</strong><span>A green, glowing setting for the big yes</span></span></a>
+          <a class="func" href="#enquire" data-reveal><img src="images/amb-dwarka-eve.jpg" alt="Open-air garden and buffet setting for a daytime gathering" loading="lazy" decoding="async" /><span class="func__shade"></span><span class="func__label"><strong>Haldi</strong><span>Sunlit moments, colour &amp; the people you love</span></span></a>
+          <a class="func" href="#enquire" data-reveal><img src="images/amb-dwarka-table.jpg" alt="Cushioned outdoor lounge seating" loading="lazy" decoding="async" /><span class="func__shade"></span><span class="func__label"><strong>Baby showers</strong><span>Soft, cheerful afternoons worth remembering</span></span></a>
+          <a class="func" href="#enquire" data-reveal><img src="images/wa-celebrate-2.jpg" alt="Leafy garden swing and seating for a relaxed gathering" loading="lazy" decoding="async" /><span class="func__shade"></span><span class="func__label"><strong>Mehendi</strong><span>Henna, laughter &amp; a garden full of memories</span></span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURE SPLIT 1 -->
+    <section class="section section--tight" style="background:var(--paper-2)">
+      <div class="wrap">
+        <div class="split">
+          <div class="split__media" data-reveal><img src="images/amb-hari-tables.jpg" alt="Dining among plants under warm lights" loading="lazy" decoding="async" /></div>
+          <div class="split__body" data-reveal>
+            <p class="eyebrow">Warm light, good people</p>
+            <h2 class="display">The setting does<br /><em>half the work.</em></h2>
+            <p class="lead">All you have to do is show up and enjoy the evening — the woodland-inspired garden, canopies of warm string lights and greenery take care of the rest.</p>
+            <a class="arrow" href="gallery.html">See the gallery →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE SPREAD -->
+    <section class="section section--tight band" style="background:var(--deep)">
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <p class="eyebrow">The spread</p>
+          <h2 class="display" style="color:var(--cream)">Made for<br /><em>passing around.</em></h2>
+          <p class="lead" style="color:rgba(244,238,225,0.72)">Generous North Indian platters, sizzling kebabs off the tandoor, fresh coolers and a sweet finish — planned around your group.</p>
+        </div>
+        <div class="spread" data-reveal>
+          <figure class="tall"><img src="images/gal-food-10.jpg" alt="Paneer and vegetable tikka on a board" loading="lazy" decoding="async" /><span class="sc-shade"></span><figcaption>Paneer Tikka</figcaption></figure>
+          <figure><img src="images/wa-janakpuri.jpg" alt="A sharing platter from the kitchen" loading="lazy" decoding="async" /><span class="sc-shade"></span><figcaption>Mezze Platter</figcaption></figure>
+          <figure><img src="images/gal-food-11.jpg" alt="Seekh kebabs served on a board" loading="lazy" decoding="async" /><span class="sc-shade"></span><figcaption>Seekh Kebab</figcaption></figure>
+          <figure class="tall"><img src="images/gal-food-1.jpg" alt="A blue mocktail" loading="lazy" decoding="async" /><span class="sc-shade"></span><figcaption>Coolers &amp; mocktails</figcaption></figure>
+          <figure><img src="images/gal-food-6.jpg" alt="Steamed momos served with a dip" loading="lazy" decoding="async" /><span class="sc-shade"></span><figcaption>Crystal Momos</figcaption></figure>
+          <figure><img src="images/food-land2.jpg" alt="Chocolate dessert served with ice cream" loading="lazy" decoding="async" /><span class="sc-shade"></span><figcaption>Brownie Sundae</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT WE HANDLE -->
+    <section class="section">
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <p class="eyebrow">What we take care of</p>
+          <h2 class="display">You gather.<br /><em>We handle the rest.</em></h2>
+        </div>
+        <div class="care">
+          <div class="item" data-reveal><span class="n">01</span><div><h3>Private &amp; semi-private seating</h3><p>Quiet corners and larger sections for groups of every size.</p></div></div>
+          <div class="item" data-reveal><span class="n">02</span><div><h3>Custom menus &amp; platters</h3><p>North Indian favourites and generous shared platters, planned around your group.</p></div></div>
+          <div class="item" data-reveal><span class="n">03</span><div><h3>Cake &amp; celebration setup</h3><p>Bring the cake — we'll help set the table so the moment lands just right.</p></div></div>
+          <div class="item" data-reveal><span class="n">04</span><div><h3>Woodland ambience</h3><p>Warm string lights, greenery and open air that make an evening feel special on its own.</p></div></div>
+          <div class="item" data-reveal><span class="n">05</span><div><h3>Pet-friendly outdoor seating</h3><p>Nobody in the family has to miss the gathering — four-legged ones included.</p></div></div>
+          <div class="item" data-reveal><span class="n">06</span><div><h3>Three convenient locations</h3><p>Dwarka, Hari Nagar and Eatery Royale in Janakpuri — pick whichever is nearest.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY TEASER -->
+    <section class="section section--tight" style="padding-top:0">
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <p class="eyebrow">A few evenings here</p>
+          <h2 class="display">Come see<br /><em>for yourself.</em></h2>
+        </div>
+        <div class="teaser-grid" data-reveal>
+          <figure class="wide"><img src="images/wa-harinagar.jpg" alt="The Hari Nagar garden" loading="lazy" decoding="async" /></figure>
+          <figure><img src="images/gal-dwarka-3.jpg" alt="Woodland Affairs sign glowing at night" loading="lazy" decoding="async" /></figure>
+          <figure><img src="images/wa-dwarka.jpg" alt="Greenery at the Dwarka entrance" loading="lazy" decoding="async" /></figure>
+          <figure><img src="images/food-tall3.jpg" alt="Berry cooler served with fruit and ice" loading="lazy" decoding="async" /></figure>
+          <figure class="wide"><img src="images/gal-food-3.jpg" alt="A board of kebabs for sharing" loading="lazy" decoding="async" /></figure>
+          <figure><img src="images/amb-hari-interior.jpg" alt="Indoor dining at Hari Nagar" loading="lazy" decoding="async" /></figure>
+        </div>
+        <div style="margin-top:34px" data-reveal><a class="btn btn--ghost" href="gallery.html">See the full gallery</a></div>
+      </div>
+    </section>
+
+    <!-- ENQUIRE -->
+    <section class="section band" id="enquire" style="background:var(--forest)">
+      <div class="wrap">
+        <div class="sec-head center" data-reveal style="text-align:center">
+          <p class="eyebrow" style="justify-content:center">Plan your celebration</p>
+          <h2 class="display" style="color:var(--cream)">Ready when<br /><em>you are.</em></h2>
+          <p class="lead" style="color:rgba(244,238,225,0.78)">Call your nearest Woodland Affairs and tell us the occasion, the date and how many are coming — we'll take it from there.</p>
+        </div>
+        <div class="enq-phones" data-reveal>
+          <a href="tel:+919873798727"><span>Dwarka</span><strong>98737 98727</strong></a>
+          <a href="tel:+919873347347"><span>Hari Nagar</span><strong>98733 47347</strong></a>
+          <a href="tel:+919990283002"><span>Janakpuri · Eatery Royale</span><strong>99902 83002</strong></a>
+        </div>
+        <div style="text-align:center;margin-top:36px" data-reveal><a class="btn btn--on-dark" href="contact.html">All contact details</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a class="brand" href="index.html#top"><span class="brand__mark">WA</span><span class="brand__name">Woodland Affairs</span></a>
+          <p>Where food meets the wild.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <div class="footer__links">
+            <a href="index.html#outlets">Restaurants</a>
+            <a href="menu.html">Menu</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="celebrate.html">Celebrate</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+        <div class="footer__contact">
+          <h4>Find us in New Delhi</h4>
+          <p><strong style="color:var(--cream)">Dwarka</strong> · <a href="tel:+919873798727">98737 98727</a></p>
+          <p><strong style="color:var(--cream)">Hari Nagar</strong> · <a href="tel:+919873347347">98733 47347</a></p>
+          <p><strong style="color:var(--cream)">Janakpuri (Eatery Royale)</strong> · <a href="tel:+919990283002">99902 83002</a></p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 Woodland Affairs · <a href="https://www.instagram.com/woodlandaffairs_/" target="_blank" rel="noreferrer">@woodlandaffairs_</a></span>
+        <span>Website by <a href="https://www.wetakefwd.online" target="_blank" rel="noreferrer">Wetakefwd</a> — we make websites</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING CALL -->
+  <a class="fab-call" href="contact.html" aria-label="Choose a restaurant to book a table on WhatsApp" aria-haspopup="dialog">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+    <span>Call a table</span>
+  </a>
+
+  <script src="app.js"></script>
+</body>
+</html>

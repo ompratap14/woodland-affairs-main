@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gallery | Woodland Affairs</title>
+  <meta name="description" content="A gallery of Woodland Affairs — the woodland-inspired gardens at Dwarka and Hari Nagar, and the food from our kitchens." />
+  <meta property="og:title" content="Gallery — Woodland Affairs" />
+  <meta property="og:description" content="Every corner, every plate." />
+  <meta property="og:image" content="images/amb-hari-tables.jpg" />
+  <link rel="icon" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script>document.documentElement.className += " js";</script>
+  <link rel="stylesheet" href="theme.css" />
+  <style>
+    .gsec { padding: clamp(64px,8vw,110px) 0 0; }
+    .gsec:last-of-type { padding-bottom: clamp(72px,9vw,130px); }
+    .gsec .sec-head { margin-bottom: clamp(40px,5vw,64px); }
+    .gitem { display:grid; grid-template-columns:1fr 1fr; gap: clamp(28px,5vw,72px); align-items:center; }
+    .gitem + .gitem { margin-top: clamp(44px,6vw,86px); }
+    .gitem__media { border-radius: var(--radius); overflow:hidden; box-shadow: var(--shadow); aspect-ratio: 4/3; }
+    .gitem__media img { width:100%; height:100%; object-fit:cover; transition: transform 1.2s ease; }
+    .gitem:hover .gitem__media img { transform: scale(1.05); }
+    .gitem__body .eyebrow { margin-bottom:18px; }
+    .gitem__body h3 { font-size: clamp(27px,3.1vw,42px); line-height:1.02; margin-bottom:16px; }
+    .gitem__body p { color: var(--muted); font-size: 17px; line-height:1.7; max-width: 46ch; }
+    .gsec .gitem:nth-child(even) .gitem__media { order: 2; }
+    /* Hari Nagar is the lead outlet, followed by Dwarka and Janakpuri. */
+    main { display:flex; flex-direction:column; }
+    main > .hero { order:0; }
+    main > .gsec:nth-of-type(3) { order:1; }
+    main > .gsec:nth-of-type(2) { order:2; }
+    main > .gsec:nth-of-type(4) { order:3; }
+    main > .more-gallery { order:4; }
+    /* Keep the branch stories focused; the complete image collection follows below. */
+    .branch-story .gitem:nth-of-type(n+5) { display:none; }
+    .more-gallery { padding: clamp(72px,9vw,130px) 0; }
+    .more-gallery .sec-head { margin-bottom: clamp(32px,5vw,58px); }
+    .more-gallery__grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+    .more-gallery__item { display:block; aspect-ratio:1; overflow:hidden; border-radius:var(--radius); background:var(--ink); }
+    .more-gallery__item img { width:100%; height:100%; object-fit:cover; transition:transform .8s ease, filter .8s ease; }
+    .more-gallery__item:hover img { transform:scale(1.06); filter:saturate(1.12); }
+    @media (max-width: 860px){ .more-gallery__grid { grid-template-columns:repeat(2,1fr); } }
+    @media (max-width: 480px){ .more-gallery__grid { gap:8px; } }
+    @media (max-width: 860px){
+      .gitem { grid-template-columns:1fr; gap:22px; }
+      .gsec .gitem:nth-child(even) .gitem__media { order:0; }
+      .gitem__body h3 { font-size:26px; }
+    }
+  </style>
+  <link rel="stylesheet" href="depth.css" />
+</head>
+<body>
+  <div class="frame"></div>
+  <div class="ambience"></div>
+
+<header class="nav always-solid" id="nav">
+    <div class="wrap nav__inner">
+      <a class="brand" href="index.html#top" aria-label="Woodland Affairs home"><span class="brand__mark">WA</span><span class="brand__name">Woodland Affairs</span></a>
+      <nav class="nav__links" aria-label="Main navigation">
+        <a href="index.html#outlets">Restaurants</a>
+        <a href="menu.html">Menu</a>
+        <a href="gallery.html" class="active" aria-current="page">Gallery</a>
+        <a href="celebrate.html">Celebrate</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a class="btn btn--brass btn--sm nav__cta desktop-only" href="contact.html">Visit us</a>
+      <button class="nav__toggle" aria-label="Open navigation" aria-controls="mobile-navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+    <nav class="nav__panel" id="mobile-navigation" aria-label="Mobile navigation">
+        <a href="index.html#outlets">Restaurants</a>
+        <a href="menu.html">Menu</a>
+        <a href="gallery.html" class="active" aria-current="page">Gallery</a>
+        <a href="celebrate.html">Celebrate</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero hero--short">
+      <div class="hero__media"><img src="images/amb-hari-tables.jpg" alt="Greenhouse dining under warm string lights" /></div>
+      <div class="hero__overlay"></div>
+      <div class="wrap hero__inner">
+        <p class="eyebrow hero__eyebrow">The gallery</p>
+        <h1 class="hero__title">Every corner,<br /><em>every plate.</em></h1>
+        <p class="hero__dek">A wander through our woodland gardens and a look at what comes out of the kitchen — one image at a time.</p>
+      </div>
+    </section>
+    <section class="gsec branch-story">
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <p class="eyebrow">Dwarka · New Delhi</p>
+          <h2 class="display">The garden<br /><em>at Dwarka.</em></h2>
+          <p class="lead">Open-air tables, umbrellas and warm lamps under a canopy of trees.</p>
+        </div>
+        <div class="gitem" data-reveal>
+          <div class="gitem__media"><img src="images/wa-dwarka.jpg" alt="The Woodland Affairs sign greets you at the Dwarka garden — greenery, bougainvillea and the day just getting started." /></div>
+          <div class="gitem__body">
+            <p class="eyebrow">Dwarka · New Delhi</p>
+            <h3>Where the woodland begins.</h3>
+            <p>The Woodland Affairs sign greets you at the Dwarka garden — greenery, bougainvillea and the day just getting started.</p>
+          </div>
+        </div>
+        <div class="gitem" data-reveal>
+          <div class="gitem__media"><img src="images/amb-dwarka-dining.jpg" alt="Wooden tables set beneath the canopy, ready for a slow, generous afternoon of shared plates." /></div>
+          <div class="gitem__body">
+            <p class="eyebrow">Dwarka · New Delhi</p>
+            <h3>A long table under the trees.</h3>
+            <p>Wooden tables set beneath the canopy, ready for a slow, generous afternoon of shared plates.</p>
+          </div>
+        </div>
+        <div class="gitem" data-reveal>
+          <div class="gitem__media"><img src="images/wa-celebrate.jpg" alt="Dwarka's garden at night, with glowing fountains and outdoor tables." /></div>
+          <div class="gitem__body">
+            <p class="eyebrow">Dwarka · New Delhi</p>
+            <h3>Dwarka after dark.</h3>
+            <p>Glowing fountains, warm lamps and garden tables make room for an unhurried evening.</p>
+          </div>
+        </div>
+        <div class="gitem" data-reveal>
+          <div class="gitem__media"><img src="images/amb-dwarka-table.jpg" alt="A relaxed lounge setting with deep cushions, made for lingering long after the meal." /></div>
+          <div class="gitem__body">
+            <p class="eyebrow">Dwarka · New Delhi</p>
+            <h3>Cane chairs, soft cushions.</h3>
+            <p>A relaxed lounge setting with deep cushions, made for lingering long after the meal.</p>
+          </div>
+        </div>
+        <div class="gitem" data-reveal>
+          <div class="gitem__media"><img src="images/amb-hero.jpg" alt="As the light softens, the courtyard warms up — lamps on, umbrellas open, the garden at its best." /></div>
+          <div class="gitem__body">
+            <p class="eyebrow">Dwarka · New Delhi</p>
+            <h3>A golden evening.</h3>
+            <p>As the light softens, the courtyard warms up — lamps on, umbrellas open, the garden at its best.</p>
+          </div>
+        </div>
+        <div class="gitem" data-reveal>
+          <div class="gitem__media"><img src="images/gal-dwarka-2.jpg" alt="Tucked beside the lawn under a wide umbrella, a quiet spot away from the sun." /></div>
+          <div class="gitem__body">
+            <p class="eyebrow">Dwarka · New Delhi</p>
+            <h3>A shaded corner to linger.</h3>
+            <p>Tucked beside the lawn under a wide umbrella, a quiet spot away from the sun.</p>
+          </div>
+        </div>
+        <div class="gitem" data-reveal>
+          <div class="gitem__media"><img src="images/amb-dwarka-eve.jpg" alt="Potted plants, paved paths and umbrellas as the afternoon cools into evening." /></div>
+          <div class="gitem__body">
+            <p class="eyebrow">Dwarka · New Delhi</p>
+            <h3>Umbrellas and open sky.</h3>
+            <p>Potted plants, paved paths and umbrellas as the afternoon cools into evening.</p>
+          </div>
+        </div>
+        <div class="gitem" data-reveal>
+          <div class="gitem__media"><img src="images/gal-dwarka-3.jpg" alt="Once the sun goes down, the Woodland Affairs sign glows against the greenery." /></div>
+          <div class="gitem__body">
+            <p class="eyebrow">Dwarka · New Delhi</p>
+            <h3>Our name in lights.</h3>
+            <p>Once the sun goes down, the Woodland Affairs sign glows against the greenery.</p>
+          </div>
+        </div>
+        <div class="gitem" data-reveal>
+          <div class="gitem__media"><img src="images/wa-celebrate.jpg" alt="Warm lamps and a lit water channel turn the garden into something a little magical at night." /></div>
+          <div class="gitem__body">
+            <p class="eyebrow">Dwarka · New Delhi</p>
+            <h3>Dwarka after dark.</h3>
+            <p>Warm lamps and a lit water channel turn the garden into something a little magical at night.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="gsec branch-story">
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <p class="eyebrow">Hari Nagar · New Delhi</p>
+          <h2 class="display">Green all over,<br /><em>at Hari Nagar.</em></h2>
+          <p class="lead">Hanging plants, string lights and glasshouse corners you won't want to leave.</p>
+        </div>
+        <div class="gitem" data-reveal>
+          <div class="gitem__media"><img src="images/amb-hari-green.jpg" alt="Dinner under a pergola of string lights, greenery on every side." /></div>
+          <div class="gitem__body">
+            <p class="eyebrow">Hari Nagar · New Delhi</p>
+            <h3>Beneath a canopy of lights.</h3>
+            <p>Dinner under a pergola of string lights, greenery on every side.</p>
+          </div>
+        </div>
+        <div class="gitem" data-reveal>
+          <div class="gitem__media"><img src="images/gal-hari-3.jpg" alt="A long communal table laid indoors, big enough to gather everyone around at once." /></div>
+          <div class="gitem__body">
+            <p class="eyebrow">Hari Nagar · New Delhi</p>
+            <h3>Room for the whole party.</h3>
+            <p>A long communal table laid indoors, big enough to gather everyone around at once.</p>
+          </div>
+        </div>
+        <div class="gitem" data-reveal>
+          <div class="gitem__media"><img src="images/wa-harinagar.jpg" alt="The Hari Nagar garden, lush with plants and strung with fairy lights from end to end." /></div>
+          <div class="gitem__body">
+            <p class="eyebrow">Hari Nagar · New Delhi</p>
+            <h3>Wrapped in green and lights.</h3>
+            <p>The Hari Nagar garden, lush with plants and strung with fairy lights from end to end.</p>
+          </div>
+        </div>
+        <div class="gitem" data-reveal>
+          <div class="gitem__media"><img src="images/amb-hari-sign.jpg" alt="The Woodland Affairs signage wall, half-hidden in a wall of foliage." /></div>
+          <div class="gitem__body">
+            <p class="eyebrow">Hari Nagar · New Delhi</p>
+            <h3>Framed in leaves.</h3>
+            <p>The Woodland Affairs signage wall, half-hidden in a wall of foliage.</p>
+          </div>
+        </div>
+        <div class="gitem" data-reveal>
+          <div class="gitem__media"><img src="images/gal-hari-4.jpg" alt="A quiet indoor table for a smaller gathering, wood-panelled and softly lit." /></div>
+          <div class="gitem__body">
+            <p class="eyebrow">Hari Nagar · New Delhi</p>
+            <h3>Warm and unhurried.</h3>
+            <p>A quiet indoor table for a smaller gathering, wood-panelled and softly lit.</p>
+          </div>
+        </div>
+        <div class="gitem" data-reveal>
+          <div class="gitem__media"><img src="images/amb-hari-tables.jpg" alt="Dining among the plants in the glasshouse, warm light pooling over the tables." /></div>
+          <div class="gitem__body">
+            <p class="eyebrow">Hari Nagar · New Delhi</p>
+            <h3>A glasshouse glow.</h3>
+            <p>Dining among the plants in the glasshouse, warm light pooling over the tables.</p>
+          </div>
+        </div>
+        <div class="gitem" data-reveal>
+          <div class="gitem__media"><img src="images/gal-hari-2.jpg" alt="A cane chair and a lantern tucked into a leafy corner of the garden." /></div>
+          <div class="gitem__body">
+            <p class="eyebrow">Hari Nagar · New Delhi</p>
+            <h3>A lantern-lit nook.</h3>
+            <p>A cane chair and a lantern tucked into a leafy corner of the garden.</p>
+          </div>
+        </div>
+        <div class="gitem" data-reveal>
+          <div class="gitem__media"><img src="images/amb-hari-interior.jpg" alt="The long indoor table set and ready, place settings gleaming under the lights." /></div>
+          <div class="gitem__body">
+            <p class="eyebrow">Hari Nagar · New Delhi</p>
+            <h3>Laid and waiting.</h3>
+            <p>The long indoor table set and ready, place settings gleaming under the lights.</p>
+          </div>
+        </div>
+        <div class="gitem" data-reveal>
+          <div class="gitem__media"><img src="images/gal-hari-5.jpg" alt="Greenhouse dining after dark, string lights doing all the work." /></div>
+          <div class="gitem__body">
+            <p class="eyebrow">Hari Nagar · New Delhi</p>
+            <h3>Lit for the evening.</h3>
+            <p>Greenhouse dining after dark, string lights doing all the work.</p>
+          </div>
+        </div>
+        <div class="gitem" data-reveal>
+          <div class="gitem__media"><img src="images/wa-celebrate-3.jpg" alt="A table dressed for a special evening, under the leaves and the lights." /></div>
+          <div class="gitem__body">
+            <p class="eyebrow">Hari Nagar · New Delhi</p>
+            <h3>Set for a celebration.</h3>
+            <p>A table dressed for a special evening, under the leaves and the lights.</p>
+          </div>
+        </div>
+        <div class="gitem" data-reveal>
+          <div class="gitem__media"><img src="images/wa-celebrate-2.jpg" alt="A garden swing under the trees at night — somewhere to step away for a minute." /></div>
+          <div class="gitem__body">
+            <p class="eyebrow">Hari Nagar · New Delhi</p>
+            <h3>A quiet moment to yourself.</h3>
+            <p>A garden swing under the trees at night — somewhere to step away for a minute.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="gsec branch-story">
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <p class="eyebrow">Janakpuri · New Delhi</p>
+          <h2 class="display">A little more<br /><em>to discover.</em></h2>
+          <p class="lead">Eatery Royale brings the same generous spirit to the heart of Janakpuri.</p>
+        </div>
+        <div class="gitem" data-reveal>
+          <div class="gitem__media"><img src="images/wa-janakpuri.jpg" alt="A little of everything — kebabs, dips, salad and warm breads on one generous plate." /></div>
+          <div class="gitem__body">
+            <p class="eyebrow">Janakpuri · New Delhi</p>
+            <h3>Eatery Royale.</h3>
+            <p>Our Janakpuri branch is made for easy gatherings, generous plates and evenings that stretch a little longer.</p>
+          </div>
+        </div>
+        <div class="gitem" data-reveal>
+          <div class="gitem__media"><img src="images/food-tall1.jpg" alt="Crisp starters brought over on a wooden board, served while they're still hot." /></div>
+          <div class="gitem__body">
+            <p class="eyebrow">From the kitchen</p>
+            <h3>Straight to the table.</h3>
+            <p>Crisp starters brought over on a wooden board, served while they're still hot.</p>
+          </div>
+        </div>
+        <div class="gitem" data-reveal>
+          <div class="gitem__media"><img src="images/food-feat.jpg" alt="Soft tacos paired with a bowl of warm broth — comfort, plated." /></div>
+          <div class="gitem__body">
+            <p class="eyebrow">From the kitchen</p>
+            <h3>Something warm alongside.</h3>
+            <p>Soft tacos paired with a bowl of warm broth — comfort, plated.</p>
+          </div>
+        </div>
+        <div class="gitem" data-reveal>
+          <div class="gitem__media"><img src="images/gal-food-3.jpg" alt="A mixed kebab board with fresh green chutney and a squeeze of lemon." /></div>
+          <div class="gitem__body">
+            <p class="eyebrow">From the kitchen</p>
+            <h3>Chutney on the side.</h3>
+            <p>A mixed kebab board with fresh green chutney and a squeeze of lemon.</p>
+          </div>
+        </div>
+        <div class="gitem" data-reveal>
+          <div class="gitem__media"><img src="images/food-tall3.jpg" alt="A tall berry cooler, fruit and ice, to go with the meal." /></div>
+          <div class="gitem__body">
+            <p class="eyebrow">From the kitchen</p>
+            <h3>A cooler for the evening.</h3>
+            <p>A tall berry cooler, fruit and ice, to go with the meal.</p>
+          </div>
+        </div>
+        <div class="gitem" data-reveal>
+          <div class="gitem__media"><img src="images/gal-food-6.jpg" alt="Soft steamed momos in a bamboo basket with a fiery red dip." /></div>
+          <div class="gitem__body">
+            <p class="eyebrow">From the kitchen</p>
+            <h3>Fresh from the steamer.</h3>
+            <p>Soft steamed momos in a bamboo basket with a fiery red dip.</p>
+          </div>
+        </div>
+        <div class="gitem" data-reveal>
+          <div class="gitem__media"><img src="images/food-land2.jpg" alt="Warm molten chocolate against cool vanilla — the sweet end to the evening." /></div>
+          <div class="gitem__body">
+            <p class="eyebrow">From the kitchen</p>
+            <h3>A molten finish.</h3>
+            <p>Warm molten chocolate against cool vanilla — the sweet end to the evening.</p>
+          </div>
+        </div>
+        <div class="gitem" data-reveal>
+          <div class="gitem__media"><img src="images/gal-food-10.jpg" alt="Paneer and veg tikka in yellows, reds and greens, char-grilled on a board." /></div>
+          <div class="gitem__body">
+            <p class="eyebrow">From the kitchen</p>
+            <h3>Tikka in every colour.</h3>
+            <p>Paneer and veg tikka in yellows, reds and greens, char-grilled on a board.</p>
+          </div>
+        </div>
+        <div class="gitem" data-reveal>
+          <div class="gitem__media"><img src="images/gal-food-1.jpg" alt="Cool, tall and blue — a mocktail made to be photographed." /></div>
+          <div class="gitem__body">
+            <p class="eyebrow">From the kitchen</p>
+            <h3>The Blue Lagoon.</h3>
+            <p>Cool, tall and blue — a mocktail made to be photographed.</p>
+          </div>
+        </div>
+        <div class="gitem" data-reveal>
+          <div class="gitem__media"><img src="images/gal-food-5.jpg" alt="Cheese-stuffed garlic bread, golden on top, with a dip on the side." /></div>
+          <div class="gitem__body">
+            <p class="eyebrow">From the kitchen</p>
+            <h3>Still steaming.</h3>
+            <p>Cheese-stuffed garlic bread, golden on top, with a dip on the side.</p>
+          </div>
+        </div>
+        <div class="gitem" data-reveal>
+          <div class="gitem__media"><img src="images/food-tall2.jpg" alt="Loaded soft tacos, piled high and served straight away." /></div>
+          <div class="gitem__body">
+            <p class="eyebrow">From the kitchen</p>
+            <h3>Fresh off the pass.</h3>
+            <p>Loaded soft tacos, piled high and served straight away.</p>
+          </div>
+        </div>
+        <div class="gitem" data-reveal>
+          <div class="gitem__media"><img src="images/gal-food-11.jpg" alt="Seekh kebabs off the grill, rolled and plated on a long board." /></div>
+          <div class="gitem__body">
+            <p class="eyebrow">From the kitchen</p>
+            <h3>Char-grilled and rolled.</h3>
+            <p>Seekh kebabs off the grill, rolled and plated on a long board.</p>
+          </div>
+        </div>
+        <div class="gitem" data-reveal>
+          <div class="gitem__media"><img src="images/gal-food-9.jpg" alt="A pomegranate cooler caught mid-pour, fresh fruit alongside." /></div>
+          <div class="gitem__body">
+            <p class="eyebrow">From the kitchen</p>
+            <h3>Mid-splash.</h3>
+            <p>A pomegranate cooler caught mid-pour, fresh fruit alongside.</p>
+          </div>
+        </div>
+        <div class="gitem" data-reveal>
+          <div class="gitem__media"><img src="images/gal-food-2.jpg" alt="Golden fried rolls on a wooden board, crunchy and hot." /></div>
+          <div class="gitem__body">
+            <p class="eyebrow">From the kitchen</p>
+            <h3>Crisp at the edges.</h3>
+            <p>Golden fried rolls on a wooden board, crunchy and hot.</p>
+          </div>
+        </div>
+        <div class="gitem" data-reveal>
+          <div class="gitem__media"><img src="images/food-plate.jpg" alt="A hearty warm bowl paired with a crisp, colourful salad." /></div>
+          <div class="gitem__body">
+            <p class="eyebrow">From the kitchen</p>
+            <h3>A bright, fresh salad.</h3>
+            <p>A hearty warm bowl paired with a crisp, colourful salad.</p>
+          </div>
+        </div>
+        <div class="gitem" data-reveal>
+          <div class="gitem__media"><img src="images/gal-food-7.jpg" alt="A savoury waffle finished with a drizzle and a scatter of vegetables." /></div>
+          <div class="gitem__body">
+            <p class="eyebrow">From the kitchen</p>
+            <h3>Drizzled and dressed.</h3>
+            <p>A savoury waffle finished with a drizzle and a scatter of vegetables.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="more-gallery">
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <p class="eyebrow">The full collection</p>
+          <h2 class="display">More moments,<br /><em>more plates.</em></h2>
+          <p class="lead">A closer look at the spaces, food and little details across Woodland Affairs.</p>
+        </div>
+        <div class="more-gallery__grid" data-reveal>
+          <a class="more-gallery__item" href="images/gal-dwarka-2.jpg"><img src="images/gal-dwarka-2.jpg" alt="A shaded corner at the Dwarka garden." loading="lazy" /></a>
+          <a class="more-gallery__item" href="images/gal-dwarka-3.jpg"><img src="images/gal-dwarka-3.jpg" alt="Woodland Affairs Dwarka after dark." loading="lazy" /></a>
+          <a class="more-gallery__item" href="images/gal-hari-2.jpg"><img src="images/gal-hari-2.jpg" alt="A lantern-lit corner at Hari Nagar." loading="lazy" /></a>
+          <a class="more-gallery__item" href="images/gal-hari-4.jpg"><img src="images/gal-hari-4.jpg" alt="A softly lit indoor table at Hari Nagar." loading="lazy" /></a>
+          <a class="more-gallery__item" href="images/gal-hari-5.jpg"><img src="images/gal-hari-5.jpg" alt="Greenhouse dining after dark." loading="lazy" /></a>
+          <a class="more-gallery__item" href="images/wa-celebrate-2.jpg"><img src="images/wa-celebrate-2.jpg" alt="A garden swing under the trees." loading="lazy" /></a>
+          <a class="more-gallery__item" href="images/gal-food-1.jpg"><img src="images/gal-food-1.jpg" alt="A bright blue mocktail." loading="lazy" /></a>
+          <a class="more-gallery__item" href="images/gal-food-2.jpg"><img src="images/gal-food-2.jpg" alt="Golden fried rolls on a wooden board." loading="lazy" /></a>
+          <a class="more-gallery__item" href="images/gal-food-6.jpg"><img src="images/gal-food-6.jpg" alt="Steamed momos with red dip." loading="lazy" /></a>
+          <a class="more-gallery__item" href="images/gal-food-9.jpg"><img src="images/gal-food-9.jpg" alt="A pomegranate cooler." loading="lazy" /></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a class="brand" href="index.html#top"><span class="brand__mark">WA</span><span class="brand__name">Woodland Affairs</span></a>
+          <p>Where food meets the wild.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <div class="footer__links">
+            <a href="index.html#outlets">Restaurants</a>
+            <a href="menu.html">Menu</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="celebrate.html">Celebrate</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+        <div class="footer__contact">
+          <h4>Find us in New Delhi</h4>
+          <p><strong style="color:var(--cream)">Dwarka</strong> · <a href="tel:+919873798727">98737 98727</a></p>
+          <p><strong style="color:var(--cream)">Hari Nagar</strong> · <a href="tel:+919873347347">98733 47347</a></p>
+          <p><strong style="color:var(--cream)">Janakpuri (Eatery Royale)</strong> · <a href="tel:+919990283002">99902 83002</a></p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 Woodland Affairs · @woodlandaffairs_</span>
+        <span>Website by <a href="https://www.wetakefwd.online" target="_blank" rel="noreferrer">Wetakefwd</a> — we make websites</span>
+      </div>
+    </div>
+  </footer>
+  <!-- FLOATING CALL -->
+  <a class="fab-call" href="contact.html" aria-label="Choose a restaurant to book a table on WhatsApp" aria-haspopup="dialog">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+    <span>Call a table</span>
+  </a>
+
+<script src="app.js"></script>
+</body>
+</html>

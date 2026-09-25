@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Our Menus | Woodland Affairs</title>
+<meta name="description" content="Explore Woodland Affairs menus. Choose your restaurant and discover à la carte favourites and proposed sharing and buffet menus.">
+<link rel="icon" href="favicon.svg"><link rel="stylesheet" href="theme.css"><link rel="stylesheet" href="menu.css">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="depth.css" />
+</head>
+<body class="menu-page">
+<header class="nav always-solid" id="nav">
+    <div class="wrap nav__inner">
+      <a class="brand" href="index.html#top" aria-label="Woodland Affairs home"><span class="brand__mark">WA</span><span class="brand__name">Woodland Affairs</span></a>
+      <nav class="nav__links" aria-label="Main navigation">
+        <a href="index.html#outlets">Restaurants</a>
+        <a href="menu.html" class="active" aria-current="page">Menu</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="celebrate.html">Celebrate</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a class="btn btn--brass btn--sm nav__cta desktop-only" href="contact.html">Visit us</a>
+      <button class="nav__toggle" aria-label="Open navigation" aria-controls="mobile-navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+    <nav class="nav__panel" id="mobile-navigation" aria-label="Mobile navigation">
+        <a href="index.html#outlets">Restaurants</a>
+        <a href="menu.html" class="active" aria-current="page">Menu</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="celebrate.html">Celebrate</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+<main>
+<section class="menu-intro"><div class="menu-intro__copy"><p class="menu-kicker">Woodland Affairs · A taste of the extraordinary</p><h1>A little wild.<br><em>Entirely delicious.</em></h1><p>Slow evenings. Generous plates. Beautiful company.<br>Your next favourite is waiting at the table.</p><a href="#choose" class="intro-link">Explore the menus <span aria-hidden="true">↘</span></a><div class="hero-details"><span>Three restaurants</span><span>One love for good food</span></div></div><div class="food-stage" aria-label="A taste of Woodland Affairs"><div class="stage-orbit" aria-hidden="true"></div><figure class="food-stage__main" data-depth><img src="images/food-feat.jpg" alt="A colourful dish from the Woodland Affairs kitchen" fetchpriority="high"><figcaption><span>FROM OUR KITCHEN</span><strong>Made to be savoured.</strong></figcaption></figure><figure class="food-stage__small" data-depth><img src="images/gal-food-9.jpg" alt="A fresh pomegranate cooler"><figcaption>A little refreshment.</figcaption></figure><span class="stage-seal" aria-hidden="true">GOOD FOOD<br>✳<br>GREAT COMPANY</span></div></section>
+<section class="menu-workspace" id="choose">
+<div class="step-heading"><span>01 / YOUR RESTAURANT</span><p>Every table has a story. Choose yours.</p></div>
+<div class="outlet-picker" role="group" aria-label="Choose restaurant">
+<button type="button" data-outlet="hari" aria-pressed="true"><small>WOODLAND AFFAIRS</small><strong>Hari Nagar</strong><span>Garden dining · Featured outlet ↗</span></button>
+<button type="button" data-outlet="dwarka" aria-pressed="false"><small>WOODLAND AFFAIRS</small><strong>Dwarka</strong><span>Under the trees ↗</span></button>
+<button type="button" data-outlet="janakpuri" aria-pressed="false"><small>EATERY ROYALE</small><strong>Janakpuri</strong><span>Gather around the table ↗</span></button>
+</div>
+<div class="type-heading"><span>02 / YOUR MENU</span><div class="menu-types" role="group" aria-label="Choose menu type"><button type="button" data-type="carte" aria-pressed="true">À la carte</button><button type="button" data-type="combo" aria-pressed="false">Combos</button><button type="button" data-type="buffet" aria-pressed="false">Buffet</button></div></div>
+<section id="menu-results" aria-live="polite" aria-atomic="true"></section>
+<noscript><p>Please enable JavaScript to select a restaurant and browse menus, or <a href="https://woodland-affairs.godirekt.in/spark/app/#/mainpage">view the original menu</a>.</p></noscript>
+</section>
+<section class="menu-ending"><p class="menu-kicker">A little occasion. A lovely evening.</p><h2>There’s always room<br>for <em>one more.</em></h2><a id="outlet-call" href="tel:+919873347347">Speak to Hari Nagar ↗</a><p>For availability, dietary requirements and group dining.</p></section>
+</main><footer class="menu-footer"><span>© 2026 Woodland Affairs</span><a href="contact.html">Find us in New Delhi ↗</a></footer>
+<a class="fab-call" href="contact.html" aria-label="Choose a restaurant to book a table on WhatsApp" aria-haspopup="dialog"><span>Call a table</span></a>
+<script src="app.js"></script>
+<script src="menu.js"></script>
+</body></html>
