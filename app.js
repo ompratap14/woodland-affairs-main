@@ -130,43 +130,116 @@
     }, { passive: true });
   }
 
-  // A single delegated, frame-limited tilt controller. Idle pages do no animation work.
+  // Pointer-driven 3D. Cards spring toward the cursor, lift off the page, catch a moving
+  // glare and let their photo drift for parallax; the hero and menu food stage split into
+  // layers that move at different depths. One rAF loop runs only while something is still
+  // settling, so idle pages do no animation work.
   var depthMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   var depthPointer = window.matchMedia('(hover:hover) and (pointer:fine)');
-  var depthTarget = null, depthFrame = 0, depthX = 0, depthY = 0, depthRect;
-  var depthSelector = '.o-card, .c-card, .func, .mcat, .gitem__media, .split__media, .proposal';
-  function clearDepth() {
-    cancelAnimationFrame(depthFrame);
-    depthFrame = 0;
-    if (depthTarget) {
-      depthTarget.classList.remove('depth-active');
-      depthTarget.style.removeProperty('--depth-x');
-      depthTarget.style.removeProperty('--depth-y');
+  var depthSelector = '.o-card, .c-card, .func, .mcat, .gitem__media, .split__media, .proposal, .outlet-picker button';
+  var depthScenes = [
+    { root:'.hero', layers:[['.hero__media', -16], ['.hero__inner', 8], ['.hero__badge', 18]] },
+    { root:'.food-stage', layers:[['.stage-orbit', -10], ['.food-stage__main', 14], ['.food-stage__small', 30], ['.stage-seal', 42]] }
+  ];
+  var DEPTH_EASE = 0.12;
+  var depthCards = new Map(), depthHover = null, depthFrame = 0;
+  var sceneStates = [], sceneHover = null;
+  depthScenes.forEach(function (scene) {
+    var root = document.querySelector(scene.root);
+    if (!root) return;
+    sceneStates.push({
+      root:root, x:0, y:0, tx:0, ty:0, live:false,
+      layers:scene.layers.map(function (layer) { return [root.querySelector(layer[0]), layer[1]]; }).filter(function (layer) { return layer[0]; })
+    });
+  });
+  function depthEnabled(event) {
+    return !depthMotion.matches && depthPointer.matches && (!event || event.pointerType !== 'touch');
+  }
+  function depthKick() { if (!depthFrame) depthFrame = requestAnimationFrame(depthTick); }
+  function cardState(card) {
+    var state = depthCards.get(card);
+    if (state) return state;
+    state = { x:0, y:0, l:0, tx:0, ty:0, tl:0 };
+    if (!card.querySelector(':scope > .depth-glare')) {
+      var glare = document.createElement('span');
+      glare.className = 'depth-glare';
+      glare.setAttribute('aria-hidden', 'true');
+      card.appendChild(glare);
     }
-    depthTarget = null;
+    card.classList.add('depth-active');
+    depthCards.set(card, state);
+    return state;
+  }
+  function releaseCard(card) {
+    var state = card && depthCards.get(card);
+    if (state) { state.tx = 0; state.ty = 0; state.tl = 0; depthKick(); }
+  }
+  function releaseAll() {
+    depthCards.forEach(function (state, card) { releaseCard(card); });
+    sceneStates.forEach(function (scene) { scene.tx = 0; scene.ty = 0; });
+    depthHover = null; sceneHover = null;
+    depthKick();
+  }
+  function depthTick() {
+    depthFrame = 0;
+    var moving = false;
+    depthCards.forEach(function (s, card) {
+      s.x += (s.tx - s.x) * DEPTH_EASE;
+      s.y += (s.ty - s.y) * DEPTH_EASE;
+      s.l += (s.tl - s.l) * DEPTH_EASE;
+      if (!s.tl && Math.abs(s.x) < 0.004 && Math.abs(s.y) < 0.004 && s.l < 0.004) {
+        card.classList.remove('depth-active');
+        ['--dx', '--dy', '--dl', '--gx', '--gy'].forEach(function (name) { card.style.removeProperty(name); });
+        depthCards.delete(card);
+        return;
+      }
+      moving = true;
+      card.style.setProperty('--dx', s.x.toFixed(4));
+      card.style.setProperty('--dy', s.y.toFixed(4));
+      card.style.setProperty('--dl', s.l.toFixed(4));
+      card.style.setProperty('--gx', ((s.x + 1) * 50).toFixed(1) + '%');
+      card.style.setProperty('--gy', ((s.y + 1) * 50).toFixed(1) + '%');
+    });
+    sceneStates.forEach(function (scene) {
+      if (!scene.live && !scene.tx && !scene.ty) return;
+      scene.x += (scene.tx - scene.x) * DEPTH_EASE * 0.7;
+      scene.y += (scene.ty - scene.y) * DEPTH_EASE * 0.7;
+      var settled = !scene.tx && !scene.ty && Math.abs(scene.x) < 0.002 && Math.abs(scene.y) < 0.002;
+      scene.layers.forEach(function (layer) {
+        layer[0].style.translate = settled ? '' : (scene.x * layer[1]).toFixed(2) + 'px ' + (scene.y * layer[1]).toFixed(2) + 'px';
+      });
+      scene.live = !settled;
+      if (scene.live) moving = true;
+    });
+    if (moving) depthKick();
   }
   document.addEventListener('pointermove', function (event) {
-    if (depthMotion.matches || !depthPointer.matches || event.pointerType === 'touch') return;
-    var target = event.target.closest(depthSelector);
-    if (!target) { if (depthTarget) clearDepth(); return; }
-    if (target !== depthTarget) {
-      clearDepth();
-      depthTarget = target;
-      depthRect = target.getBoundingClientRect();
+    if (!depthEnabled(event)) return;
+    var card = event.target.closest(depthSelector);
+    if (depthHover && depthHover !== card) releaseCard(depthHover);
+    depthHover = card;
+    if (card) {
+      var rect = card.getBoundingClientRect();
+      var s = cardState(card);
+      s.tx = Math.max(-1, Math.min(1, (event.clientX - rect.left) / rect.width * 2 - 1));
+      s.ty = Math.max(-1, Math.min(1, (event.clientY - rect.top) / rect.height * 2 - 1));
+      s.tl = 1;
     }
-    depthX = Math.max(-1, Math.min(1, (event.clientX - depthRect.left) / depthRect.width * 2 - 1));
-    depthY = Math.max(-1, Math.min(1, (event.clientY - depthRect.top) / depthRect.height * 2 - 1));
-    if (!depthFrame) depthFrame = requestAnimationFrame(function () {
-      depthFrame = 0;
-      if (!depthTarget) return;
-      depthTarget.style.setProperty('--depth-x', (-depthY * 3).toFixed(2) + 'deg');
-      depthTarget.style.setProperty('--depth-y', (depthX * 3).toFixed(2) + 'deg');
-      depthTarget.classList.add('depth-active');
-    });
+    var scene = null;
+    for (var i = 0; i < sceneStates.length; i++) if (sceneStates[i].root.contains(event.target)) scene = sceneStates[i];
+    if (sceneHover && sceneHover !== scene) { sceneHover.tx = 0; sceneHover.ty = 0; }
+    sceneHover = scene;
+    if (scene) {
+      var box = scene.root.getBoundingClientRect();
+      scene.tx = (event.clientX - box.left) / box.width * 2 - 1;
+      scene.ty = (event.clientY - box.top) / box.height * 2 - 1;
+      scene.live = true;
+    }
+    depthKick();
   }, { passive:true });
-  document.addEventListener('pointerout', function (event) { if (!event.relatedTarget) clearDepth(); });
-  window.addEventListener('blur', clearDepth);
-  window.addEventListener('scroll', function () { if (depthTarget) clearDepth(); }, { passive:true });
-  depthMotion.addEventListener('change', clearDepth);
-  depthPointer.addEventListener('change', clearDepth);
+  document.addEventListener('pointerout', function (event) { if (!event.relatedTarget) releaseAll(); });
+  window.addEventListener('blur', releaseAll);
+  window.addEventListener('scroll', function () { if (depthHover) { releaseCard(depthHover); depthHover = null; } }, { passive:true });
+  depthMotion.addEventListener('change', releaseAll);
+  depthPointer.addEventListener('change', releaseAll);
 })();

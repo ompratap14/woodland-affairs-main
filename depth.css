@@ -16,9 +16,38 @@ body .btn--brass:active { transform:translateY(2px); box-shadow:0 2px 0 #0a442b;
 body .sec-head .eyebrow { color:#607347; }
 body .band .eyebrow { color:#c6d6a5; }
 body .cta-strip { box-shadow:0 8px 0 #d7dfcd,0 22px 45px #18382220; border-color:#a9bb99; }
-body .depth-active { transform:perspective(1000px) rotateX(var(--depth-x,0deg)) rotateY(var(--depth-y,0deg)) translateY(-4px); transition:transform 100ms ease-out; }
+/* Pointer 3D (driven by app.js): --dx/--dy are the cursor position from -1 to 1, --dl is lift from 0 to 1. */
+body .depth-active,
+body.menu-page .outlet-picker button.depth-active {
+  position:relative; z-index:2; will-change:transform,filter;
+  transform:perspective(900px) rotateX(calc(var(--dy,0) * -10deg)) rotateY(calc(var(--dx,0) * 10deg)) translateY(calc(var(--dl,0) * -10px)) scale(calc(1 + var(--dl,0) * .03));
+  filter:drop-shadow(calc(var(--dx,0) * -18px) calc(var(--dl,0) * 26px + var(--dy,0) * -8px) calc(var(--dl,0) * 26px) rgb(8 38 22 / calc(var(--dl,0) * .38)));
+  transition:none;
+}
+.depth-glare { display:none; }
+body .depth-active > .depth-glare {
+  display:block; position:absolute; inset:0; z-index:4; border-radius:inherit; pointer-events:none;
+  opacity:var(--dl,0); mix-blend-mode:overlay;
+  background:radial-gradient(circle at var(--gx,50%) var(--gy,50%), rgb(255 255 255 / .7), rgb(255 255 255 / .18) 28%, transparent 62%),
+             linear-gradient(calc(115deg + var(--dx,0) * 25deg), transparent 35%, rgb(255 255 255 / calc(var(--dl,0) * .22)) 50%, transparent 65%);
+}
+/* The photo slides against the tilt so it reads as a window into a deeper scene. */
+body .o-card.depth-active:hover .o-card__media img,
+body .c-card.depth-active:hover .c-card__media img,
+body .gitem .gitem__media.depth-active:hover img,
+body .depth-active:hover > img {
+  transform:scale(1.14) translate(calc(var(--dx,0) * -3.5%), calc(var(--dy,0) * -3.5%));
+  transition:transform .25s ease-out;
+}
+body .o-card.depth-active .o-card__body,
+body .c-card.depth-active .c-card__body,
+body .depth-active .func__label,
+body .depth-active .mcat__label { translate:calc(var(--dx,0) * 6px) calc(var(--dy,0) * 5px); }
 @media(hover:hover) and (pointer:fine) {
   .o-card,.c-card,.func,.mcat,.gitem__media,.split__media { transition:transform .3s ease-out,box-shadow .3s ease-out; }
+  /* A little bleed so the layered hero can drift without exposing its edges. */
+  body .hero__media { scale:1.05; }
+  .hero__inner,.hero__badge,.food-stage figure,.stage-orbit,.stage-seal { will-change:translate; }
 }
 @media(max-width:760px) {
   body .split__media,body .gitem__media { border-width:3px; box-shadow:5px 6px 0 #d9e3d4,0 12px 20px #17342114; }
@@ -31,7 +60,7 @@ body .depth-active { transform:perspective(1000px) rotateX(var(--depth-x,0deg)) 
   body .o-card:hover img,body .c-card:hover img,body .func:hover img,body .mcat:hover img,body .gitem:hover img,body .split__media:hover img { transform:none; }
 }
 /* Individual translate keeps scroll entrances separate from hover transforms. */
-body .scroll-entry { opacity:0; translate:72px 12px; transition:opacity .8s ease,translate .9s cubic-bezier(.16,1,.3,1),transform .3s ease-out; }
+body .scroll-entry { opacity:0; translate:72px 12px; transition:opacity .8s ease,translate .9s cubic-bezier(.16,1,.3,1); }
 body .scroll-entry[data-enter="left"] { translate:-72px 12px; }
 body .scroll-entry.scroll-arrived { opacity:1; translate:0 0; }
 @media(max-width:760px) {
