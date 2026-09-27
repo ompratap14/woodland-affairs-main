@@ -26,6 +26,9 @@
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var FLIGHT = 1150;
   var finished = false;
+  var backgroundElements = Array.from(document.body.children).filter(function (element) {
+    return element !== intro && element.tagName !== 'SCRIPT' && !element.inert;
+  });
 
   // Lift an intro logo part out of the overlay and fly it onto its nav counterpart.
   // Transform-only (translate + scale from the top-left corner) so it stays smooth.
@@ -82,25 +85,41 @@
     if (finished) return;
     finished = true;
     try { sessionStorage.setItem('wa_intro_seen', '1'); } catch (e) {}
-    var flying = animate === true && !reduce && flyLogoHome();
+    // Fade the photographic invitation into the homepage without moving the wordmark.
+    var flying = false;
+    var restoreFocus = intro.contains(document.activeElement);
+    backgroundElements.forEach(function (element) { element.inert = false; });
+    intro.inert = true;
     intro.classList.add('gone');
     document.body.classList.remove('intro-active');
     document.dispatchEvent(new CustomEvent('wa:enter'));
+    if (restoreFocus) {
+      var homeLink = document.querySelector('.nav .brand');
+      if (homeLink) homeLink.focus({ preventScroll: true });
+    }
     setTimeout(function () { if (intro && intro.parentNode) intro.parentNode.removeChild(intro); }, flying ? FLIGHT + 300 : 1100);
   }
   window.__waEnter = enterSite;
 
   var seen = false;
   try { seen = sessionStorage.getItem('wa_intro_seen') === '1'; } catch (e) {}
-  if (seen) { enterSite(); return; }
+  if (seen || reduce || location.hash) { enterSite(); return; }
 
   document.body.classList.add('intro-active');
+  backgroundElements.forEach(function (element) { element.inert = true; });
 
   var skip = intro.querySelector('.intro__skip');
-  if (skip) skip.addEventListener('click', function () { enterSite(true); });
+  if (skip) {
+    skip.addEventListener('click', function () { enterSite(true); });
+    skip.focus({ preventScroll: true });
+    skip.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') enterSite();
+      if (event.key === 'Tab') { event.preventDefault(); skip.focus(); }
+    });
+  }
 
   // Reduced motion → hold briefly then reveal
-  var DURATION = reduce ? 900 : 2600;
+  var DURATION = reduce ? 900 : 6000;
   var bar = intro.querySelector('.intro__bar');
   var start = performance.now();
   (function tick() {

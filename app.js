@@ -1,7 +1,7 @@
 (function () {
-  // Outlet selection opens a draft WhatsApp conversation; no message is sent automatically.
+  // The table button opens one direct WhatsApp enquiry; there is no booking form or chooser.
   var bookingTriggers = document.querySelectorAll('.fab-call');
-  if (bookingTriggers.length && typeof HTMLDialogElement !== 'undefined') {
+  if (bookingTriggers.length && false && typeof HTMLDialogElement !== 'undefined') {
     var bookingDialog = document.createElement('dialog');
     bookingDialog.className = 'booking-dialog';
     bookingDialog.setAttribute('aria-labelledby', 'booking-title');
@@ -36,20 +36,40 @@
       if (event.target === bookingDialog && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) bookingDialog.close();
     });
     bookingDialog.addEventListener('close', function () { if (bookingOpener) bookingOpener.focus(); });
+  } else if (bookingTriggers.length) {
+    var whatsappUrl = 'https://wa.me/919873347347?text=' + encodeURIComponent('Hello Woodland Affairs! I would like to enquire about booking a table.');
+    bookingTriggers.forEach(function (trigger) {
+      trigger.href = whatsappUrl;
+      trigger.setAttribute('aria-label', 'Message Woodland Affairs on WhatsApp about a table');
+      trigger.removeAttribute('aria-haspopup');
+      trigger.addEventListener('click', function () { window.location.href = whatsappUrl; });
+    });
   }
   var nav = document.querySelector('.nav');
 
   // Mobile menu toggle
   var toggle = document.querySelector('.nav__toggle');
   if (toggle && nav) {
+    var mobilePanel = nav.querySelector('.nav__panel');
+    if (mobilePanel && !mobilePanel.querySelector('.mobile-booking-link')) {
+      var mobileBooking = document.createElement('a');
+      mobileBooking.className = 'mobile-booking-link';
+      mobileBooking.href = 'https://wa.me/919873347347?text=' + encodeURIComponent('Hello Woodland Affairs! I would like to enquire about booking a table.');
+      mobileBooking.textContent = 'Book a table';
+      mobilePanel.appendChild(mobileBooking);
+    }
     function setMenuOpen(open) {
       nav.classList.toggle('open', open);
+      document.body.classList.toggle('menu-open', open);
       toggle.setAttribute('aria-expanded', String(open));
       toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
     }
     toggle.addEventListener('click', function () { setMenuOpen(!nav.classList.contains('open')); });
     document.addEventListener('keydown', function (event) {
       if (event.key === 'Escape' && nav.classList.contains('open')) { setMenuOpen(false); toggle.focus(); }
+    });
+    document.addEventListener('click', function (event) {
+      if (nav.classList.contains('open') && !nav.contains(event.target)) setMenuOpen(false);
     });
     nav.querySelectorAll('.nav__panel a').forEach(function (a) {
       a.addEventListener('click', function () { setMenuOpen(false); });
