@@ -1,23 +1,23 @@
 /* Forest entrance. All styles are scoped to the intro. */
-#intro{isolation:isolate;overflow:hidden;background:#061810;color:#fff6de;perspective:900px}
+#intro{isolation:isolate;overflow:hidden;background:#061810;color:#fff6de;perspective:900px;transition:opacity .3s ease,visibility .3s}
 html:not(.js) #intro{display:none}
 #intro::before{display:none}
 #intro::after{content:'';position:absolute;inset:0;pointer-events:none;z-index:2;box-shadow:inset 0 0 140px 30px #020b0788}
-#intro .intro__garden{position:absolute;inset:-4%;z-index:-3;background:linear-gradient(#04160dd9,#0a291b99 50%,#031209ed),url('images/amb-hero.jpg') center/cover;animation:forestApproach 6s ease-out both}
-#intro .intro__light{position:absolute;inset:0;z-index:-2;background:radial-gradient(ellipse at 50% 28%,#f6df9a25,transparent 55%);animation:forestLight 6s ease-out both}
+#intro .intro__garden{position:absolute;inset:-4%;z-index:-3;background:linear-gradient(#04160dd9,#0a291b99 50%,#031209ed),url('images/amb-hero.jpg') center/cover;animation:forestApproach 5s ease-out both}
+#intro .intro__light{position:absolute;inset:0;z-index:-2;background:radial-gradient(ellipse at 50% 28%,#f6df9a25,transparent 55%);animation:forestLight 5s ease-out both}
 #intro .intro__foliage{position:absolute;top:-8%;bottom:-12%;width:45%;z-index:1;pointer-events:none;background:url('images/intro-leaves.svg') center/100% 100% no-repeat;filter:drop-shadow(0 8px 15px #0007)}
-#intro .intro__foliage--left{left:-8%;transform-origin:left center;animation:forestLeft 6s cubic-bezier(.2,.7,.2,1) both}
-#intro .intro__foliage--right{right:-8%;transform-origin:right center;animation:forestRight 6s cubic-bezier(.2,.7,.2,1) both}
+#intro .intro__foliage--left{left:-8%;transform-origin:left center;animation:forestLeft 5s cubic-bezier(.2,.7,.2,1) both}
+#intro .intro__foliage--right{right:-8%;transform-origin:right center;animation:forestRight 5s cubic-bezier(.2,.7,.2,1) both}
 #intro .intro__edition{position:absolute;top:34px;left:5%;right:5%;display:flex;justify-content:space-between;z-index:4;color:#c9d4bc;font:500 9px var(--font-body);letter-spacing:.22em;margin:0;text-transform:uppercase}
 #intro .intro__logo{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:75px 20px 130px;z-index:3}
-#intro .intro__mark{height:46px;width:46px;border:1px solid #d5bb7577;border-radius:50%;display:grid;place-items:center;font:20px var(--font-display);margin:0 0 20px;color:#e3cc94;animation:forestWord 1.2s .8s both}
+#intro .intro__mark{height:46px;width:46px;border:1px solid #d5bb7577;border-radius:50%;display:grid;place-items:center;font:20px var(--font-display);margin:0 0 20px;color:#e3cc94;animation:forestWord .45s 0s both}
 #intro .intro__mark::after{display:none}
-#intro .intro__welcome{font:500 9px var(--font-body);letter-spacing:.35em;text-transform:uppercase;color:#d7ddc4;margin:0 0 22px;animation:forestWord 1.3s 1s both}
-#intro .intro__name{font:400 clamp(70px,10vw,145px)/.78 var(--font-display);letter-spacing:-.04em;margin:0;color:#fff6de;text-shadow:0 6px 45px #0008;animation:forestWord 1.7s 1.3s both}
+#intro .intro__welcome{font:500 9px var(--font-body);letter-spacing:.35em;text-transform:uppercase;color:#d7ddc4;margin:0 0 22px;animation:forestWord .45s .05s both}
+#intro .intro__name{font:400 clamp(70px,10vw,145px)/.78 var(--font-display);letter-spacing:-.04em;margin:0;color:#fff6de;text-shadow:0 6px 45px #0008;animation:forestWord .55s .1s both}
 #intro .intro__name em{display:block;color:#e5c992;letter-spacing:-.045em;margin-top:16px}
-#intro .intro__tag{font:italic clamp(19px,2vw,25px) var(--font-display);margin:28px 0 0;color:#eee5ca;animation:forestWord 1.5s 1.8s both}
-#intro .intro__line{width:64px;height:1px;background:#dfc99788;margin:24px 0 18px;animation:forestWord 1.3s 2s both}
-#intro .intro__places{font:400 8px var(--font-body);letter-spacing:.2em;color:#c9d4bc;margin:0;animation:forestWord 1.3s 2.1s both}
+#intro .intro__tag{font:italic clamp(19px,2vw,25px) var(--font-display);margin:28px 0 0;color:#eee5ca;animation:forestWord .45s .2s both}
+#intro .intro__line{width:64px;height:1px;background:#dfc99788;margin:24px 0 18px;animation:forestWord .4s .25s both}
+#intro .intro__places{font:400 8px var(--font-body);letter-spacing:.2em;color:#c9d4bc;margin:0;animation:forestWord .4s .3s both}
 #intro .intro__caption{position:absolute;bottom:38px;left:5%;z-index:4;font:17px/1.5 var(--font-display);color:#d0d7c1;margin:0}
 #intro .intro__caption em{color:#93a691}
 #intro .intro__skip{right:5%;bottom:38px;z-index:4;border:1px solid #e5c99299;color:#f2e6c8;background:#10271bb3;padding:16px 22px;min-height:48px;border-radius:2px;font:500 10px var(--font-body);letter-spacing:.18em;text-transform:uppercase}
@@ -26,7 +26,7 @@ html:not(.js) #intro{display:none}
 #intro .intro__bar{height:2px;background:#e5c992;z-index:5}
 @keyframes forestApproach{from{transform:scale(1);opacity:.4}to{transform:scale(1.08);opacity:1}}
 @keyframes forestLight{from{opacity:0}to{opacity:1}}
-@keyframes forestWord{from{opacity:0;transform:translateY(20px);filter:blur(6px)}to{opacity:1;transform:none;filter:blur(0)}}
+@keyframes forestWord{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:none;}}
 @keyframes forestLeft{from{transform:translateX(12%) scale(1.1)}to{transform:translateX(-20%) scale(1.3)}}
 @keyframes forestRight{from{transform:scaleX(-1) translateX(12%) scale(1.1)}to{transform:scaleX(-1) translateX(-20%) scale(1.3)}}
 @media(max-width:600px){

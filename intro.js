@@ -118,8 +118,8 @@
     });
   }
 
-  // Reduced motion → hold briefly then reveal
-  var DURATION = reduce ? 900 : 6000;
+  // A brief welcome, independent of image, font or video loading.
+  var DURATION = 5000;
   var bar = intro.querySelector('.intro__bar');
   var start = performance.now();
   (function tick() {
