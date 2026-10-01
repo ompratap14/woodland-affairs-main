@@ -40,6 +40,7 @@ body .depth-active:hover > img {
   transition:transform .25s ease-out;
 }
 @media (hover:none) and (pointer:coarse) {
+  body { -webkit-user-select:none; user-select:none; }
   .o-card__media, .c-card__media, .gitem__media, .split__media, .func, .mcat, .food-stage {
     -webkit-touch-callout:none;
     -webkit-user-select:none;
