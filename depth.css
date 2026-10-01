@@ -40,6 +40,16 @@ body .depth-active:hover > img {
   transition:transform .25s ease-out;
 }
 @media (hover:none) and (pointer:coarse) {
+  .o-card__media, .c-card__media, .gitem__media, .split__media, .func, .mcat, .food-stage {
+    -webkit-touch-callout:none;
+    -webkit-user-select:none;
+    user-select:none;
+    touch-action:pan-y;
+  }
+  .o-card__media img, .c-card__media img, .gitem__media img, .split__media img, .func img, .mcat img, .food-stage img {
+    -webkit-user-drag:none;
+    pointer-events:none;
+  }
   body .o-card.depth-active .o-card__media img,
   body .c-card.depth-active .c-card__media img,
   body .gitem .gitem__media.depth-active img,

@@ -258,8 +258,7 @@
     }
     depthKick();
   }, { passive:true });
-  // Touch screens have no hover: tilt a card where the visitor presses it,
-  // then let it settle after the tap so the depth remains visible.
+  // Touch screens have no hover: a normal tap tilts a card briefly, then it settles.
   var touchCard = null, touchReleaseTimer = 0;
   function releaseTouchCard(delay) {
     clearTimeout(touchReleaseTimer);
@@ -282,11 +281,16 @@
     depthKick();
   }, { passive:true });
   document.addEventListener('pointerup', function (event) {
-    if (event.pointerType === 'touch') releaseTouchCard(650);
+    if (event.pointerType === 'touch') releaseTouchCard(1200);
   }, { passive:true });
   document.addEventListener('pointercancel', function (event) {
     if (event.pointerType === 'touch') releaseTouchCard(0);
   }, { passive:true });
+  // Android otherwise opens its image actions on a long press, covering the card.
+  // Only decorative media is affected; phone, directions and menu links stay native.
+  document.addEventListener('contextmenu', function (event) {
+    if (!depthPointer.matches && event.target.closest('.o-card__media, .c-card__media, .gitem__media, .split__media, .func, .mcat, .food-stage')) event.preventDefault();
+  });
   document.addEventListener('pointerout', function (event) { if (!event.relatedTarget) releaseAll(); });
   window.addEventListener('blur', releaseAll);
   window.addEventListener('scroll', function () { if (depthHover) { releaseCard(depthHover); depthHover = null; } }, { passive:true });
