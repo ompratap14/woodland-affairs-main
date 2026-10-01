@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <script>document.documentElement.className += " js";</script>
-  <link rel="stylesheet" href="theme.css?v=20261001" />
+  <link rel="stylesheet" href="theme.css?v=20261001-nav" />
 
   <!-- Local SEO structured data (3 outlets) -->
   <script type="application/ld+json">
@@ -68,9 +68,8 @@
         <a href="menu.html">Menu</a>
         <a href="gallery.html">Gallery</a>
         <a href="celebrate.html">Celebrate</a>
-        <a href="contact.html">Contact</a>
+        <a class="nav__contact" href="contact.html">Contact Us</a>
       </nav>
-      <a class="btn btn--brass btn--sm nav__cta desktop-only" href="contact.html">Visit us</a>
       <button class="nav__toggle" aria-label="Open navigation" aria-controls="mobile-navigation" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
     <nav class="nav__panel" id="mobile-navigation" aria-label="Mobile navigation">
@@ -78,13 +77,13 @@
         <a href="menu.html">Menu</a>
         <a href="gallery.html">Gallery</a>
         <a href="celebrate.html">Celebrate</a>
-        <a href="contact.html">Contact</a>
+        <a class="nav__contact" href="contact.html">Contact Us</a>
     </nav>
   </header>
 
   <main id="top">
     <!-- HERO -->
-    <section class="hero">
+    <section class="hero hero--home">
       <div class="hero__media">
         <img decoding="async" loading="eager" fetchpriority="high" src="images/amb-hero.jpg" alt="Woodland Affairs garden dining at dusk" />
         <video autoplay muted loop playsinline preload="metadata" poster="images/amb-hero.jpg" aria-label="Woodland Affairs garden dining at dusk">
@@ -332,7 +331,7 @@
   </a>
 
   <script src="intro.js"></script>
-  <script src="app.js"></script>
+  <script src="app.js?v=20261001-nav"></script>
   <script src="cinematic.js"></script>
 </body>
 </html>

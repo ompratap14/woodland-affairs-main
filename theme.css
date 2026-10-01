@@ -116,7 +116,9 @@ p{ margin:0; }
 .nav__links a{ color:rgba(245,250,245,0.88); font-size:12px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; padding:8px 0; position:relative; }
 .nav__links a::after{ content:""; position:absolute; left:0; bottom:0; height:1px; width:0; background:var(--brass-2); transition:width .4s var(--ease); }
 .nav__links a:hover::after, .nav__links a.active::after{ width:100%; }
-.nav__cta{ margin-left:10px; }
+.nav__links .nav__contact{ margin-left:10px; padding:12px 21px; border-radius:100px; background:linear-gradient(135deg,var(--emerald),var(--green) 60%,var(--brass-deep)); color:#fff; font-weight:700; box-shadow:0 10px 24px rgba(26,122,69,.26); transition:transform .3s ease,box-shadow .3s ease; }
+.nav__links .nav__contact::after{ display:none; }
+.nav__links .nav__contact:hover{ color:#fff; transform:translateY(-2px); box-shadow:0 15px 30px rgba(26,122,69,.4); }
 .nav__toggle{ display:none; margin-left:auto; background:none; border:0; color:var(--cream); cursor:pointer; padding:8px; }
 .nav__toggle:focus-visible{ outline:2px solid var(--brass-2); outline-offset:4px; border-radius:6px; }
 .nav__toggle span{ display:block; width:26px; height:2px; background:var(--cream); margin:6px 0; transition:.4s var(--ease); }
@@ -127,7 +129,7 @@ p{ margin:0; }
 
 .nav__panel{ display:none; }
 @media (max-width:1100px){
-  .nav__links, .nav__cta.desktop-only{ display:none; }
+  .nav__links{ display:none; }
   .nav__toggle{ display:block; }
   .nav__panel{ display:block; position:fixed; inset:84px 0 auto 0; background:rgba(11,51,32,0.98);
     -webkit-backdrop-filter:blur(20px); backdrop-filter:blur(20px);
@@ -135,7 +137,7 @@ p{ margin:0; }
     transform:translateY(-14px); opacity:0; visibility:hidden; pointer-events:none; transition:.4s var(--ease); z-index:49; max-height:calc(100dvh - 84px); overflow-y:auto; }
   .nav.open .nav__panel{ transform:none; opacity:1; visibility:visible; pointer-events:auto; }
   .nav__panel a{ display:block; color:var(--cream); font-size:19px; font-family:var(--font-display); padding:15px 0; border-bottom:1px solid var(--line-d); }
-  .nav__panel .mobile-booking-link{ margin-top:22px; padding:14px 18px; border:1px solid var(--brass-2); border-radius:999px; color:var(--deep); background:var(--brass-2); font-family:var(--font-body); font-size:11px; font-weight:700; letter-spacing:.14em; text-align:center; text-transform:uppercase; }
+  .nav__panel .nav__contact{ margin-top:20px; padding:13px 18px; border:0; border-radius:999px; background:linear-gradient(135deg,var(--emerald),var(--green) 60%,var(--brass-deep)); color:#fff; font-family:var(--font-body); font-size:12px; font-weight:700; letter-spacing:.14em; text-align:center; text-transform:uppercase; }
   .nav__panel .btn{ margin-top:20px; }
 }
 @media (max-width:1100px){ body.menu-open{ overflow:hidden; } }
@@ -167,6 +169,17 @@ p{ margin:0; }
 .hero__scroll::after{ content:""; width:1px; height:40px; background:linear-gradient(var(--brass-2),transparent); animation:scrollpulse 2.4s var(--ease) infinite; }
 @keyframes scrollpulse{ 0%,100%{ opacity:.3; transform:scaleY(.6); transform-origin:top; } 50%{ opacity:1; transform:scaleY(1); } }
 @media (max-width:720px){ .hero__scroll{ display:none; } }
+/* On phones, give the landscape film its own full-width frame instead of cropping it to a tall hero. */
+@media (max-width:720px){
+  .hero--home{ min-height:100svh; flex-direction:column; align-items:stretch; justify-content:flex-start; background:radial-gradient(circle at 70% 72%,#1b5135,#0a2419 62%); }
+  .hero--home .hero__media{ position:relative; inset:auto; flex:none; width:100%; height:auto; aspect-ratio:16/9; margin-top:84px; overflow:hidden; scale:1; background:#0a2419; box-shadow:0 16px 36px #06191080; }
+  .hero--home .hero__media img,.hero--home .hero__media video{ object-fit:contain; object-position:center; }
+  .hero--home .hero__overlay{ display:none; }
+  .hero--home .hero__inner{ flex:1; display:flex; flex-direction:column; justify-content:center; padding-top:34px; padding-bottom:64px; }
+  .hero--home .hero__title{ font-size:clamp(50px,12vw,76px); line-height:.94; margin:18px 0 20px; }
+  .hero--home .hero__dek{ font-size:16px; line-height:1.55; }
+  .hero--home .hero__actions{ margin-top:28px; gap:12px; }
+}
 
 /* animated hero headline */
 .reveal-line{ display:block; overflow:hidden; }

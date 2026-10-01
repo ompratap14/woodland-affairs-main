@@ -50,14 +50,6 @@
   // Mobile menu toggle
   var toggle = document.querySelector('.nav__toggle');
   if (toggle && nav) {
-    var mobilePanel = nav.querySelector('.nav__panel');
-    if (mobilePanel && !mobilePanel.querySelector('.mobile-booking-link')) {
-      var mobileBooking = document.createElement('a');
-      mobileBooking.className = 'mobile-booking-link';
-      mobileBooking.href = 'https://wa.me/919873347347?text=' + encodeURIComponent('Hello Woodland Affairs! I would like to enquire about booking a table.');
-      mobileBooking.textContent = 'Book a table';
-      mobilePanel.appendChild(mobileBooking);
-    }
     function setMenuOpen(open) {
       nav.classList.toggle('open', open);
       document.body.classList.toggle('menu-open', open);

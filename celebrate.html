@@ -15,7 +15,7 @@
   <link rel="preload" as="image" href="images/wa-celebrate.jpg" fetchpriority="high" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <script>document.documentElement.className += " js";</script>
-  <link rel="stylesheet" href="theme.css?v=20261001" />
+  <link rel="stylesheet" href="theme.css?v=20261001-nav" />
   <!-- Local venue photos keep the celebration page independent of Drive image requests. -->
   <style>
     .func-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:54px; }
@@ -66,9 +66,8 @@
         <a href="menu.html">Menu</a>
         <a href="gallery.html">Gallery</a>
         <a href="celebrate.html" class="active" aria-current="page">Celebrate</a>
-        <a href="contact.html">Contact</a>
+        <a class="nav__contact" href="contact.html">Contact Us</a>
       </nav>
-      <a class="btn btn--brass btn--sm nav__cta desktop-only" href="contact.html">Visit us</a>
       <button class="nav__toggle" aria-label="Open navigation" aria-controls="mobile-navigation" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
     <nav class="nav__panel" id="mobile-navigation" aria-label="Mobile navigation">
@@ -76,7 +75,7 @@
         <a href="menu.html">Menu</a>
         <a href="gallery.html">Gallery</a>
         <a href="celebrate.html" class="active" aria-current="page">Celebrate</a>
-        <a href="contact.html">Contact</a>
+        <a class="nav__contact" href="contact.html">Contact Us</a>
     </nav>
   </header>
 
@@ -253,7 +252,7 @@
     <span>Chat with us</span>
   </a>
 
-  <script src="app.js"></script>
+  <script src="app.js?v=20261001-nav"></script>
   <script src="cinematic.js"></script>
 </body>
 </html>
