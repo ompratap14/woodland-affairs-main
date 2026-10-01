@@ -196,8 +196,10 @@
     if (state) { state.tx = 0; state.ty = 0; state.tl = 0; depthKick(); }
   }
   function releaseAll() {
+    clearTimeout(touchSceneTimer);
+    touchScene = null;
     depthCards.forEach(function (state, card) { releaseCard(card); });
-    sceneStates.forEach(function (scene) { scene.tx = 0; scene.ty = 0; });
+    sceneStates.forEach(function (scene) { scene.tx = 0; scene.ty = 0; scene.root.classList.remove('depth-touched'); });
     depthHover = null; sceneHover = null;
     depthKick();
   }
@@ -259,7 +261,7 @@
     depthKick();
   }, { passive:true });
   // Touch screens have no hover: a normal tap tilts a card briefly, then it settles.
-  var touchCard = null, touchReleaseTimer = 0;
+  var touchCard = null, touchReleaseTimer = 0, touchScene = null, touchSceneTimer = 0;
   function releaseTouchCard(delay) {
     clearTimeout(touchReleaseTimer);
     var card = touchCard;
@@ -268,6 +270,19 @@
   }
   document.addEventListener('pointerdown', function (event) {
     if (event.pointerType !== 'touch' || depthMotion.matches) return;
+    var scene = sceneStates.find(function (item) { return item.root.contains(event.target); });
+    if (scene) {
+      clearTimeout(touchSceneTimer);
+      sceneStates.forEach(function (other) { if (other !== scene) { other.tx = 0; other.ty = 0; other.root.classList.remove('depth-touched'); } });
+      if (touchScene && touchScene !== scene) { touchScene.tx = 0; touchScene.ty = 0; touchScene.root.classList.remove('depth-touched'); }
+      touchScene = scene;
+      scene.root.classList.add('depth-touched');
+      var box = scene.root.getBoundingClientRect();
+      scene.tx = Math.max(-1, Math.min(1, (event.clientX - box.left) / box.width * 2 - 1));
+      scene.ty = Math.max(-1, Math.min(1, (event.clientY - box.top) / box.height * 2 - 1));
+      scene.live = true;
+      depthKick();
+    }
     var card = event.target.closest(depthSelector);
     if (!card) return;
     clearTimeout(touchReleaseTimer);
@@ -281,17 +296,27 @@
     depthKick();
   }, { passive:true });
   document.addEventListener('pointerup', function (event) {
-    if (event.pointerType === 'touch') releaseTouchCard(1200);
+    if (event.pointerType === 'touch') {
+      releaseTouchCard(1200);
+      if (touchScene) {
+        var scene = touchScene;
+        touchScene = null;
+        touchSceneTimer = setTimeout(function () { scene.tx = 0; scene.ty = 0; scene.root.classList.remove('depth-touched'); depthKick(); }, 1200);
+      }
+    }
   }, { passive:true });
   document.addEventListener('pointercancel', function (event) {
-    if (event.pointerType === 'touch') releaseTouchCard(0);
+    if (event.pointerType === 'touch') {
+      releaseTouchCard(0);
+      if (touchScene) { touchScene.tx = 0; touchScene.ty = 0; touchScene.root.classList.remove('depth-touched'); touchScene = null; depthKick(); }
+    }
   }, { passive:true });
   // Android otherwise opens its image actions on a long press, covering the card.
   // Only decorative media is affected; phone, directions and menu links stay native.
   document.addEventListener('contextmenu', function (event) {
     if (!depthPointer.matches && event.target.closest('.o-card__media, .c-card__media, .gitem__media, .split__media, .func, .mcat, .food-stage')) event.preventDefault();
   });
-  document.addEventListener('pointerout', function (event) { if (!event.relatedTarget) releaseAll(); });
+  document.addEventListener('pointerout', function (event) { if (event.pointerType !== 'touch' && !event.relatedTarget) releaseAll(); });
   window.addEventListener('blur', releaseAll);
   window.addEventListener('scroll', function () { if (depthHover) { releaseCard(depthHover); depthHover = null; } }, { passive:true });
   depthMotion.addEventListener('change', releaseAll);

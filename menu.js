@@ -14,6 +14,7 @@
     const sheet = results.querySelector('.notebook__sheet');
     if (!sheet) return;
     sheet.innerHTML = `<span class="notebook__eyebrow">${outlets[outlet].name} · À la carte</span><h3>${heading}</h3><ul>${dishes.map(dish => `<li>${dish}</li>`).join('')}</ul><span class="notebook__folio">${String(page + 1).padStart(2, '0')} / ${String(pages.length).padStart(2, '0')}</span>`;
+    sheet.scrollTop = 0;
     results.querySelector('[data-page="prev"]').disabled = page === 0;
     results.querySelector('[data-page="next"]').disabled = page === pages.length - 1;
     results.querySelector('.notebook__progress').textContent = `Page ${page + 1} of ${pages.length}`;
