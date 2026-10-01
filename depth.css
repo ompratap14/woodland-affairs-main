@@ -39,6 +39,15 @@ body .depth-active:hover > img {
   transform:scale(1.14) translate(calc(var(--dx,0) * -3.5%), calc(var(--dy,0) * -3.5%));
   transition:transform .25s ease-out;
 }
+@media (hover:none) and (pointer:coarse) {
+  body .o-card.depth-active .o-card__media img,
+  body .c-card.depth-active .c-card__media img,
+  body .gitem .gitem__media.depth-active img,
+  body .depth-active > img {
+    transform:scale(1.08) translate(calc(var(--dx,0) * -2%), calc(var(--dy,0) * -2%));
+    transition:transform .25s ease-out;
+  }
+}
 body .o-card.depth-active .o-card__body,
 body .c-card.depth-active .c-card__body,
 body .depth-active .func__label,

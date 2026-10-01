@@ -1,7 +1,7 @@
 (function () {
   // The table button opens one direct WhatsApp enquiry; there is no booking form or chooser.
   var bookingTriggers = document.querySelectorAll('.fab-call');
-  if (bookingTriggers.length && false && typeof HTMLDialogElement !== 'undefined') {
+  if (bookingTriggers.length && typeof HTMLDialogElement !== 'undefined') {
     var bookingDialog = document.createElement('dialog');
     bookingDialog.className = 'booking-dialog';
     bookingDialog.setAttribute('aria-labelledby', 'booking-title');
@@ -10,9 +10,9 @@
       '<p class="eyebrow">Your next gathering</p><h2 id="booking-title">Choose your restaurant.</h2>' +
       '<p id="booking-description">Select an outlet to continue on WhatsApp and arrange your table.</p><div class="booking-outlets"></div>';
     var bookingOutlets = [
-      ['Hari Nagar', 'Woodland Affairs', '919873347347'],
       ['Dwarka', 'Woodland Affairs', '919873798727'],
-      ['Janakpuri', 'Eatery Royale', '919990283002']
+      ['Hari Nagar', 'Woodland Affairs', '919873347347'],
+      ['Janakpuri West', 'Eatery Royale', '919990283002']
     ];
     bookingOutlets.forEach(function (outlet) {
       var link = document.createElement('a');
@@ -133,8 +133,9 @@
   // Hero entrance — plays after the 3D intro dollies away (or immediately if no intro)
   var hero = document.querySelector('.hero');
   function playHero() { if (hero) hero.classList.add('in'); }
-  if (document.getElementById('intro')) {
-    document.addEventListener('wa:enter', playHero);
+  var introOverlay = document.getElementById('intro');
+  if (introOverlay && !introOverlay.classList.contains('gone')) {
+    document.addEventListener('wa:enter', playHero, { once: true });
   } else {
     // slight delay so the reveal reads as intentional
     setTimeout(playHero, 120);
@@ -256,6 +257,35 @@
       scene.live = true;
     }
     depthKick();
+  }, { passive:true });
+  // Touch screens have no hover: tilt a card where the visitor presses it,
+  // then let it settle after the tap so the depth remains visible.
+  var touchCard = null, touchReleaseTimer = 0;
+  function releaseTouchCard(delay) {
+    clearTimeout(touchReleaseTimer);
+    var card = touchCard;
+    touchCard = null;
+    if (card) touchReleaseTimer = setTimeout(function () { releaseCard(card); }, delay);
+  }
+  document.addEventListener('pointerdown', function (event) {
+    if (event.pointerType !== 'touch' || depthMotion.matches) return;
+    var card = event.target.closest(depthSelector);
+    if (!card) return;
+    clearTimeout(touchReleaseTimer);
+    if (touchCard && touchCard !== card) releaseCard(touchCard);
+    touchCard = card;
+    var rect = card.getBoundingClientRect();
+    var s = cardState(card);
+    s.tx = Math.max(-1, Math.min(1, (event.clientX - rect.left) / rect.width * 2 - 1));
+    s.ty = Math.max(-1, Math.min(1, (event.clientY - rect.top) / rect.height * 2 - 1));
+    s.tl = 1;
+    depthKick();
+  }, { passive:true });
+  document.addEventListener('pointerup', function (event) {
+    if (event.pointerType === 'touch') releaseTouchCard(650);
+  }, { passive:true });
+  document.addEventListener('pointercancel', function (event) {
+    if (event.pointerType === 'touch') releaseTouchCard(0);
   }, { passive:true });
   document.addEventListener('pointerout', function (event) { if (!event.relatedTarget) releaseAll(); });
   window.addEventListener('blur', releaseAll);

@@ -7,7 +7,6 @@
   <link rel="preload" as="image" href="images/intro-leaves.svg" />
   <title>Woodland Affairs | North Indian Garden Dining, New Delhi</title>
   <meta name="description" content="Woodland Affairs — comforting North Indian food and woodland-inspired garden dining across three New Delhi outlets: Dwarka, Hari Nagar and Janakpuri. Where food meets the wild." />
-  <meta name="keywords" content="North Indian restaurant Delhi, garden restaurant Dwarka, Woodland Affairs, restaurant Hari Nagar, family restaurant New Delhi, celebration venue Janakpuri" />
   <meta property="og:title" content="Woodland Affairs — Where food meets the wild" />
   <meta property="og:description" content="North Indian food and woodland garden dining across three New Delhi outlets." />
   <meta property="og:image" content="images/amb-hero.jpg" />
@@ -20,20 +19,21 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <script>document.documentElement.className += " js";</script>
-  <link rel="stylesheet" href="theme.css" />
+  <link rel="stylesheet" href="theme.css?v=20261001" />
 
   <!-- Local SEO structured data (3 outlets) -->
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Restaurant","name":"Woodland Affairs — Dwarka","servesCuisine":"North Indian","priceRange":"₹₹","image":"images/wa-dwarka.jpg","url":"https://www.woodlandaffairs.in/","telephone":"+91-98737-98727","address":{"@type":"PostalAddress","streetAddress":"Community Park, opposite rear gate of Shubham Apartments, DDA Pocket 4, Sector 12, Dwarka","addressLocality":"New Delhi","postalCode":"110078","addressCountry":"IN"},"openingHours":"Mo-Su 13:00-23:00","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"3798"}}
+  {"@context":"https://schema.org","@type":"Restaurant","name":"Woodland Affairs — Dwarka","servesCuisine":"North Indian","priceRange":"₹₹","image":"images/wa-dwarka.jpg","telephone":"+91-98737-98727","address":{"@type":"PostalAddress","streetAddress":"Community Park, opposite rear gate of Shubham Apartments, DDA Pocket 4, Sector 12, Dwarka","addressLocality":"New Delhi","postalCode":"110078","addressCountry":"IN"},"openingHours":"Mo-Su 13:00-23:00"}
   </script>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Restaurant","name":"Woodland Affairs — Hari Nagar","servesCuisine":"North Indian","priceRange":"₹₹","image":"images/amb-hari-green.jpg","url":"https://www.woodlandaffairs.in/","telephone":"+91-98733-47347","address":{"@type":"PostalAddress","streetAddress":"Lake & Woodland Park, Tihar Lake, Hari Nagar","addressLocality":"New Delhi","postalCode":"110018","addressCountry":"IN"},"openingHours":"Mo-Su 13:00-23:00","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"3798"}}
+  {"@context":"https://schema.org","@type":"Restaurant","name":"Woodland Affairs — Hari Nagar","servesCuisine":"North Indian","priceRange":"₹₹","image":"images/amb-hari-green.jpg","telephone":"+91-98733-47347","address":{"@type":"PostalAddress","streetAddress":"Lake & Woodland Park, Tihar Lake, Hari Nagar","addressLocality":"New Delhi","postalCode":"110018","addressCountry":"IN"},"openingHours":"Mo-Su 13:00-23:00"}
   </script>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Restaurant","name":"Eatery Royale — Janakpuri","servesCuisine":"North Indian","priceRange":"₹₹","image":"images/wa-janakpuri.jpg","url":"https://www.woodlandaffairs.in/","telephone":"+91-99902-83002","address":{"@type":"PostalAddress","streetAddress":"Musical Fountain Complex, Dharam Marg, Block B 3A, Janakpuri","addressLocality":"New Delhi","postalCode":"110058","addressCountry":"IN"},"openingHours":"Mo-Su 13:00-22:30"}
+  {"@context":"https://schema.org","@type":"Restaurant","name":"Eatery Royale — Janakpuri","servesCuisine":"North Indian","priceRange":"₹₹","image":"images/wa-janakpuri.jpg","telephone":"+91-99902-83002","address":{"@type":"PostalAddress","streetAddress":"Musical Fountain Complex, Dharam Marg, Block B 3A, Janakpuri","addressLocality":"New Delhi","postalCode":"110058","addressCountry":"IN"},"openingHours":"Mo-Su 13:00-22:30"}
   </script>
   <link rel="stylesheet" href="depth.css" />
   <link rel="stylesheet" href="intro.css" />
+  <link rel="stylesheet" href="cinematic.css" />
 </head>
 <body>
 
@@ -45,7 +45,6 @@
     <div class="intro__foliage intro__foliage--right" aria-hidden="true"></div>
     <p class="intro__edition">Woodland Affairs <span>New Delhi · India</span></p>
     <div class="intro__logo">
-      <span class="intro__mark">WA</span>
       <p class="intro__welcome">Leave the city behind.</p>
       <span class="intro__name">Woodland <em>Affairs</em></span>
       <span class="intro__tag">Where food meets the wild</span>
@@ -63,7 +62,7 @@
   <!-- NAV -->
 <header class="nav always-solid" id="nav">
     <div class="wrap nav__inner">
-      <a class="brand" href="index.html#top" aria-label="Woodland Affairs home"><span class="brand__mark">WA</span><span class="brand__name">Woodland Affairs</span></a>
+      <a class="brand" href="index.html#top" aria-label="Woodland Affairs home"><span class="brand__name">Woodland Affairs</span></a>
       <nav class="nav__links" aria-label="Main navigation">
         <a href="index.html#outlets">Restaurants</a>
         <a href="menu.html">Menu</a>
@@ -87,13 +86,13 @@
     <!-- HERO -->
     <section class="hero">
       <div class="hero__media">
-        <img src="images/amb-hero.jpg" alt="Woodland Affairs garden dining at dusk" />
-        <video autoplay muted loop playsinline preload="auto" poster="images/amb-hero.jpg">
+        <img decoding="async" loading="eager" fetchpriority="high" src="images/amb-hero.jpg" alt="Woodland Affairs garden dining at dusk" />
+        <video autoplay muted loop playsinline preload="metadata" poster="images/amb-hero.jpg" aria-label="Woodland Affairs garden dining at dusk">
           <source src="video/woodland-affairs-1080p-web.mp4" type="video/mp4" />
         </video>
       </div>
       <div class="hero__overlay"></div>
-      <div class="hero__badge"><strong>4.9</strong><span>★★★★★<br />3,798 Google reviews</span></div>
+      <div class="hero__badge"><strong>4.9</strong><span>★★★★★<br />4K+ Google reviews</span></div>
       <div class="wrap hero__inner">
         <p class="eyebrow hero__eyebrow">Three gardens · New Delhi</p>
         <h1 class="hero__title">
@@ -102,7 +101,7 @@
         </h1>
         <p class="hero__dek">Comforting North Indian food, warm hospitality and a woodland-inspired atmosphere — an evening under the trees, made to linger.</p>
         <div class="hero__actions">
-          <a class="btn btn--brass" href="menu.html">Explore the table</a>
+          <a class="btn btn--brass" href="menu.html">Explore the menu</a>
           <a class="btn btn--on-dark" href="#outlets">Our restaurants</a>
         </div>
       </div>
@@ -119,7 +118,7 @@
         </div>
         <div class="outlets-grid">
           <article class="o-card" data-reveal data-tilt>
-            <div class="o-card__media"><span class="o-card__tag">New Delhi</span><img src="images/wa-dwarka.jpg" alt="Woodland Affairs Dwarka" /></div>
+            <div class="o-card__media"><span class="o-card__tag">Dwarka</span><img decoding="async" loading="lazy" src="images/wa-dwarka.jpg" alt="Woodland Affairs Dwarka" /></div>
             <div class="o-card__body">
               <h3>Woodland Affairs — Dwarka</h3>
               <address>Community Park (opposite rear gate of Shubham Apartments, DDA Pocket 4), Sector 12, Dwarka — 110078</address>
@@ -132,7 +131,7 @@
             </div>
           </article>
           <article class="o-card" data-reveal data-tilt>
-            <div class="o-card__media"><span class="o-card__tag">New Delhi</span><img src="images/amb-hari-green.jpg" alt="Woodland Affairs Hari Nagar" /></div>
+            <div class="o-card__media"><span class="o-card__tag">Hari Nagar</span><img decoding="async" loading="lazy" src="images/amb-hari-green.jpg" alt="Woodland Affairs Hari Nagar" /></div>
             <div class="o-card__body">
               <h3>Woodland Affairs — Hari Nagar</h3>
               <address>Lake &amp; Woodland Park, Tihar Lake, Hari Nagar — 110018</address>
@@ -145,7 +144,7 @@
             </div>
           </article>
           <article class="o-card" data-reveal data-tilt>
-            <div class="o-card__media"><span class="o-card__tag">New Delhi</span><img src="images/wa-eatery-royale-hd.png" alt="Eatery Royale Janakpuri garden seating at night" /></div>
+            <div class="o-card__media"><span class="o-card__tag">Janakpuri West</span><img decoding="async" loading="lazy" src="images/wa-eatery-royale-web.jpg" alt="Eatery Royale Janakpuri garden seating at night" /></div>
             <div class="o-card__body">
               <h3>Eatery Royale — Janakpuri</h3>
               <address>Musical Fountain Complex, Dharam Marg, Block B 3A, Janakpuri — 110058</address>
@@ -165,7 +164,7 @@
     <section class="section section--tight" id="story" style="background:var(--paper-2)">
       <div class="wrap">
         <div class="split">
-          <div class="split__media" data-reveal><img src="images/amb-story-garden.jpg" alt="The garden at night from above, tables on the lawn beneath a canopy of string lights" /></div>
+          <div class="split__media" data-reveal><img decoding="async" loading="lazy" src="images/amb-story-garden.jpg" alt="The garden at night from above, tables on the lawn beneath a canopy of string lights" /></div>
           <div class="split__body" data-reveal>
             <p class="eyebrow">Our story</p>
             <h2 class="display">More than a meal.<br /><em>A place to belong.</em></h2>
@@ -180,7 +179,7 @@
     <section class="section" id="experience">
       <div class="wrap">
         <div class="split split--reverse">
-          <div class="split__media" data-reveal><img src="images/amb-hari-tables.jpg" alt="Greenhouse dining under string lights" /></div>
+          <div class="split__media" data-reveal><img decoding="async" loading="lazy" src="images/amb-hari-tables.jpg" alt="Greenhouse dining under string lights" /></div>
           <div class="split__body" data-reveal>
             <p class="eyebrow">The experience</p>
             <h2 class="display">Warm light.<br />Open air.<br /><em>Unhurried time.</em></h2>
@@ -200,10 +199,10 @@
           <p class="lead" style="color:rgba(244,238,225,0.72)">North Indian flavours, balanced spices and comforting favourites — crisp starters, dishes off the tandoor, generous mains and a sweet finish, all made for passing around the table.</p>
         </div>
         <div class="menu-cats" data-reveal>
-          <div class="mcat"><img src="images/food-tall1.jpg" alt="Starters to share" /><span class="mcat__shade"></span><span class="mcat__label"><strong>Starters</strong><span>Crisp &amp; made to share</span></span></div>
-          <div class="mcat"><img src="images/gal-food-10.jpg" alt="Tandoor and grills" /><span class="mcat__shade"></span><span class="mcat__label"><strong>Tandoor</strong><span>Straight off the grill</span></span></div>
-          <div class="mcat"><img src="images/food-tall2.jpg" alt="Guest favourite main course" /><span class="mcat__shade"></span><span class="mcat__label"><strong>Main course</strong><span>The dishes people return for</span></span></div>
-          <div class="mcat"><img src="images/food-tall3.jpg" alt="Coolers and desserts" /><span class="mcat__shade"></span><span class="mcat__label"><strong>Coolers &amp; sweets</strong><span>Fresh pours &amp; a sweet finish</span></span></div>
+          <div class="mcat"><img decoding="async" loading="lazy" src="images/food-tall1.jpg" alt="Starters to share" /><span class="mcat__shade"></span><span class="mcat__label"><strong>Starters</strong><span>Crisp &amp; made to share</span></span></div>
+          <div class="mcat"><img decoding="async" loading="lazy" src="images/gal-food-10.jpg" alt="Tandoor and grills" /><span class="mcat__shade"></span><span class="mcat__label"><strong>Tandoor</strong><span>Straight off the grill</span></span></div>
+          <div class="mcat"><img decoding="async" loading="lazy" src="images/food-tall2.jpg" alt="Guest favourite main course" /><span class="mcat__shade"></span><span class="mcat__label"><strong>Main course</strong><span>The dishes people return for</span></span></div>
+          <div class="mcat"><img decoding="async" loading="lazy" src="images/food-tall3.jpg" alt="Coolers and desserts" /><span class="mcat__shade"></span><span class="mcat__label"><strong>Coolers &amp; sweets</strong><span>Fresh pours &amp; a sweet finish</span></span></div>
         </div>
         <p style="color:rgba(244,238,225,0.55);font-size:14px;margin-top:34px" data-reveal>A little of everything, generously served. Visit us for the full menu.</p>
       </div>
@@ -215,7 +214,7 @@
         <div class="reviews__score" data-reveal>
           <div class="num">4.9</div>
           <div class="stars">★★★★★</div>
-          <div class="cnt">3,798 Google reviews</div>
+          <div class="cnt">4K+ Google reviews</div>
         </div>
         <div class="reviews__body" data-reveal>
           <p class="eyebrow">What guests appreciate</p>
@@ -228,7 +227,7 @@
             <span>Reasonable pricing</span>
             <span>Pet-friendly seating</span>
           </div>
-          <p class="reviews__note">Themes summarized from the Google review overview. <a class="arrow" href="https://www.google.com/maps/search/?api=1&query=Woodland%20Affairs%20New%20Delhi" target="_blank" rel="noreferrer">Read our reviews →</a></p>
+          <p class="reviews__note">Themes summarized from the Google review overview. <a class="arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Woodland%20Affairs%20Dwarka&amp;query_place_id=ChIJ02IPdQAbDTkRtB-7GRtT6K8" target="_blank" rel="noreferrer">Read our reviews →</a></p>
         </div>
       </div>
     </section>
@@ -262,12 +261,12 @@
           <p class="lead">A wander through our woodland gardens and a look at what comes out of the kitchen.</p>
         </div>
         <div class="teaser-grid" data-reveal>
-          <figure class="wide"><img src="images/amb-dwarka-eve.jpg" alt="Amber evening over the outdoor seating" /></figure>
-          <figure><img src="images/amb-hari-tables.jpg" alt="Greenhouse dining" /></figure>
-          <figure><img src="images/gal-food-10.jpg" alt="Paneer tikka on a board" /></figure>
-          <figure><img src="images/food-land2.jpg" alt="A molten chocolate dessert" /></figure>
-          <figure class="wide"><img src="images/wa-celebrate.jpg" alt="Warm lamps at night" /></figure>
-          <figure><img src="images/amb-hari-green.jpg" alt="String-lit garden" /></figure>
+          <figure class="wide"><img decoding="async" loading="lazy" src="images/amb-dwarka-eve.jpg" alt="Amber evening over the outdoor seating" /></figure>
+          <figure><img decoding="async" loading="lazy" src="images/amb-hari-tables.jpg" alt="Greenhouse dining" /></figure>
+          <figure><img decoding="async" loading="lazy" src="images/gal-food-10.jpg" alt="Paneer tikka on a board" /></figure>
+          <figure><img decoding="async" loading="lazy" src="images/food-land2.jpg" alt="A molten chocolate dessert" /></figure>
+          <figure class="wide"><img decoding="async" loading="lazy" src="images/wa-celebrate.jpg" alt="Warm lamps at night" /></figure>
+          <figure><img decoding="async" loading="lazy" src="images/amb-hari-green.jpg" alt="String-lit garden" /></figure>
         </div>
         <div style="margin-top:34px" data-reveal><a class="btn btn--ghost" href="gallery.html">See the full gallery</a></div>
       </div>
@@ -277,7 +276,7 @@
     <section class="section section--tight">
       <div class="wrap">
         <div class="cta-strip" data-reveal>
-          <img src="images/amb-hari-sign.jpg" alt="The Woodland Affairs sign amid greenery" />
+          <img decoding="async" loading="lazy" src="images/amb-hari-sign.jpg" alt="The Woodland Affairs sign amid greenery" />
           <div class="cta-strip__shade"></div>
           <div class="cta-strip__inner">
             <p class="eyebrow" style="color:var(--brass)">Come find us</p>
@@ -298,7 +297,7 @@
     <div class="wrap">
       <div class="footer__grid">
         <div class="footer__brand">
-          <a class="brand" href="#top"><span class="brand__mark">WA</span><span class="brand__name">Woodland Affairs</span></a>
+          <a class="brand" href="#top"><span class="brand__name">Woodland Affairs</span></a>
           <p>Where food meets the wild.</p>
         </div>
         <div>
@@ -320,7 +319,7 @@
         </div>
       </div>
       <div class="footer__bottom">
-        <span>© 2026 Woodland Affairs · <a href="https://www.instagram.com/woodlandaffairs_/" target="_blank" rel="noreferrer">@woodlandaffairs_</a></span>
+        <span>© 2026 Woodland Affairs · <a class="footer__instagram" href="https://www.instagram.com/woodlandaffairs_/" target="_blank" rel="noopener noreferrer" aria-label="Woodland Affairs on Instagram: @woodlandaffairs_"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>@woodlandaffairs_</a></span>
         
       </div>
     </div>
@@ -329,10 +328,11 @@
   <!-- FLOATING CALL -->
   <a class="fab-call" href="https://wa.me/919873347347?text=Hello%20Woodland%20Affairs%21%20I%20would%20like%20to%20enquire%20about%20booking%20a%20table." target="_blank" rel="noopener" aria-label="Message Woodland Affairs on WhatsApp about a table">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
-    <span>Call a table</span>
+    <span>Chat with us</span>
   </a>
 
   <script src="intro.js"></script>
   <script src="app.js"></script>
+  <script src="cinematic.js"></script>
 </body>
 </html>

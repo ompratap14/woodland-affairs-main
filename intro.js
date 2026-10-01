@@ -119,7 +119,8 @@
   }
 
   // A brief welcome, independent of image, font or video loading.
-  var DURATION = 5000;
+  // Keep the welcome cinematic, but get visitors to the usable page sooner.
+  var DURATION = 3600;
   var bar = intro.querySelector('.intro__bar');
   var start = performance.now();
   (function tick() {
