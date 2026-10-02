@@ -26,6 +26,7 @@
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var FLIGHT = 1150;
   var finished = false;
+  var lastInputKeyboard = false;
   var backgroundElements = Array.from(document.body.children).filter(function (element) {
     return element !== intro && element.tagName !== 'SCRIPT' && !element.inert;
   });
@@ -87,7 +88,7 @@
     try { sessionStorage.setItem('wa_intro_seen', '1'); } catch (e) {}
     // Fade the photographic invitation into the homepage without moving the wordmark.
     var flying = false;
-    var restoreFocus = intro.contains(document.activeElement);
+    var restoreFocus = lastInputKeyboard && intro.contains(document.activeElement);
     backgroundElements.forEach(function (element) { element.inert = false; });
     intro.inert = true;
     intro.classList.add('gone');
@@ -113,6 +114,7 @@
     skip.addEventListener('click', function () { enterSite(true); });
     skip.focus({ preventScroll: true });
     skip.addEventListener('keydown', function (event) {
+      lastInputKeyboard = true;
       if (event.key === 'Escape') enterSite();
       if (event.key === 'Tab') { event.preventDefault(); skip.focus(); }
     });
