@@ -17,9 +17,9 @@
   <link rel="icon" href="favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" /><noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" /></noscript>
   <script>document.documentElement.className += " js";</script>
-  <link rel="stylesheet" href="theme.css?v=20261002-smooth" />
+  <link rel="stylesheet" href="theme.css?v=20261002-audit" />
 
   <!-- Local SEO structured data (3 outlets) -->
   <script type="application/ld+json">
@@ -31,9 +31,9 @@
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Restaurant","name":"Eatery Royale — Janakpuri","servesCuisine":"North Indian","priceRange":"₹₹","image":"images/wa-janakpuri.jpg","telephone":"+91-99902-83002","address":{"@type":"PostalAddress","streetAddress":"Musical Fountain Complex, Dharam Marg, Block B 3A, Janakpuri","addressLocality":"New Delhi","postalCode":"110058","addressCountry":"IN"},"openingHours":"Mo-Su 13:00-22:30"}
   </script>
-  <link rel="stylesheet" href="depth.css?v=20261002-smooth" />
-  <link rel="stylesheet" href="intro.css?v=20261002-smooth" />
-  <link rel="stylesheet" href="cinematic.css?v=20261002-smooth" />
+  <link rel="stylesheet" href="depth.css?v=20261002-audit" />
+  <link rel="stylesheet" href="intro.css?v=20261002-audit" />
+  <link rel="stylesheet" href="cinematic.css?v=20261002-audit" />
 </head>
 <body>
 
@@ -85,9 +85,9 @@
     <!-- HERO -->
     <section class="hero">
       <div class="hero__media">
-        <img decoding="async" loading="eager" fetchpriority="high" src="images/amb-hero.webp" alt="Woodland Affairs garden dining at dusk" />
-        <video muted loop playsinline preload="metadata" poster="images/amb-hero.webp" aria-label="Woodland Affairs garden dining at dusk">
-          <source src="video/woodland-affairs-1080p-web.mp4" type="video/mp4" />
+        <img srcset="images/amb-hero-480.webp 480w, images/amb-hero-960.webp 960w, images/amb-hero.webp 1500w" sizes="100vw" width="1500" height="1000" decoding="async" loading="eager" fetchpriority="high" src="images/amb-hero.webp" alt="Woodland Affairs garden dining at dusk" />
+        <video muted loop playsinline preload="none" poster="images/amb-hero.webp" aria-label="Woodland Affairs garden dining at dusk">
+          <source src="video/woodland-affairs-optimized.mp4" type="video/mp4" />
         </video>
       </div>
       <div class="hero__overlay"></div>
@@ -117,7 +117,7 @@
         </div>
         <div class="outlets-grid">
           <article class="o-card" data-reveal data-tilt>
-            <div class="o-card__media"><span class="o-card__tag">Dwarka</span><img decoding="async" loading="lazy" src="images/wa-dwarka.jpg" alt="Woodland Affairs Dwarka" /></div>
+            <div class="o-card__media"><span class="o-card__tag">Dwarka</span><img srcset="images/wa-dwarka-480.webp 480w, images/wa-dwarka.jpg 720w" sizes="(max-width: 760px) 100vw, 50vw" width="720" height="480" decoding="async" loading="lazy" src="images/wa-dwarka.jpg" alt="Woodland Affairs Dwarka" /></div>
             <div class="o-card__body">
               <h3>Woodland Affairs — Dwarka</h3>
               <address>Community Park (opposite rear gate of Shubham Apartments, DDA Pocket 4), Sector 12, Dwarka — 110078</address>
@@ -130,7 +130,7 @@
             </div>
           </article>
           <article class="o-card" data-reveal data-tilt>
-            <div class="o-card__media"><span class="o-card__tag">Hari Nagar</span><img decoding="async" loading="lazy" src="images/amb-hari-green.jpg" alt="Woodland Affairs Hari Nagar" /></div>
+            <div class="o-card__media"><span class="o-card__tag">Hari Nagar</span><img srcset="images/amb-hari-green-480.webp 480w, images/amb-hari-green-960.webp 960w, images/amb-hari-green.jpg 1200w" sizes="(max-width: 760px) 100vw, 50vw" width="1200" height="800" decoding="async" loading="lazy" src="images/amb-hari-green.jpg" alt="Woodland Affairs Hari Nagar" /></div>
             <div class="o-card__body">
               <h3>Woodland Affairs — Hari Nagar</h3>
               <address>Lake &amp; Woodland Park, Tihar Lake, Hari Nagar — 110018</address>
@@ -143,7 +143,7 @@
             </div>
           </article>
           <article class="o-card" data-reveal data-tilt>
-            <div class="o-card__media"><span class="o-card__tag">Janakpuri West</span><img decoding="async" loading="lazy" src="images/wa-eatery-royale-web.webp" alt="Eatery Royale Janakpuri garden seating at night" /></div>
+            <div class="o-card__media"><span class="o-card__tag">Janakpuri West</span><img srcset="images/wa-eatery-royale-web-480.webp 480w, images/wa-eatery-royale-web-960.webp 960w, images/wa-eatery-royale-web.webp 1536w" sizes="(max-width: 760px) 100vw, 50vw" width="1536" height="1024" decoding="async" loading="lazy" src="images/wa-eatery-royale-web.webp" alt="Eatery Royale Janakpuri garden seating at night" /></div>
             <div class="o-card__body">
               <h3>Eatery Royale — Janakpuri</h3>
               <address>Musical Fountain Complex, Dharam Marg, Block B 3A, Janakpuri — 110058</address>
@@ -163,7 +163,7 @@
     <section class="section section--tight" id="story" style="background:var(--paper-2)">
       <div class="wrap">
         <div class="split">
-          <div class="split__media" data-reveal><img decoding="async" loading="lazy" src="images/amb-story-garden.webp" alt="The garden at night from above, tables on the lawn beneath a canopy of string lights" /></div>
+          <div class="split__media" data-reveal><img srcset="images/amb-story-garden-480.webp 480w, images/amb-story-garden-960.webp 960w, images/amb-story-garden.webp 1200w" sizes="(max-width: 760px) 100vw, 50vw" width="1200" height="800" decoding="async" loading="lazy" src="images/amb-story-garden.webp" alt="The garden at night from above, tables on the lawn beneath a canopy of string lights" /></div>
           <div class="split__body" data-reveal>
             <p class="eyebrow">Our story</p>
             <h2 class="display">More than a meal.<br /><em>A place to belong.</em></h2>
@@ -178,7 +178,7 @@
     <section class="section" id="experience">
       <div class="wrap">
         <div class="split split--reverse">
-          <div class="split__media" data-reveal><img decoding="async" loading="lazy" src="images/amb-hari-tables.jpg" alt="Greenhouse dining under string lights" /></div>
+          <div class="split__media" data-reveal><img srcset="images/amb-hari-tables-480.webp 480w, images/amb-hari-tables-960.webp 960w, images/amb-hari-tables.jpg 1000w" sizes="(max-width: 760px) 100vw, 50vw" width="1000" height="667" decoding="async" loading="lazy" src="images/amb-hari-tables.jpg" alt="Greenhouse dining under string lights" /></div>
           <div class="split__body" data-reveal>
             <p class="eyebrow">The experience</p>
             <h2 class="display">Warm light.<br />Open air.<br /><em>Unhurried time.</em></h2>
@@ -198,10 +198,10 @@
           <p class="lead" style="color:rgba(244,238,225,0.72)">North Indian flavours, balanced spices and comforting favourites — crisp starters, dishes off the tandoor, generous mains and a sweet finish, all made for passing around the table.</p>
         </div>
         <div class="menu-cats" data-reveal>
-          <div class="mcat"><img decoding="async" loading="lazy" src="images/food-tall1.jpg" alt="Starters to share" /><span class="mcat__shade"></span><span class="mcat__label"><strong>Starters</strong><span>Crisp &amp; made to share</span></span></div>
-          <div class="mcat"><img decoding="async" loading="lazy" src="images/gal-food-10.jpg" alt="Tandoor and grills" /><span class="mcat__shade"></span><span class="mcat__label"><strong>Tandoor</strong><span>Straight off the grill</span></span></div>
-          <div class="mcat"><img decoding="async" loading="lazy" src="images/food-tall2.webp" alt="Guest favourite main course" /><span class="mcat__shade"></span><span class="mcat__label"><strong>Main course</strong><span>The dishes people return for</span></span></div>
-          <div class="mcat"><img decoding="async" loading="lazy" src="images/food-tall3.webp" alt="Coolers and desserts" /><span class="mcat__shade"></span><span class="mcat__label"><strong>Coolers &amp; sweets</strong><span>Fresh pours &amp; a sweet finish</span></span></div>
+          <div class="mcat"><img srcset="images/food-tall1-480.webp 480w, images/food-tall1.jpg 900w" sizes="(max-width: 760px) 100vw, 50vw" width="900" height="1125" decoding="async" loading="lazy" src="images/food-tall1.jpg" alt="Starters to share" /><span class="mcat__shade"></span><span class="mcat__label"><strong>Starters</strong><span>Crisp &amp; made to share</span></span></div>
+          <div class="mcat"><img srcset="images/gal-food-10-480.webp 480w, images/gal-food-10.jpg 850w" sizes="(max-width: 760px) 100vw, 50vw" width="850" height="567" decoding="async" loading="lazy" src="images/gal-food-10.jpg" alt="Tandoor and grills" /><span class="mcat__shade"></span><span class="mcat__label"><strong>Tandoor</strong><span>Straight off the grill</span></span></div>
+          <div class="mcat"><img srcset="images/food-tall2-480.webp 480w, images/food-tall2.webp 900w" sizes="(max-width: 760px) 100vw, 50vw" width="900" height="1350" decoding="async" loading="lazy" src="images/food-tall2.webp" alt="Guest favourite main course" /><span class="mcat__shade"></span><span class="mcat__label"><strong>Main course</strong><span>The dishes people return for</span></span></div>
+          <div class="mcat"><img srcset="images/food-tall3-480.webp 480w, images/food-tall3.webp 900w" sizes="(max-width: 760px) 100vw, 50vw" width="900" height="1125" decoding="async" loading="lazy" src="images/food-tall3.webp" alt="Coolers and desserts" /><span class="mcat__shade"></span><span class="mcat__label"><strong>Coolers &amp; sweets</strong><span>Fresh pours &amp; a sweet finish</span></span></div>
         </div>
         <p style="color:rgba(244,238,225,0.55);font-size:14px;margin-top:34px" data-reveal>A little of everything, generously served. Visit us for the full menu.</p>
       </div>
@@ -260,12 +260,12 @@
           <p class="lead">A wander through our woodland gardens and a look at what comes out of the kitchen.</p>
         </div>
         <div class="teaser-grid" data-reveal>
-          <figure class="wide"><img decoding="async" loading="lazy" src="images/amb-dwarka-eve.jpg" alt="Amber evening over the outdoor seating" /></figure>
-          <figure><img decoding="async" loading="lazy" src="images/amb-hari-tables.jpg" alt="Greenhouse dining" /></figure>
-          <figure><img decoding="async" loading="lazy" src="images/gal-food-10.jpg" alt="Paneer tikka on a board" /></figure>
-          <figure><img decoding="async" loading="lazy" src="images/food-land2.jpg" alt="A molten chocolate dessert" /></figure>
-          <figure class="wide"><img decoding="async" loading="lazy" src="images/wa-celebrate.jpg" alt="Warm lamps at night" /></figure>
-          <figure><img decoding="async" loading="lazy" src="images/amb-hari-green.jpg" alt="String-lit garden" /></figure>
+          <figure class="wide"><img srcset="images/amb-dwarka-eve-480.webp 480w, images/amb-dwarka-eve-960.webp 960w, images/amb-dwarka-eve.jpg 1000w" sizes="(max-width: 760px) 100vw, 50vw" width="1000" height="667" decoding="async" loading="lazy" src="images/amb-dwarka-eve.jpg" alt="Amber evening over the outdoor seating" /></figure>
+          <figure><img srcset="images/amb-hari-tables-480.webp 480w, images/amb-hari-tables-960.webp 960w, images/amb-hari-tables.jpg 1000w" sizes="(max-width: 760px) 100vw, 50vw" width="1000" height="667" decoding="async" loading="lazy" src="images/amb-hari-tables.jpg" alt="Greenhouse dining" /></figure>
+          <figure><img srcset="images/gal-food-10-480.webp 480w, images/gal-food-10.jpg 850w" sizes="(max-width: 760px) 100vw, 50vw" width="850" height="567" decoding="async" loading="lazy" src="images/gal-food-10.jpg" alt="Paneer tikka on a board" /></figure>
+          <figure><img srcset="images/food-land2-480.webp 480w, images/food-land2-960.webp 960w, images/food-land2.jpg 1100w" sizes="(max-width: 760px) 100vw, 50vw" width="1100" height="733" decoding="async" loading="lazy" src="images/food-land2.jpg" alt="A molten chocolate dessert" /></figure>
+          <figure class="wide"><img srcset="images/wa-celebrate-480.webp 480w, images/wa-celebrate-960.webp 960w, images/wa-celebrate.jpg 1200w" sizes="(max-width: 760px) 100vw, 50vw" width="1200" height="800" decoding="async" loading="lazy" src="images/wa-celebrate.jpg" alt="Warm lamps at night" /></figure>
+          <figure><img srcset="images/amb-hari-green-480.webp 480w, images/amb-hari-green-960.webp 960w, images/amb-hari-green.jpg 1200w" sizes="(max-width: 760px) 100vw, 50vw" width="1200" height="800" decoding="async" loading="lazy" src="images/amb-hari-green.jpg" alt="String-lit garden" /></figure>
         </div>
         <div style="margin-top:34px" data-reveal><a class="btn btn--ghost" href="gallery.html">See the full gallery</a></div>
       </div>
@@ -275,7 +275,7 @@
     <section class="section section--tight">
       <div class="wrap">
         <div class="cta-strip" data-reveal>
-          <img decoding="async" loading="lazy" src="images/amb-hari-sign.webp" alt="The Woodland Affairs sign amid greenery" />
+          <img srcset="images/amb-hari-sign-480.webp 480w, images/amb-hari-sign-960.webp 960w, images/amb-hari-sign.webp 1000w" sizes="(max-width: 760px) 100vw, 50vw" width="1000" height="664" decoding="async" loading="lazy" src="images/amb-hari-sign.webp" alt="The Woodland Affairs sign amid greenery" />
           <div class="cta-strip__shade"></div>
           <div class="cta-strip__inner">
             <p class="eyebrow" style="color:var(--brass)">Come find us</p>
@@ -330,8 +330,8 @@
     <span>Chat with us</span>
   </a>
 
-  <script src="intro.js?v=20261002-smooth"></script>
-  <script src="app.js?v=20261002-smooth"></script>
-  <script src="cinematic.js?v=20261002-smooth"></script>
+  <script src="intro.js?v=20261002-audit"></script>
+  <script src="app.js?v=20261002-audit"></script>
+  <script src="cinematic.js?v=20261002-audit"></script>
 </body>
 </html>

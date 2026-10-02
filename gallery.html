@@ -11,9 +11,9 @@
   <link rel="icon" href="favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" /><noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" /></noscript>
   <script>document.documentElement.className += " js";</script>
-  <link rel="stylesheet" href="theme.css?v=20261002-smooth" />
+  <link rel="stylesheet" href="theme.css?v=20261002-audit" />
   <style>
     .gsec { padding: clamp(64px,8vw,110px) 0 0; }
     .gsec:last-of-type { padding-bottom: clamp(72px,9vw,130px); }
@@ -50,8 +50,8 @@
       .gitem__body h3 { font-size:26px; }
     }
   </style>
-  <link rel="stylesheet" href="depth.css?v=20261002-smooth" />
-  <link rel="stylesheet" href="cinematic.css?v=20261002-smooth" />
+  <link rel="stylesheet" href="depth.css?v=20261002-audit" />
+  <link rel="stylesheet" href="cinematic.css?v=20261002-audit" />
 </head>
 <body>
   <div class="frame"></div>
@@ -80,7 +80,7 @@
 
   <main id="top">
     <section class="hero hero--short">
-      <div class="hero__media"><img decoding="async" loading="eager" fetchpriority="high" src="images/amb-hari-tables.jpg" alt="Greenhouse dining under warm string lights" /></div>
+      <div class="hero__media"><img srcset="images/amb-hari-tables-480.webp 480w, images/amb-hari-tables-960.webp 960w, images/amb-hari-tables.jpg 1000w" sizes="100vw" width="1000" height="667" decoding="async" loading="eager" fetchpriority="high" src="images/amb-hari-tables.jpg" alt="Greenhouse dining under warm string lights" /></div>
       <div class="hero__overlay"></div>
       <div class="wrap hero__inner">
         <p class="eyebrow hero__eyebrow">The gallery</p>
@@ -96,7 +96,7 @@
           <p class="lead">Open-air tables, umbrellas and warm lamps under a canopy of trees.</p>
         </div>
         <div class="gitem" data-reveal>
-          <div class="gitem__media"><img decoding="async" loading="lazy" src="images/wa-dwarka.jpg" alt="The Woodland Affairs sign greets you at the Dwarka garden — greenery, bougainvillea and the day just getting started." /></div>
+          <div class="gitem__media"><img srcset="images/wa-dwarka-480.webp 480w, images/wa-dwarka.jpg 720w" sizes="(max-width: 760px) 100vw, 50vw" width="720" height="480" decoding="async" loading="lazy" src="images/wa-dwarka.jpg" alt="The Woodland Affairs sign greets you at the Dwarka garden — greenery, bougainvillea and the day just getting started." /></div>
           <div class="gitem__body">
             <p class="eyebrow">Dwarka · New Delhi</p>
             <h3>Where the woodland begins.</h3>
@@ -104,7 +104,7 @@
           </div>
         </div>
         <div class="gitem" data-reveal>
-          <div class="gitem__media"><img decoding="async" loading="lazy" src="images/amb-dwarka-dining.jpg" alt="Wooden tables set beneath the canopy, ready for a slow, generous afternoon of shared plates." /></div>
+          <div class="gitem__media"><img srcset="images/amb-dwarka-dining-480.webp 480w, images/amb-dwarka-dining-960.webp 960w, images/amb-dwarka-dining.jpg 1200w" sizes="(max-width: 760px) 100vw, 50vw" width="1200" height="800" decoding="async" loading="lazy" src="images/amb-dwarka-dining.jpg" alt="Wooden tables set beneath the canopy, ready for a slow, generous afternoon of shared plates." /></div>
           <div class="gitem__body">
             <p class="eyebrow">Dwarka · New Delhi</p>
             <h3>A long table under the trees.</h3>
@@ -112,7 +112,7 @@
           </div>
         </div>
         <div class="gitem" data-reveal>
-          <div class="gitem__media"><img decoding="async" loading="lazy" src="images/wa-celebrate.jpg" alt="Dwarka's garden at night, with glowing fountains and outdoor tables." /></div>
+          <div class="gitem__media"><img srcset="images/wa-celebrate-480.webp 480w, images/wa-celebrate-960.webp 960w, images/wa-celebrate.jpg 1200w" sizes="(max-width: 760px) 100vw, 50vw" width="1200" height="800" decoding="async" loading="lazy" src="images/wa-celebrate.jpg" alt="Dwarka's garden at night, with glowing fountains and outdoor tables." /></div>
           <div class="gitem__body">
             <p class="eyebrow">Dwarka · New Delhi</p>
             <h3>Dwarka after dark.</h3>
@@ -120,7 +120,7 @@
           </div>
         </div>
         <div class="gitem" data-reveal>
-          <div class="gitem__media"><img decoding="async" loading="lazy" src="images/amb-dwarka-table.jpg" alt="A relaxed lounge setting with deep cushions, made for lingering long after the meal." /></div>
+          <div class="gitem__media"><img srcset="images/amb-dwarka-table-480.webp 480w, images/amb-dwarka-table-960.webp 960w, images/amb-dwarka-table.jpg 1000w" sizes="(max-width: 760px) 100vw, 50vw" width="1000" height="667" decoding="async" loading="lazy" src="images/amb-dwarka-table.jpg" alt="A relaxed lounge setting with deep cushions, made for lingering long after the meal." /></div>
           <div class="gitem__body">
             <p class="eyebrow">Dwarka · New Delhi</p>
             <h3>Cane chairs, soft cushions.</h3>
@@ -128,7 +128,7 @@
           </div>
         </div>
         <div class="gitem" data-reveal>
-          <div class="gitem__media"><img decoding="async" loading="lazy" src="images/amb-hero.webp" alt="As the light softens, the courtyard warms up — lamps on, umbrellas open, the garden at its best." /></div>
+          <div class="gitem__media"><img srcset="images/amb-hero-480.webp 480w, images/amb-hero-960.webp 960w, images/amb-hero.webp 1500w" sizes="(max-width: 760px) 100vw, 50vw" width="1500" height="1000" decoding="async" loading="lazy" src="images/amb-hero.webp" alt="As the light softens, the courtyard warms up — lamps on, umbrellas open, the garden at its best." /></div>
           <div class="gitem__body">
             <p class="eyebrow">Dwarka · New Delhi</p>
             <h3>A golden evening.</h3>
@@ -136,7 +136,7 @@
           </div>
         </div>
         <div class="gitem" data-reveal>
-          <div class="gitem__media"><img decoding="async" loading="lazy" src="images/gal-dwarka-2.jpg" alt="Tucked beside the lawn under a wide umbrella, a quiet spot away from the sun." /></div>
+          <div class="gitem__media"><img srcset="images/gal-dwarka-2-480.webp 480w, images/gal-dwarka-2.jpg 900w" sizes="(max-width: 760px) 100vw, 50vw" width="900" height="600" decoding="async" loading="lazy" src="images/gal-dwarka-2.jpg" alt="Tucked beside the lawn under a wide umbrella, a quiet spot away from the sun." /></div>
           <div class="gitem__body">
             <p class="eyebrow">Dwarka · New Delhi</p>
             <h3>A shaded corner to linger.</h3>
@@ -144,7 +144,7 @@
           </div>
         </div>
         <div class="gitem" data-reveal>
-          <div class="gitem__media"><img decoding="async" loading="lazy" src="images/amb-dwarka-eve.jpg" alt="Potted plants, paved paths and umbrellas as the afternoon cools into evening." /></div>
+          <div class="gitem__media"><img srcset="images/amb-dwarka-eve-480.webp 480w, images/amb-dwarka-eve-960.webp 960w, images/amb-dwarka-eve.jpg 1000w" sizes="(max-width: 760px) 100vw, 50vw" width="1000" height="667" decoding="async" loading="lazy" src="images/amb-dwarka-eve.jpg" alt="Potted plants, paved paths and umbrellas as the afternoon cools into evening." /></div>
           <div class="gitem__body">
             <p class="eyebrow">Dwarka · New Delhi</p>
             <h3>Umbrellas and open sky.</h3>
@@ -152,7 +152,7 @@
           </div>
         </div>
         <div class="gitem" data-reveal>
-          <div class="gitem__media"><img decoding="async" loading="lazy" src="images/gal-dwarka-3.jpg" alt="Once the sun goes down, the Woodland Affairs sign glows against the greenery." /></div>
+          <div class="gitem__media"><img srcset="images/gal-dwarka-3-480.webp 480w, images/gal-dwarka-3.jpg 850w" sizes="(max-width: 760px) 100vw, 50vw" width="850" height="567" decoding="async" loading="lazy" src="images/gal-dwarka-3.jpg" alt="Once the sun goes down, the Woodland Affairs sign glows against the greenery." /></div>
           <div class="gitem__body">
             <p class="eyebrow">Dwarka · New Delhi</p>
             <h3>Our name in lights.</h3>
@@ -160,7 +160,7 @@
           </div>
         </div>
         <div class="gitem" data-reveal>
-          <div class="gitem__media"><img decoding="async" loading="lazy" src="images/wa-celebrate.jpg" alt="Warm lamps and a lit water channel turn the garden into something a little magical at night." /></div>
+          <div class="gitem__media"><img srcset="images/wa-celebrate-480.webp 480w, images/wa-celebrate-960.webp 960w, images/wa-celebrate.jpg 1200w" sizes="(max-width: 760px) 100vw, 50vw" width="1200" height="800" decoding="async" loading="lazy" src="images/wa-celebrate.jpg" alt="Warm lamps and a lit water channel turn the garden into something a little magical at night." /></div>
           <div class="gitem__body">
             <p class="eyebrow">Dwarka · New Delhi</p>
             <h3>Dwarka after dark.</h3>
@@ -177,7 +177,7 @@
           <p class="lead">Hanging plants, string lights and glasshouse corners you won't want to leave.</p>
         </div>
         <div class="gitem" data-reveal>
-          <div class="gitem__media"><img decoding="async" loading="lazy" src="images/amb-hari-green.jpg" alt="Dinner under a pergola of string lights, greenery on every side." /></div>
+          <div class="gitem__media"><img srcset="images/amb-hari-green-480.webp 480w, images/amb-hari-green-960.webp 960w, images/amb-hari-green.jpg 1200w" sizes="(max-width: 760px) 100vw, 50vw" width="1200" height="800" decoding="async" loading="lazy" src="images/amb-hari-green.jpg" alt="Dinner under a pergola of string lights, greenery on every side." /></div>
           <div class="gitem__body">
             <p class="eyebrow">Hari Nagar · New Delhi</p>
             <h3>Beneath a canopy of lights.</h3>
@@ -185,7 +185,7 @@
           </div>
         </div>
         <div class="gitem" data-reveal>
-          <div class="gitem__media"><img decoding="async" loading="lazy" src="images/gal-hari-3.webp" alt="A long communal table laid indoors, big enough to gather everyone around at once." /></div>
+          <div class="gitem__media"><img srcset="images/gal-hari-3-480.webp 480w, images/gal-hari-3.webp 850w" sizes="(max-width: 760px) 100vw, 50vw" width="850" height="1275" decoding="async" loading="lazy" src="images/gal-hari-3.webp" alt="A long communal table laid indoors, big enough to gather everyone around at once." /></div>
           <div class="gitem__body">
             <p class="eyebrow">Hari Nagar · New Delhi</p>
             <h3>Room for the whole party.</h3>
@@ -193,7 +193,7 @@
           </div>
         </div>
         <div class="gitem" data-reveal>
-          <div class="gitem__media"><img decoding="async" loading="lazy" src="images/wa-harinagar.jpg" alt="The Hari Nagar garden, lush with plants and strung with fairy lights from end to end." /></div>
+          <div class="gitem__media"><img srcset="images/wa-harinagar-480.webp 480w, images/wa-harinagar.jpg 720w" sizes="(max-width: 760px) 100vw, 50vw" width="720" height="480" decoding="async" loading="lazy" src="images/wa-harinagar.jpg" alt="The Hari Nagar garden, lush with plants and strung with fairy lights from end to end." /></div>
           <div class="gitem__body">
             <p class="eyebrow">Hari Nagar · New Delhi</p>
             <h3>Wrapped in green and lights.</h3>
@@ -201,7 +201,7 @@
           </div>
         </div>
         <div class="gitem" data-reveal>
-          <div class="gitem__media"><img decoding="async" loading="lazy" src="images/amb-hari-sign.webp" alt="The Woodland Affairs signage wall, half-hidden in a wall of foliage." /></div>
+          <div class="gitem__media"><img srcset="images/amb-hari-sign-480.webp 480w, images/amb-hari-sign-960.webp 960w, images/amb-hari-sign.webp 1000w" sizes="(max-width: 760px) 100vw, 50vw" width="1000" height="664" decoding="async" loading="lazy" src="images/amb-hari-sign.webp" alt="The Woodland Affairs signage wall, half-hidden in a wall of foliage." /></div>
           <div class="gitem__body">
             <p class="eyebrow">Hari Nagar · New Delhi</p>
             <h3>Framed in leaves.</h3>
@@ -209,7 +209,7 @@
           </div>
         </div>
         <div class="gitem" data-reveal>
-          <div class="gitem__media"><img decoding="async" loading="lazy" src="images/gal-hari-4.jpg" alt="A quiet indoor table for a smaller gathering, wood-panelled and softly lit." /></div>
+          <div class="gitem__media"><img srcset="images/gal-hari-4-480.webp 480w, images/gal-hari-4.jpg 850w" sizes="(max-width: 760px) 100vw, 50vw" width="850" height="567" decoding="async" loading="lazy" src="images/gal-hari-4.jpg" alt="A quiet indoor table for a smaller gathering, wood-panelled and softly lit." /></div>
           <div class="gitem__body">
             <p class="eyebrow">Hari Nagar · New Delhi</p>
             <h3>Warm and unhurried.</h3>
@@ -217,7 +217,7 @@
           </div>
         </div>
         <div class="gitem" data-reveal>
-          <div class="gitem__media"><img decoding="async" loading="lazy" src="images/amb-hari-tables.jpg" alt="Dining among the plants in the glasshouse, warm light pooling over the tables." /></div>
+          <div class="gitem__media"><img srcset="images/amb-hari-tables-480.webp 480w, images/amb-hari-tables-960.webp 960w, images/amb-hari-tables.jpg 1000w" sizes="(max-width: 760px) 100vw, 50vw" width="1000" height="667" decoding="async" loading="lazy" src="images/amb-hari-tables.jpg" alt="Dining among the plants in the glasshouse, warm light pooling over the tables." /></div>
           <div class="gitem__body">
             <p class="eyebrow">Hari Nagar · New Delhi</p>
             <h3>A glasshouse glow.</h3>
@@ -225,7 +225,7 @@
           </div>
         </div>
         <div class="gitem" data-reveal>
-          <div class="gitem__media"><img decoding="async" loading="lazy" src="images/gal-hari-2.jpg" alt="A cane chair and a lantern tucked into a leafy corner of the garden." /></div>
+          <div class="gitem__media"><img srcset="images/gal-hari-2-480.webp 480w, images/gal-hari-2.jpg 850w" sizes="(max-width: 760px) 100vw, 50vw" width="850" height="567" decoding="async" loading="lazy" src="images/gal-hari-2.jpg" alt="A cane chair and a lantern tucked into a leafy corner of the garden." /></div>
           <div class="gitem__body">
             <p class="eyebrow">Hari Nagar · New Delhi</p>
             <h3>A lantern-lit nook.</h3>
@@ -233,7 +233,7 @@
           </div>
         </div>
         <div class="gitem" data-reveal>
-          <div class="gitem__media"><img decoding="async" loading="lazy" src="images/amb-hari-interior.webp" alt="The long indoor table set and ready, place settings gleaming under the lights." /></div>
+          <div class="gitem__media"><img srcset="images/amb-hari-interior-480.webp 480w, images/amb-hari-interior-960.webp 960w, images/amb-hari-interior.webp 1000w" sizes="(max-width: 760px) 100vw, 50vw" width="1000" height="666" decoding="async" loading="lazy" src="images/amb-hari-interior.webp" alt="The long indoor table set and ready, place settings gleaming under the lights." /></div>
           <div class="gitem__body">
             <p class="eyebrow">Hari Nagar · New Delhi</p>
             <h3>Laid and waiting.</h3>
@@ -241,7 +241,7 @@
           </div>
         </div>
         <div class="gitem" data-reveal>
-          <div class="gitem__media"><img decoding="async" loading="lazy" src="images/gal-hari-5.webp" alt="Greenhouse dining after dark, string lights doing all the work." /></div>
+          <div class="gitem__media"><img srcset="images/gal-hari-5-480.webp 480w, images/gal-hari-5.webp 850w" sizes="(max-width: 760px) 100vw, 50vw" width="850" height="1275" decoding="async" loading="lazy" src="images/gal-hari-5.webp" alt="Greenhouse dining after dark, string lights doing all the work." /></div>
           <div class="gitem__body">
             <p class="eyebrow">Hari Nagar · New Delhi</p>
             <h3>Lit for the evening.</h3>
@@ -249,7 +249,7 @@
           </div>
         </div>
         <div class="gitem" data-reveal>
-          <div class="gitem__media"><img decoding="async" loading="lazy" src="images/wa-celebrate-3.jpg" alt="A table dressed for a special evening, under the leaves and the lights." /></div>
+          <div class="gitem__media"><img srcset="images/wa-celebrate-3-480.webp 480w, images/wa-celebrate-3.jpg 760w" sizes="(max-width: 760px) 100vw, 50vw" width="760" height="1140" decoding="async" loading="lazy" src="images/wa-celebrate-3.jpg" alt="A table dressed for a special evening, under the leaves and the lights." /></div>
           <div class="gitem__body">
             <p class="eyebrow">Hari Nagar · New Delhi</p>
             <h3>Set for a celebration.</h3>
@@ -257,7 +257,7 @@
           </div>
         </div>
         <div class="gitem" data-reveal>
-          <div class="gitem__media"><img decoding="async" loading="lazy" src="images/wa-celebrate-2.webp" alt="A garden swing under the trees at night — somewhere to step away for a minute." /></div>
+          <div class="gitem__media"><img srcset="images/wa-celebrate-2-480.webp 480w, images/wa-celebrate-2.webp 760w" sizes="(max-width: 760px) 100vw, 50vw" width="760" height="1140" decoding="async" loading="lazy" src="images/wa-celebrate-2.webp" alt="A garden swing under the trees at night — somewhere to step away for a minute." /></div>
           <div class="gitem__body">
             <p class="eyebrow">Hari Nagar · New Delhi</p>
             <h3>A quiet moment to yourself.</h3>
@@ -274,7 +274,7 @@
           <p class="lead">Eatery Royale brings the same generous spirit to the heart of Janakpuri.</p>
         </div>
         <div class="gitem" data-reveal>
-          <div class="gitem__media"><img decoding="async" loading="lazy" src="images/wa-janakpuri.jpg" alt="A little of everything — kebabs, dips, salad and warm breads on one generous plate." /></div>
+          <div class="gitem__media"><img srcset="images/wa-janakpuri-480.webp 480w, images/wa-janakpuri.jpg 720w" sizes="(max-width: 760px) 100vw, 50vw" width="720" height="480" decoding="async" loading="lazy" src="images/wa-janakpuri.jpg" alt="A little of everything — kebabs, dips, salad and warm breads on one generous plate." /></div>
           <div class="gitem__body">
             <p class="eyebrow">Janakpuri · New Delhi</p>
             <h3>Eatery Royale.</h3>
@@ -282,7 +282,7 @@
           </div>
         </div>
         <div class="gitem" data-reveal>
-          <div class="gitem__media"><img decoding="async" loading="lazy" src="images/food-tall1.jpg" alt="Crisp starters brought over on a wooden board, served while they're still hot." /></div>
+          <div class="gitem__media"><img srcset="images/food-tall1-480.webp 480w, images/food-tall1.jpg 900w" sizes="(max-width: 760px) 100vw, 50vw" width="900" height="1125" decoding="async" loading="lazy" src="images/food-tall1.jpg" alt="Crisp starters brought over on a wooden board, served while they're still hot." /></div>
           <div class="gitem__body">
             <p class="eyebrow">From the kitchen</p>
             <h3>Straight to the table.</h3>
@@ -290,7 +290,7 @@
           </div>
         </div>
         <div class="gitem" data-reveal>
-          <div class="gitem__media"><img decoding="async" loading="lazy" src="images/food-feat.webp" alt="Soft tacos paired with a bowl of warm broth — comfort, plated." /></div>
+          <div class="gitem__media"><img srcset="images/food-feat-480.webp 480w, images/food-feat-960.webp 960w, images/food-feat.webp 1200w" sizes="(max-width: 760px) 100vw, 50vw" width="1200" height="800" decoding="async" loading="lazy" src="images/food-feat.webp" alt="Soft tacos paired with a bowl of warm broth — comfort, plated." /></div>
           <div class="gitem__body">
             <p class="eyebrow">From the kitchen</p>
             <h3>Something warm alongside.</h3>
@@ -298,7 +298,7 @@
           </div>
         </div>
         <div class="gitem" data-reveal>
-          <div class="gitem__media"><img decoding="async" loading="lazy" src="images/gal-food-3.jpg" alt="A mixed kebab board with fresh green chutney and a squeeze of lemon." /></div>
+          <div class="gitem__media"><img srcset="images/gal-food-3-480.webp 480w, images/gal-food-3.jpg 900w" sizes="(max-width: 760px) 100vw, 50vw" width="900" height="600" decoding="async" loading="lazy" src="images/gal-food-3.jpg" alt="A mixed kebab board with fresh green chutney and a squeeze of lemon." /></div>
           <div class="gitem__body">
             <p class="eyebrow">From the kitchen</p>
             <h3>Chutney on the side.</h3>
@@ -306,7 +306,7 @@
           </div>
         </div>
         <div class="gitem" data-reveal>
-          <div class="gitem__media"><img decoding="async" loading="lazy" src="images/food-tall3.webp" alt="A tall berry cooler, fruit and ice, to go with the meal." /></div>
+          <div class="gitem__media"><img srcset="images/food-tall3-480.webp 480w, images/food-tall3.webp 900w" sizes="(max-width: 760px) 100vw, 50vw" width="900" height="1125" decoding="async" loading="lazy" src="images/food-tall3.webp" alt="A tall berry cooler, fruit and ice, to go with the meal." /></div>
           <div class="gitem__body">
             <p class="eyebrow">From the kitchen</p>
             <h3>A cooler for the evening.</h3>
@@ -314,7 +314,7 @@
           </div>
         </div>
         <div class="gitem" data-reveal>
-          <div class="gitem__media"><img decoding="async" loading="lazy" src="images/gal-food-6.jpg" alt="Soft steamed momos in a bamboo basket with a fiery red dip." /></div>
+          <div class="gitem__media"><img srcset="images/gal-food-6-480.webp 480w, images/gal-food-6.jpg 850w" sizes="(max-width: 760px) 100vw, 50vw" width="850" height="567" decoding="async" loading="lazy" src="images/gal-food-6.jpg" alt="Soft steamed momos in a bamboo basket with a fiery red dip." /></div>
           <div class="gitem__body">
             <p class="eyebrow">From the kitchen</p>
             <h3>Fresh from the steamer.</h3>
@@ -322,7 +322,7 @@
           </div>
         </div>
         <div class="gitem" data-reveal>
-          <div class="gitem__media"><img decoding="async" loading="lazy" src="images/food-land2.jpg" alt="Warm molten chocolate against cool vanilla — the sweet end to the evening." /></div>
+          <div class="gitem__media"><img srcset="images/food-land2-480.webp 480w, images/food-land2-960.webp 960w, images/food-land2.jpg 1100w" sizes="(max-width: 760px) 100vw, 50vw" width="1100" height="733" decoding="async" loading="lazy" src="images/food-land2.jpg" alt="Warm molten chocolate against cool vanilla — the sweet end to the evening." /></div>
           <div class="gitem__body">
             <p class="eyebrow">From the kitchen</p>
             <h3>A molten finish.</h3>
@@ -330,7 +330,7 @@
           </div>
         </div>
         <div class="gitem" data-reveal>
-          <div class="gitem__media"><img decoding="async" loading="lazy" src="images/gal-food-10.jpg" alt="Paneer and veg tikka in yellows, reds and greens, char-grilled on a board." /></div>
+          <div class="gitem__media"><img srcset="images/gal-food-10-480.webp 480w, images/gal-food-10.jpg 850w" sizes="(max-width: 760px) 100vw, 50vw" width="850" height="567" decoding="async" loading="lazy" src="images/gal-food-10.jpg" alt="Paneer and veg tikka in yellows, reds and greens, char-grilled on a board." /></div>
           <div class="gitem__body">
             <p class="eyebrow">From the kitchen</p>
             <h3>Tikka in every colour.</h3>
@@ -338,7 +338,7 @@
           </div>
         </div>
         <div class="gitem" data-reveal>
-          <div class="gitem__media"><img decoding="async" loading="lazy" src="images/gal-food-1.jpg" alt="Cool, tall and blue — a mocktail made to be photographed." /></div>
+          <div class="gitem__media"><img srcset="images/gal-food-1-480.webp 480w, images/gal-food-1.jpg 900w" sizes="(max-width: 760px) 100vw, 50vw" width="900" height="1125" decoding="async" loading="lazy" src="images/gal-food-1.jpg" alt="Cool, tall and blue — a mocktail made to be photographed." /></div>
           <div class="gitem__body">
             <p class="eyebrow">From the kitchen</p>
             <h3>The Blue Lagoon.</h3>
@@ -346,7 +346,7 @@
           </div>
         </div>
         <div class="gitem" data-reveal>
-          <div class="gitem__media"><img decoding="async" loading="lazy" src="images/gal-food-5.jpg" alt="Cheese-stuffed garlic bread, golden on top, with a dip on the side." /></div>
+          <div class="gitem__media"><img srcset="images/gal-food-5-480.webp 480w, images/gal-food-5.jpg 850w" sizes="(max-width: 760px) 100vw, 50vw" width="850" height="567" decoding="async" loading="lazy" src="images/gal-food-5.jpg" alt="Cheese-stuffed garlic bread, golden on top, with a dip on the side." /></div>
           <div class="gitem__body">
             <p class="eyebrow">From the kitchen</p>
             <h3>Still steaming.</h3>
@@ -354,7 +354,7 @@
           </div>
         </div>
         <div class="gitem" data-reveal>
-          <div class="gitem__media"><img decoding="async" loading="lazy" src="images/food-tall2.webp" alt="Loaded soft tacos, piled high and served straight away." /></div>
+          <div class="gitem__media"><img srcset="images/food-tall2-480.webp 480w, images/food-tall2.webp 900w" sizes="(max-width: 760px) 100vw, 50vw" width="900" height="1350" decoding="async" loading="lazy" src="images/food-tall2.webp" alt="Loaded soft tacos, piled high and served straight away." /></div>
           <div class="gitem__body">
             <p class="eyebrow">From the kitchen</p>
             <h3>Fresh off the pass.</h3>
@@ -362,7 +362,7 @@
           </div>
         </div>
         <div class="gitem" data-reveal>
-          <div class="gitem__media"><img decoding="async" loading="lazy" src="images/gal-food-11.jpg" alt="Seekh kebabs off the grill, rolled and plated on a long board." /></div>
+          <div class="gitem__media"><img srcset="images/gal-food-11-480.webp 480w, images/gal-food-11.jpg 850w" sizes="(max-width: 760px) 100vw, 50vw" width="850" height="567" decoding="async" loading="lazy" src="images/gal-food-11.jpg" alt="Seekh kebabs off the grill, rolled and plated on a long board." /></div>
           <div class="gitem__body">
             <p class="eyebrow">From the kitchen</p>
             <h3>Char-grilled and rolled.</h3>
@@ -370,7 +370,7 @@
           </div>
         </div>
         <div class="gitem" data-reveal>
-          <div class="gitem__media"><img decoding="async" loading="lazy" src="images/gal-food-9.jpg" alt="A pomegranate cooler caught mid-pour, fresh fruit alongside." /></div>
+          <div class="gitem__media"><img srcset="images/gal-food-9-480.webp 480w, images/gal-food-9.jpg 850w" sizes="(max-width: 760px) 100vw, 50vw" width="850" height="1063" decoding="async" loading="lazy" src="images/gal-food-9.jpg" alt="A pomegranate cooler caught mid-pour, fresh fruit alongside." /></div>
           <div class="gitem__body">
             <p class="eyebrow">From the kitchen</p>
             <h3>Mid-splash.</h3>
@@ -378,7 +378,7 @@
           </div>
         </div>
         <div class="gitem" data-reveal>
-          <div class="gitem__media"><img decoding="async" loading="lazy" src="images/gal-food-2.jpg" alt="Golden fried rolls on a wooden board, crunchy and hot." /></div>
+          <div class="gitem__media"><img srcset="images/gal-food-2-480.webp 480w, images/gal-food-2.jpg 900w" sizes="(max-width: 760px) 100vw, 50vw" width="900" height="1125" decoding="async" loading="lazy" src="images/gal-food-2.jpg" alt="Golden fried rolls on a wooden board, crunchy and hot." /></div>
           <div class="gitem__body">
             <p class="eyebrow">From the kitchen</p>
             <h3>Crisp at the edges.</h3>
@@ -386,7 +386,7 @@
           </div>
         </div>
         <div class="gitem" data-reveal>
-          <div class="gitem__media"><img decoding="async" loading="lazy" src="images/food-plate.jpg" alt="A hearty warm bowl paired with a crisp, colourful salad." /></div>
+          <div class="gitem__media"><img srcset="images/food-plate-480.webp 480w, images/food-plate-960.webp 960w, images/food-plate.jpg 1000w" sizes="(max-width: 760px) 100vw, 50vw" width="1000" height="667" decoding="async" loading="lazy" src="images/food-plate.jpg" alt="A hearty warm bowl paired with a crisp, colourful salad." /></div>
           <div class="gitem__body">
             <p class="eyebrow">From the kitchen</p>
             <h3>A bright, fresh salad.</h3>
@@ -394,7 +394,7 @@
           </div>
         </div>
         <div class="gitem" data-reveal>
-          <div class="gitem__media"><img decoding="async" loading="lazy" src="images/gal-food-7.jpg" alt="A savoury waffle finished with a drizzle and a scatter of vegetables." /></div>
+          <div class="gitem__media"><img srcset="images/gal-food-7-480.webp 480w, images/gal-food-7.jpg 850w" sizes="(max-width: 760px) 100vw, 50vw" width="850" height="567" decoding="async" loading="lazy" src="images/gal-food-7.jpg" alt="A savoury waffle finished with a drizzle and a scatter of vegetables." /></div>
           <div class="gitem__body">
             <p class="eyebrow">From the kitchen</p>
             <h3>Drizzled and dressed.</h3>
@@ -411,16 +411,16 @@
           <p class="lead">A closer look at the spaces, food and little details across Woodland Affairs.</p>
         </div>
         <div class="more-gallery__grid" data-reveal>
-          <a class="more-gallery__item" href="images/gal-dwarka-2.jpg"><img decoding="async" src="images/gal-dwarka-2.jpg" alt="A shaded corner at the Dwarka garden." loading="lazy" /></a>
-          <a class="more-gallery__item" href="images/gal-dwarka-3.jpg"><img decoding="async" src="images/gal-dwarka-3.jpg" alt="Woodland Affairs Dwarka after dark." loading="lazy" /></a>
-          <a class="more-gallery__item" href="images/gal-hari-2.jpg"><img decoding="async" src="images/gal-hari-2.jpg" alt="A lantern-lit corner at Hari Nagar." loading="lazy" /></a>
-          <a class="more-gallery__item" href="images/gal-hari-4.jpg"><img decoding="async" src="images/gal-hari-4.jpg" alt="A softly lit indoor table at Hari Nagar." loading="lazy" /></a>
-          <a class="more-gallery__item" href="images/gal-hari-5.webp"><img decoding="async" src="images/gal-hari-5.webp" alt="Greenhouse dining after dark." loading="lazy" /></a>
-          <a class="more-gallery__item" href="images/wa-celebrate-2.webp"><img decoding="async" src="images/wa-celebrate-2.webp" alt="A garden swing under the trees." loading="lazy" /></a>
-          <a class="more-gallery__item" href="images/gal-food-1.jpg"><img decoding="async" src="images/gal-food-1.jpg" alt="A bright blue mocktail." loading="lazy" /></a>
-          <a class="more-gallery__item" href="images/gal-food-2.jpg"><img decoding="async" src="images/gal-food-2.jpg" alt="Golden fried rolls on a wooden board." loading="lazy" /></a>
-          <a class="more-gallery__item" href="images/gal-food-6.jpg"><img decoding="async" src="images/gal-food-6.jpg" alt="Steamed momos with red dip." loading="lazy" /></a>
-          <a class="more-gallery__item" href="images/gal-food-9.jpg"><img decoding="async" src="images/gal-food-9.jpg" alt="A pomegranate cooler." loading="lazy" /></a>
+          <a class="more-gallery__item" href="images/gal-dwarka-2.jpg"><img srcset="images/gal-dwarka-2-480.webp 480w, images/gal-dwarka-2.jpg 900w" sizes="(max-width: 760px) 100vw, 50vw" width="900" height="600" decoding="async" src="images/gal-dwarka-2.jpg" alt="A shaded corner at the Dwarka garden." loading="lazy" /></a>
+          <a class="more-gallery__item" href="images/gal-dwarka-3.jpg"><img srcset="images/gal-dwarka-3-480.webp 480w, images/gal-dwarka-3.jpg 850w" sizes="(max-width: 760px) 100vw, 50vw" width="850" height="567" decoding="async" src="images/gal-dwarka-3.jpg" alt="Woodland Affairs Dwarka after dark." loading="lazy" /></a>
+          <a class="more-gallery__item" href="images/gal-hari-2.jpg"><img srcset="images/gal-hari-2-480.webp 480w, images/gal-hari-2.jpg 850w" sizes="(max-width: 760px) 100vw, 50vw" width="850" height="567" decoding="async" src="images/gal-hari-2.jpg" alt="A lantern-lit corner at Hari Nagar." loading="lazy" /></a>
+          <a class="more-gallery__item" href="images/gal-hari-4.jpg"><img srcset="images/gal-hari-4-480.webp 480w, images/gal-hari-4.jpg 850w" sizes="(max-width: 760px) 100vw, 50vw" width="850" height="567" decoding="async" src="images/gal-hari-4.jpg" alt="A softly lit indoor table at Hari Nagar." loading="lazy" /></a>
+          <a class="more-gallery__item" href="images/gal-hari-5.webp"><img srcset="images/gal-hari-5-480.webp 480w, images/gal-hari-5.webp 850w" sizes="(max-width: 760px) 100vw, 50vw" width="850" height="1275" decoding="async" src="images/gal-hari-5.webp" alt="Greenhouse dining after dark." loading="lazy" /></a>
+          <a class="more-gallery__item" href="images/wa-celebrate-2.webp"><img srcset="images/wa-celebrate-2-480.webp 480w, images/wa-celebrate-2.webp 760w" sizes="(max-width: 760px) 100vw, 50vw" width="760" height="1140" decoding="async" src="images/wa-celebrate-2.webp" alt="A garden swing under the trees." loading="lazy" /></a>
+          <a class="more-gallery__item" href="images/gal-food-1.jpg"><img srcset="images/gal-food-1-480.webp 480w, images/gal-food-1.jpg 900w" sizes="(max-width: 760px) 100vw, 50vw" width="900" height="1125" decoding="async" src="images/gal-food-1.jpg" alt="A bright blue mocktail." loading="lazy" /></a>
+          <a class="more-gallery__item" href="images/gal-food-2.jpg"><img srcset="images/gal-food-2-480.webp 480w, images/gal-food-2.jpg 900w" sizes="(max-width: 760px) 100vw, 50vw" width="900" height="1125" decoding="async" src="images/gal-food-2.jpg" alt="Golden fried rolls on a wooden board." loading="lazy" /></a>
+          <a class="more-gallery__item" href="images/gal-food-6.jpg"><img srcset="images/gal-food-6-480.webp 480w, images/gal-food-6.jpg 850w" sizes="(max-width: 760px) 100vw, 50vw" width="850" height="567" decoding="async" src="images/gal-food-6.jpg" alt="Steamed momos with red dip." loading="lazy" /></a>
+          <a class="more-gallery__item" href="images/gal-food-9.jpg"><img srcset="images/gal-food-9-480.webp 480w, images/gal-food-9.jpg 850w" sizes="(max-width: 760px) 100vw, 50vw" width="850" height="1063" decoding="async" src="images/gal-food-9.jpg" alt="A pomegranate cooler." loading="lazy" /></a>
         </div>
       </div>
     </section>
@@ -461,7 +461,7 @@
     <span>Chat with us</span>
   </a>
 
-  <script src="app.js?v=20261002-smooth"></script>
-  <script src="cinematic.js?v=20261002-smooth"></script>
+  <script src="app.js?v=20261002-audit"></script>
+  <script src="cinematic.js?v=20261002-audit"></script>
 </body>
 </html>

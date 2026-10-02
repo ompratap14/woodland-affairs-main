@@ -11,9 +11,9 @@
   <link rel="icon" href="favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" /><noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" /></noscript>
   <script>document.documentElement.className += " js";</script>
-  <link rel="stylesheet" href="theme.css?v=20261002-smooth" />
+  <link rel="stylesheet" href="theme.css?v=20261002-audit" />
   <style>
     .contact-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 26px; margin-top: 56px; }
     .c-card { background:var(--card); border:1px solid var(--line); border-radius:var(--radius-lg); overflow:hidden; display:flex; flex-direction:column; }
@@ -47,8 +47,8 @@
     @media (max-width: 940px){ .contact-grid { grid-template-columns:1fr; max-width:460px; margin-inline:auto; } }
     @media (max-width: 760px){ .c-card__body { padding:26px 22px; } }
   </style>
-  <link rel="stylesheet" href="depth.css?v=20261002-smooth" />
-  <link rel="stylesheet" href="cinematic.css?v=20261002-smooth" />
+  <link rel="stylesheet" href="depth.css?v=20261002-audit" />
+  <link rel="stylesheet" href="cinematic.css?v=20261002-audit" />
 </head>
 <body>
   <div class="frame"></div>
@@ -79,7 +79,7 @@
     <!-- HERO -->
     <section class="hero hero--short">
       <div class="hero__media">
-        <img decoding="async" loading="eager" fetchpriority="high" src="images/amb-dwarka-eve.jpg" alt="Woodland Affairs outdoor seating in the evening" />
+        <img srcset="images/amb-dwarka-eve-480.webp 480w, images/amb-dwarka-eve-960.webp 960w, images/amb-dwarka-eve.jpg 1000w" sizes="100vw" width="1000" height="667" decoding="async" loading="eager" fetchpriority="high" src="images/amb-dwarka-eve.jpg" alt="Woodland Affairs outdoor seating in the evening" />
       </div>
       <div class="hero__overlay"></div>
       <div class="wrap hero__inner">
@@ -100,7 +100,7 @@
 
         <div class="contact-grid">
           <article class="c-card" data-reveal>
-            <div class="c-card__media"><span class="c-card__tag">Dwarka</span><img decoding="async" loading="lazy" src="images/wa-dwarka.jpg" alt="Woodland Affairs Dwarka" /></div>
+            <div class="c-card__media"><span class="c-card__tag">Dwarka</span><img srcset="images/wa-dwarka-480.webp 480w, images/wa-dwarka.jpg 720w" sizes="(max-width: 760px) 100vw, 50vw" width="720" height="480" decoding="async" loading="lazy" src="images/wa-dwarka.jpg" alt="Woodland Affairs Dwarka" /></div>
             <div class="c-card__body">
               <h3>Woodland Affairs — Dwarka</h3>
               <div class="c-card__row"><span class="ic">◈</span><span>Community Park (opposite rear gate of Shubham Apartments, DDA Pocket 4), Sector 12, Dwarka, New Delhi — 110078</span></div>
@@ -114,7 +114,7 @@
           </article>
 
           <article class="c-card" data-reveal>
-            <div class="c-card__media"><span class="c-card__tag">Hari Nagar</span><img decoding="async" loading="lazy" src="images/wa-harinagar.jpg" alt="Woodland Affairs Hari Nagar" /></div>
+            <div class="c-card__media"><span class="c-card__tag">Hari Nagar</span><img srcset="images/wa-harinagar-480.webp 480w, images/wa-harinagar.jpg 720w" sizes="(max-width: 760px) 100vw, 50vw" width="720" height="480" decoding="async" loading="lazy" src="images/wa-harinagar.jpg" alt="Woodland Affairs Hari Nagar" /></div>
             <div class="c-card__body">
               <h3>Woodland Affairs — Hari Nagar</h3>
               <div class="c-card__row"><span class="ic">◈</span><span>Lake &amp; Woodland Park, Tihar Lake, Hari Nagar, New Delhi — 110018</span></div>
@@ -128,7 +128,7 @@
           </article>
 
           <article class="c-card" data-reveal>
-            <div class="c-card__media"><span class="c-card__tag">Janakpuri</span><img decoding="async" loading="lazy" src="images/wa-janakpuri.jpg" alt="Eatery Royale Janakpuri" /></div>
+            <div class="c-card__media"><span class="c-card__tag">Janakpuri</span><img srcset="images/wa-janakpuri-480.webp 480w, images/wa-janakpuri.jpg 720w" sizes="(max-width: 760px) 100vw, 50vw" width="720" height="480" decoding="async" loading="lazy" src="images/wa-janakpuri.jpg" alt="Eatery Royale Janakpuri" /></div>
             <div class="c-card__body">
               <h3>Eatery Royale — Janakpuri</h3>
               <div class="c-card__row"><span class="ic">◈</span><span>Musical Fountain Complex, Dharam Marg, Block B 3A, Janakpuri, New Delhi — 110058</span></div>
@@ -195,7 +195,7 @@
     <span>Chat with us</span>
   </a>
 
-  <script src="app.js?v=20261002-smooth"></script>
-  <script src="cinematic.js?v=20261002-smooth"></script>
+  <script src="app.js?v=20261002-audit"></script>
+  <script src="cinematic.js?v=20261002-audit"></script>
 </body>
 </html>

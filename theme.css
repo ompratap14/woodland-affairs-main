@@ -374,3 +374,8 @@ body.intro-active{ overflow:hidden; }
 .booking-outlets strong { display:block; font-family:var(--font-display); font-weight:500; font-size:28px; }
 .booking-action { font-size:12px; white-space:nowrap; color:#23633d; }
 .booking-dialog :focus-visible { outline:2px solid #297445; outline-offset:3px; }
+
+/* Keep the fixed phone header inexpensive while the page scrolls. */
+@media (hover:none) and (pointer:coarse) {
+  .nav.solid,.nav.always-solid { background:#0b3320; -webkit-backdrop-filter:none; backdrop-filter:none; }
+}

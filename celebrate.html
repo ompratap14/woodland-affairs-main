@@ -13,9 +13,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preload" as="image" href="images/wa-celebrate.jpg" fetchpriority="high" />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" /><noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" /></noscript>
   <script>document.documentElement.className += " js";</script>
-  <link rel="stylesheet" href="theme.css?v=20261002-smooth" />
+  <link rel="stylesheet" href="theme.css?v=20261002-audit" />
   <!-- Local venue photos keep the celebration page independent of Drive image requests. -->
   <style>
     .func-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:54px; }
@@ -51,8 +51,8 @@
     .enq-phones strong { font-family:var(--font-display); font-weight:600; font-size:24px; color:#ffffff; }
     @media (max-width:820px){ .enq-phones { grid-template-columns:1fr; } }
   </style>
-  <link rel="stylesheet" href="depth.css?v=20261002-smooth" />
-  <link rel="stylesheet" href="cinematic.css?v=20261002-smooth" />
+  <link rel="stylesheet" href="depth.css?v=20261002-audit" />
+  <link rel="stylesheet" href="cinematic.css?v=20261002-audit" />
 </head>
 <body>
   <div class="frame"></div>
@@ -82,7 +82,7 @@
   <main id="top">
     <!-- HERO -->
     <section class="hero hero--short">
-      <div class="hero__media"><img src="images/wa-celebrate.jpg" alt="Outdoor tables beside illuminated fountains at Woodland Affairs" loading="eager" decoding="async" fetchpriority="high" width="1200" height="800" /></div>
+      <div class="hero__media"><img srcset="images/wa-celebrate-480.webp 480w, images/wa-celebrate-960.webp 960w, images/wa-celebrate.jpg 1200w" sizes="100vw" src="images/wa-celebrate.jpg" alt="Outdoor tables beside illuminated fountains at Woodland Affairs" loading="eager" decoding="async" fetchpriority="high" width="1200" height="800" /></div>
       <div class="hero__overlay"></div>
       <div class="wrap hero__inner">
         <p class="eyebrow hero__eyebrow">Celebrate with us</p>
@@ -115,14 +115,14 @@
           <p class="lead">From an intimate birthday to a full family function, each celebration finds its own corner of the garden.</p>
         </div>
         <div class="func-grid">
-          <a class="func" href="#enquire" data-reveal><img src="images/wa-celebrate-3.jpg" alt="Garden table set for a celebration under warm lights" loading="lazy" decoding="async" /><span class="func__shade"></span><span class="func__label"><strong>Birthday parties</strong><span>Cake, candles &amp; a table set for the moment</span></span></a>
-          <a class="func" href="#enquire" data-reveal><img src="images/gal-hari-4.jpg" alt="Intimate indoor dining table with candles" loading="lazy" decoding="async" /><span class="func__shade"></span><span class="func__label"><strong>Anniversaries</strong><span>Warm, personal evenings for two or twenty</span></span></a>
-          <a class="func" href="#enquire" data-reveal><img src="images/amb-dwarka-dining.jpg" alt="Garden seating beneath umbrellas" loading="lazy" decoding="async" /><span class="func__shade"></span><span class="func__label"><strong>Kitty &amp; get-togethers</strong><span>Long, unhurried afternoons with friends</span></span></a>
-          <a class="func" href="#enquire" data-reveal><img src="images/gal-hari-3.webp" alt="Long indoor table for a family gathering" loading="lazy" decoding="async" /><span class="func__shade"></span><span class="func__label"><strong>Family functions</strong><span>Room for the whole family, elders to little ones</span></span></a>
-          <a class="func" href="#enquire" data-reveal><img src="images/amb-hari-green.jpg" alt="Garden dining beneath a canopy of string lights" loading="lazy" decoding="async" /><span class="func__shade"></span><span class="func__label"><strong>Pre-wedding &amp; Roka</strong><span>A green, glowing setting for the big yes</span></span></a>
-          <a class="func" href="#enquire" data-reveal><img src="images/amb-dwarka-eve.jpg" alt="Open-air garden and buffet setting for a daytime gathering" loading="lazy" decoding="async" /><span class="func__shade"></span><span class="func__label"><strong>Haldi</strong><span>Sunlit moments, colour &amp; the people you love</span></span></a>
-          <a class="func" href="#enquire" data-reveal><img src="images/amb-dwarka-table.jpg" alt="Cushioned outdoor lounge seating" loading="lazy" decoding="async" /><span class="func__shade"></span><span class="func__label"><strong>Baby showers</strong><span>Soft, cheerful afternoons worth remembering</span></span></a>
-          <a class="func" href="#enquire" data-reveal><img src="images/wa-celebrate-2.webp" alt="Leafy garden swing and seating for a relaxed gathering" loading="lazy" decoding="async" /><span class="func__shade"></span><span class="func__label"><strong>Mehendi</strong><span>Henna, laughter &amp; a garden full of memories</span></span></a>
+          <a class="func" href="#enquire" data-reveal><img srcset="images/wa-celebrate-3-480.webp 480w, images/wa-celebrate-3.jpg 760w" sizes="(max-width: 760px) 100vw, 50vw" width="760" height="1140" src="images/wa-celebrate-3.jpg" alt="Garden table set for a celebration under warm lights" loading="lazy" decoding="async" /><span class="func__shade"></span><span class="func__label"><strong>Birthday parties</strong><span>Cake, candles &amp; a table set for the moment</span></span></a>
+          <a class="func" href="#enquire" data-reveal><img srcset="images/gal-hari-4-480.webp 480w, images/gal-hari-4.jpg 850w" sizes="(max-width: 760px) 100vw, 50vw" width="850" height="567" src="images/gal-hari-4.jpg" alt="Intimate indoor dining table with candles" loading="lazy" decoding="async" /><span class="func__shade"></span><span class="func__label"><strong>Anniversaries</strong><span>Warm, personal evenings for two or twenty</span></span></a>
+          <a class="func" href="#enquire" data-reveal><img srcset="images/amb-dwarka-dining-480.webp 480w, images/amb-dwarka-dining-960.webp 960w, images/amb-dwarka-dining.jpg 1200w" sizes="(max-width: 760px) 100vw, 50vw" width="1200" height="800" src="images/amb-dwarka-dining.jpg" alt="Garden seating beneath umbrellas" loading="lazy" decoding="async" /><span class="func__shade"></span><span class="func__label"><strong>Kitty &amp; get-togethers</strong><span>Long, unhurried afternoons with friends</span></span></a>
+          <a class="func" href="#enquire" data-reveal><img srcset="images/gal-hari-3-480.webp 480w, images/gal-hari-3.webp 850w" sizes="(max-width: 760px) 100vw, 50vw" width="850" height="1275" src="images/gal-hari-3.webp" alt="Long indoor table for a family gathering" loading="lazy" decoding="async" /><span class="func__shade"></span><span class="func__label"><strong>Family functions</strong><span>Room for the whole family, elders to little ones</span></span></a>
+          <a class="func" href="#enquire" data-reveal><img srcset="images/amb-hari-green-480.webp 480w, images/amb-hari-green-960.webp 960w, images/amb-hari-green.jpg 1200w" sizes="(max-width: 760px) 100vw, 50vw" width="1200" height="800" src="images/amb-hari-green.jpg" alt="Garden dining beneath a canopy of string lights" loading="lazy" decoding="async" /><span class="func__shade"></span><span class="func__label"><strong>Pre-wedding &amp; Roka</strong><span>A green, glowing setting for the big yes</span></span></a>
+          <a class="func" href="#enquire" data-reveal><img srcset="images/amb-dwarka-eve-480.webp 480w, images/amb-dwarka-eve-960.webp 960w, images/amb-dwarka-eve.jpg 1000w" sizes="(max-width: 760px) 100vw, 50vw" width="1000" height="667" src="images/amb-dwarka-eve.jpg" alt="Open-air garden and buffet setting for a daytime gathering" loading="lazy" decoding="async" /><span class="func__shade"></span><span class="func__label"><strong>Haldi</strong><span>Sunlit moments, colour &amp; the people you love</span></span></a>
+          <a class="func" href="#enquire" data-reveal><img srcset="images/amb-dwarka-table-480.webp 480w, images/amb-dwarka-table-960.webp 960w, images/amb-dwarka-table.jpg 1000w" sizes="(max-width: 760px) 100vw, 50vw" width="1000" height="667" src="images/amb-dwarka-table.jpg" alt="Cushioned outdoor lounge seating" loading="lazy" decoding="async" /><span class="func__shade"></span><span class="func__label"><strong>Baby showers</strong><span>Soft, cheerful afternoons worth remembering</span></span></a>
+          <a class="func" href="#enquire" data-reveal><img srcset="images/wa-celebrate-2-480.webp 480w, images/wa-celebrate-2.webp 760w" sizes="(max-width: 760px) 100vw, 50vw" width="760" height="1140" src="images/wa-celebrate-2.webp" alt="Leafy garden swing and seating for a relaxed gathering" loading="lazy" decoding="async" /><span class="func__shade"></span><span class="func__label"><strong>Mehendi</strong><span>Henna, laughter &amp; a garden full of memories</span></span></a>
         </div>
       </div>
     </section>
@@ -131,7 +131,7 @@
     <section class="section section--tight" style="background:var(--paper-2)">
       <div class="wrap">
         <div class="split">
-          <div class="split__media" data-reveal><img src="images/amb-hari-tables.jpg" alt="Dining among plants under warm lights" loading="lazy" decoding="async" /></div>
+          <div class="split__media" data-reveal><img srcset="images/amb-hari-tables-480.webp 480w, images/amb-hari-tables-960.webp 960w, images/amb-hari-tables.jpg 1000w" sizes="(max-width: 760px) 100vw, 50vw" width="1000" height="667" src="images/amb-hari-tables.jpg" alt="Dining among plants under warm lights" loading="lazy" decoding="async" /></div>
           <div class="split__body" data-reveal>
             <p class="eyebrow">Warm light, good people</p>
             <h2 class="display">The setting does<br /><em>half the work.</em></h2>
@@ -151,12 +151,12 @@
           <p class="lead" style="color:rgba(244,238,225,0.72)">Generous North Indian platters, sizzling kebabs off the tandoor, fresh coolers and a sweet finish — planned around your group.</p>
         </div>
         <div class="spread" data-reveal>
-          <figure class="tall"><img src="images/gal-food-10.jpg" alt="Paneer and vegetable tikka on a board" loading="lazy" decoding="async" /><span class="sc-shade"></span><figcaption>Paneer Tikka</figcaption></figure>
-          <figure><img src="images/wa-janakpuri.jpg" alt="A sharing platter from the kitchen" loading="lazy" decoding="async" /><span class="sc-shade"></span><figcaption>Mezze Platter</figcaption></figure>
-          <figure><img src="images/gal-food-11.jpg" alt="Seekh kebabs served on a board" loading="lazy" decoding="async" /><span class="sc-shade"></span><figcaption>Seekh Kebab</figcaption></figure>
-          <figure class="tall"><img src="images/gal-food-1.jpg" alt="A blue mocktail" loading="lazy" decoding="async" /><span class="sc-shade"></span><figcaption>Coolers &amp; mocktails</figcaption></figure>
-          <figure><img src="images/gal-food-6.jpg" alt="Steamed momos served with a dip" loading="lazy" decoding="async" /><span class="sc-shade"></span><figcaption>Crystal Momos</figcaption></figure>
-          <figure><img src="images/food-land2.jpg" alt="Chocolate dessert served with ice cream" loading="lazy" decoding="async" /><span class="sc-shade"></span><figcaption>Brownie Sundae</figcaption></figure>
+          <figure class="tall"><img srcset="images/gal-food-10-480.webp 480w, images/gal-food-10.jpg 850w" sizes="(max-width: 760px) 100vw, 50vw" width="850" height="567" src="images/gal-food-10.jpg" alt="Paneer and vegetable tikka on a board" loading="lazy" decoding="async" /><span class="sc-shade"></span><figcaption>Paneer Tikka</figcaption></figure>
+          <figure><img srcset="images/wa-janakpuri-480.webp 480w, images/wa-janakpuri.jpg 720w" sizes="(max-width: 760px) 100vw, 50vw" width="720" height="480" src="images/wa-janakpuri.jpg" alt="A sharing platter from the kitchen" loading="lazy" decoding="async" /><span class="sc-shade"></span><figcaption>Mezze Platter</figcaption></figure>
+          <figure><img srcset="images/gal-food-11-480.webp 480w, images/gal-food-11.jpg 850w" sizes="(max-width: 760px) 100vw, 50vw" width="850" height="567" src="images/gal-food-11.jpg" alt="Seekh kebabs served on a board" loading="lazy" decoding="async" /><span class="sc-shade"></span><figcaption>Seekh Kebab</figcaption></figure>
+          <figure class="tall"><img srcset="images/gal-food-1-480.webp 480w, images/gal-food-1.jpg 900w" sizes="(max-width: 760px) 100vw, 50vw" width="900" height="1125" src="images/gal-food-1.jpg" alt="A blue mocktail" loading="lazy" decoding="async" /><span class="sc-shade"></span><figcaption>Coolers &amp; mocktails</figcaption></figure>
+          <figure><img srcset="images/gal-food-6-480.webp 480w, images/gal-food-6.jpg 850w" sizes="(max-width: 760px) 100vw, 50vw" width="850" height="567" src="images/gal-food-6.jpg" alt="Steamed momos served with a dip" loading="lazy" decoding="async" /><span class="sc-shade"></span><figcaption>Crystal Momos</figcaption></figure>
+          <figure><img srcset="images/food-land2-480.webp 480w, images/food-land2-960.webp 960w, images/food-land2.jpg 1100w" sizes="(max-width: 760px) 100vw, 50vw" width="1100" height="733" src="images/food-land2.jpg" alt="Chocolate dessert served with ice cream" loading="lazy" decoding="async" /><span class="sc-shade"></span><figcaption>Brownie Sundae</figcaption></figure>
         </div>
       </div>
     </section>
@@ -187,12 +187,12 @@
           <h2 class="display">Come see<br /><em>for yourself.</em></h2>
         </div>
         <div class="teaser-grid" data-reveal>
-          <figure class="wide"><img src="images/wa-harinagar.jpg" alt="The Hari Nagar garden" loading="lazy" decoding="async" /></figure>
-          <figure><img src="images/gal-dwarka-3.jpg" alt="Woodland Affairs sign glowing at night" loading="lazy" decoding="async" /></figure>
-          <figure><img src="images/wa-dwarka.jpg" alt="Greenery at the Dwarka entrance" loading="lazy" decoding="async" /></figure>
-          <figure><img src="images/food-tall3.webp" alt="Berry cooler served with fruit and ice" loading="lazy" decoding="async" /></figure>
-          <figure class="wide"><img src="images/gal-food-3.jpg" alt="A board of kebabs for sharing" loading="lazy" decoding="async" /></figure>
-          <figure><img src="images/amb-hari-interior.webp" alt="Indoor dining at Hari Nagar" loading="lazy" decoding="async" /></figure>
+          <figure class="wide"><img srcset="images/wa-harinagar-480.webp 480w, images/wa-harinagar.jpg 720w" sizes="(max-width: 760px) 100vw, 50vw" width="720" height="480" src="images/wa-harinagar.jpg" alt="The Hari Nagar garden" loading="lazy" decoding="async" /></figure>
+          <figure><img srcset="images/gal-dwarka-3-480.webp 480w, images/gal-dwarka-3.jpg 850w" sizes="(max-width: 760px) 100vw, 50vw" width="850" height="567" src="images/gal-dwarka-3.jpg" alt="Woodland Affairs sign glowing at night" loading="lazy" decoding="async" /></figure>
+          <figure><img srcset="images/wa-dwarka-480.webp 480w, images/wa-dwarka.jpg 720w" sizes="(max-width: 760px) 100vw, 50vw" width="720" height="480" src="images/wa-dwarka.jpg" alt="Greenery at the Dwarka entrance" loading="lazy" decoding="async" /></figure>
+          <figure><img srcset="images/food-tall3-480.webp 480w, images/food-tall3.webp 900w" sizes="(max-width: 760px) 100vw, 50vw" width="900" height="1125" src="images/food-tall3.webp" alt="Berry cooler served with fruit and ice" loading="lazy" decoding="async" /></figure>
+          <figure class="wide"><img srcset="images/gal-food-3-480.webp 480w, images/gal-food-3.jpg 900w" sizes="(max-width: 760px) 100vw, 50vw" width="900" height="600" src="images/gal-food-3.jpg" alt="A board of kebabs for sharing" loading="lazy" decoding="async" /></figure>
+          <figure><img srcset="images/amb-hari-interior-480.webp 480w, images/amb-hari-interior-960.webp 960w, images/amb-hari-interior.webp 1000w" sizes="(max-width: 760px) 100vw, 50vw" width="1000" height="666" src="images/amb-hari-interior.webp" alt="Indoor dining at Hari Nagar" loading="lazy" decoding="async" /></figure>
         </div>
         <div style="margin-top:34px" data-reveal><a class="btn btn--ghost" href="gallery.html">See the full gallery</a></div>
       </div>
@@ -252,7 +252,7 @@
     <span>Chat with us</span>
   </a>
 
-  <script src="app.js?v=20261002-smooth"></script>
-  <script src="cinematic.js?v=20261002-smooth"></script>
+  <script src="app.js?v=20261002-audit"></script>
+  <script src="cinematic.js?v=20261002-audit"></script>
 </body>
 </html>

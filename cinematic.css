@@ -41,6 +41,8 @@ body.cinematic[data-motion-page="contact"] main .motion-piece { translate:none; 
 body.cinematic[data-motion-page] main .motion-piece.is-visible { translate:0 0; scale:1; }
 @media(max-width:760px) {
   body.cinematic main .motion-piece { translate:calc(var(--entrance-x, 0px) * .24) 20px; }
+  body.cinematic[data-motion-page] main .motion-piece { transition-duration:.55s,.8s,.8s; transition-delay:0ms; }
+  body.cinematic main .motion-image img { transition-duration:.8s; }
   body.cinematic main .motion-piece.is-visible { translate:0 0; }
   .cinematic .motion-word { transition-delay:calc(var(--word-index) * 20ms); }
 }

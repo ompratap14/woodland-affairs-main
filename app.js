@@ -81,7 +81,9 @@
   // Opposing scroll entrances. Observe only until visible; no scroll polling.
   var revealMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   var pendingReveals = new Set();
-  var revealObserver = 'IntersectionObserver' in window ? new IntersectionObserver(function (entries) {
+  // Cinematic pages own their entrances; avoid observing each section twice.
+  var cinematicEntrances = !!document.querySelector('script[src^="cinematic.js"]');
+  var revealObserver = !cinematicEntrances && 'IntersectionObserver' in window ? new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
       if (entry.isIntersecting) finishReveal(entry.target);
     });
@@ -137,9 +139,13 @@
   var heroMedia = document.querySelector('.hero__media');
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (heroMedia && !reduce) {
+    var parallaxFrame = 0;
     window.addEventListener('scroll', function () {
-      var y = window.scrollY;
-      if (y < window.innerHeight) heroMedia.style.transform = 'translateY(' + (y * 0.18) + 'px) scale(1.05)';
+      if (parallaxFrame || window.scrollY >= window.innerHeight) return;
+      parallaxFrame = requestAnimationFrame(function () {
+        parallaxFrame = 0;
+        heroMedia.style.transform = 'translateY(' + (window.scrollY * 0.18) + 'px) scale(1.05)';
+      });
     }, { passive: true });
   }
 
@@ -188,6 +194,8 @@
     if (state) { state.tx = 0; state.ty = 0; state.tl = 0; depthKick(); }
   }
   function releaseAll() {
+    clearTimeout(touchReleaseTimer);
+    touchCard = null;
     clearTimeout(touchSceneTimer);
     touchScene = null;
     depthCards.forEach(function (state, card) { releaseCard(card); });
@@ -212,8 +220,6 @@
       card.style.setProperty('--dx', s.x.toFixed(4));
       card.style.setProperty('--dy', s.y.toFixed(4));
       card.style.setProperty('--dl', s.l.toFixed(4));
-      card.style.setProperty('--gx', ((s.x + 1) * 50).toFixed(1) + '%');
-      card.style.setProperty('--gy', ((s.y + 1) * 50).toFixed(1) + '%');
     });
     sceneStates.forEach(function (scene) {
       if (!scene.live && !scene.tx && !scene.ty) return;
@@ -257,8 +263,10 @@
   function releaseTouchCard(delay) {
     clearTimeout(touchReleaseTimer);
     var card = touchCard;
-    touchCard = null;
-    if (card) touchReleaseTimer = setTimeout(function () { releaseCard(card); }, delay);
+    if (card) touchReleaseTimer = setTimeout(function () {
+      releaseCard(card);
+      if (touchCard === card) touchCard = null;
+    }, delay);
   }
   document.addEventListener('pointerdown', function (event) {
     if (event.pointerType !== 'touch' || depthMotion.matches) return;
@@ -292,8 +300,7 @@
       releaseTouchCard(1200);
       if (touchScene) {
         var scene = touchScene;
-        touchScene = null;
-        touchSceneTimer = setTimeout(function () { scene.tx = 0; scene.ty = 0; scene.root.classList.remove('depth-touched'); depthKick(); }, 1200);
+        touchSceneTimer = setTimeout(function () { scene.tx = 0; scene.ty = 0; scene.root.classList.remove('depth-touched'); if (touchScene === scene) touchScene = null; depthKick(); }, 1200);
       }
     }
   }, { passive:true });
@@ -310,6 +317,7 @@
   });
   document.addEventListener('pointerout', function (event) { if (event.pointerType !== 'touch' && !event.relatedTarget) releaseAll(); });
   window.addEventListener('blur', releaseAll);
+  document.addEventListener('visibilitychange', function () { if (document.hidden) releaseAll(); });
   window.addEventListener('scroll', function () { if (depthHover) { releaseCard(depthHover); depthHover = null; } }, { passive:true });
   depthMotion.addEventListener('change', releaseAll);
   depthPointer.addEventListener('change', releaseAll);
