@@ -7,6 +7,7 @@
   let outlet = 'hari', type = 'carte';
   let page = 0, turning = false, turnTimer = 0;
   let swipe = null;
+  let leafAnimation = null;
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const results = document.getElementById('menu-results');
   function notebookPage() {
@@ -14,39 +15,70 @@
     const [heading, dishes] = pages[page];
     const sheet = results.querySelector('.notebook__sheet');
     if (!sheet) return;
-    sheet.innerHTML = `<span class="notebook__eyebrow">${outlets[outlet].name} · À la carte</span><h3>${heading}</h3><ul>${dishes.map(dish => `<li>${dish}</li>`).join('')}</ul><span class="notebook__folio">${String(page + 1).padStart(2, '0')} / ${String(pages.length).padStart(2, '0')}</span>`;
+    sheet.innerHTML = `<div class="book-page-top"><span class="notebook__eyebrow">${outlets[outlet].name} · À la carte</span><span class="book-chapter-number" aria-hidden="true">${String(page + 1).padStart(2, '0')}</span></div><h3>${heading}</h3><div class="book-divider" aria-hidden="true">✦</div><ul>${dishes.map((dish, index) => `<li><span class="book-dish-number" aria-hidden="true">${String(index + 1).padStart(2, '0')}</span><span>${dish}</span></li>`).join('')}</ul><span class="notebook__folio">WOODLAND AFFAIRS <span>${String(page + 1).padStart(2, '0')} / ${String(pages.length).padStart(2, '0')}</span></span>`;
     sheet.scrollTop = 0;
     results.querySelector('[data-page="prev"]').disabled = page === 0;
     results.querySelector('[data-page="next"]').disabled = page === pages.length - 1;
     results.querySelector('.notebook__progress').textContent = `Page ${page + 1} of ${pages.length}`;
+    results.querySelectorAll('[data-chapter]').forEach(button => {
+      button.setAttribute('aria-pressed', String(Number(button.dataset.chapter) === page));
+    });
   }
-  function turnPage(direction) {
-    const next = page + direction;
+  function turnPage(direction, target) {
+    const next = target === undefined ? page + direction : target;
     if (turning || next < 0 || next >= window.woodlandMenus[outlet].length) return;
     if (reduceMotion.matches) { page = next; notebookPage(); return; }
     turning = true;
     const sheet = results.querySelector('.notebook__sheet');
-    sheet.classList.add(direction > 0 ? 'turn-forward' : 'turn-backward');
-    turnTimer = setTimeout(() => {
-      page = next;
+    const previousHTML = sheet.innerHTML;
+    const previousScroll = sheet.scrollTop;
+    const startAngle = parseFloat(sheet.style.getPropertyValue('--turn-start')) || 0;
+    const front = sheet.cloneNode(true);
+    page = next;
+    notebookPage();
+    if (direction < 0) {
+      front.innerHTML = sheet.innerHTML;
+      sheet.innerHTML = previousHTML;
+      sheet.scrollTop = previousScroll;
+    }
+    front.removeAttribute('aria-live');
+    front.className = 'notebook__sheet book-leaf-front';
+    front.style.removeProperty('--turn-start');
+    const leaf = document.createElement('div');
+    leaf.className = 'book-turn-leaf';
+    leaf.setAttribute('aria-hidden', 'true');
+    leaf.style.cssText = `left:${sheet.offsetLeft}px;top:${sheet.offsetTop}px;width:${sheet.offsetWidth}px;height:${sheet.offsetHeight}px`;
+    const back = document.createElement('div');
+    back.className = 'book-leaf-back';
+    leaf.append(front, back);
+    sheet.parentElement.appendChild(leaf);
+    front.scrollTop = direction > 0 ? previousScroll : 0;
+    sheet.style.removeProperty('--turn-start');
+    const animation = leaf.animate([
+      { transform:`rotateY(${direction > 0 ? Math.min(0, startAngle) : -180}deg)` },
+      { transform:`rotateY(${direction > 0 ? -180 : 0}deg)` }
+    ], { duration:900, easing:'cubic-bezier(.22,.65,.18,1)', fill:'forwards' });
+    leafAnimation = animation;
+    animation.finished.then(() => {
+      if (!leaf.isConnected) return;
       notebookPage();
-      turnTimer = setTimeout(() => {
-        sheet.classList.remove('turn-forward', 'turn-backward');
-        turning = false;
-      }, 310);
-    }, 290);
+      leaf.remove();
+      leafAnimation = null;
+      turning = false;
+    }).catch(() => { leaf.remove(); });
   }
   function buffetCard(menu, index) {
     return `<details class="buffet-card" ${index === 0 ? 'open' : ''}><summary><span class="buffet-card__number">${String(index + 1).padStart(2, '0')}</span><span class="buffet-card__identity"><strong>${menu.title}</strong><small>${menu.terms}</small></span><span class="buffet-card__toggle" aria-hidden="true">+</span></summary><div class="buffet-card__body">${menu.sections.map(([name, items]) => `<section><h4>${name}</h4><p>${items}</p></section>`).join('')}</div></details>`;
   }
   function render() {
+    if (leafAnimation) { leafAnimation.cancel(); leafAnimation = null; }
     clearTimeout(turnTimer);
     turning = false;
     swipe = null;
     const selected = outlets[outlet];
     let body;
     if (type === 'carte') {
-      body = `<p class="menu-notice">Turn the pages to explore selected dishes from ${selected.name}. Prices are available in the <a href="${selected.menu}" target="_blank" rel="noopener noreferrer">full digital menu ↗</a>.</p><div class="notebook" aria-label="${selected.name} à la carte notebook"><div class="notebook__inside"><span class="menu-kicker">The menu book</span><h3>Good food,<br><em>page by page.</em></h3><p>Explore the flavours of ${selected.name}.</p><span class="notebook__ornament" aria-hidden="true">✳</span></div><div class="notebook__sheet" aria-live="polite"></div></div><div class="notebook__controls"><button type="button" data-page="prev" aria-label="Previous menu page">← Previous page</button><span class="notebook__progress"></span><button type="button" data-page="next" aria-label="Next menu page">Next page →</button></div>`;
+      body = `<p class="menu-notice">Turn the pages to explore selected dishes from ${selected.name}. Prices are available in the <a href="${selected.menu}" target="_blank" rel="noopener noreferrer">full digital menu ↗</a>.</p><div class="book-chapters" role="group" aria-label="Menu chapters">${window.woodlandMenus[outlet].map(([heading], index) => `<button type="button" data-chapter="${index}" aria-pressed="${index === page}"><span>${String(index + 1).padStart(2, '0')}</span>${heading}</button>`).join('')}</div><div class="notebook" tabindex="0" aria-label="${selected.name} à la carte menu book" style="--book-photo:url('${selected.image}')"><div class="notebook__inside"><span class="book-edition">WOODLAND AFFAIRS<span>THE DINING COLLECTION</span></span><div class="book-cover-copy"><span class="menu-kicker">${selected.name}</span><h3>Good food,<br><em>page by page.</em></h3><p>Explore the flavours of ${selected.name}.</p></div><span class="book-cover-seal" aria-hidden="true">✦<span>EST. FOR GOOD TIMES</span></span><span class="book-cover-bottom">A LITTLE WILD. A LOT DELICIOUS.</span></div><div class="notebook__sheet" aria-live="polite"></div></div><div class="notebook__controls"><button type="button" data-page="prev" aria-label="Previous menu page">← Previous page</button><span class="notebook__progress"></span><button type="button" data-page="next" aria-label="Next menu page">Next page →</button></div>`;
     } else {
       body = outlet === 'janakpuri'
         ? `<div class="buffet-unavailable"><h3>Planning a buffet in Janakpuri?</h3><p>The supplied buffet packages apply to Hari Nagar and Dwarka. Contact Eatery Royale for its current group dining options.</p><a class="btn btn--brass" href="tel:${selected.phone}">Call Eatery Royale ↗</a></div>`
@@ -73,6 +105,15 @@
   results.addEventListener('click', event => {
     const button = event.target.closest('[data-page]');
     if (button) turnPage(button.dataset.page === 'next' ? 1 : -1);
+    const chapter = event.target.closest('[data-chapter]');
+    if (chapter && Number(chapter.dataset.chapter) !== page) turnPage(Number(chapter.dataset.chapter) > page ? 1 : -1, Number(chapter.dataset.chapter));
+  });
+  results.addEventListener('keydown', event => {
+    if (!event.target.closest('.notebook')) return;
+    if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+      event.preventDefault();
+      turnPage(event.key === 'ArrowRight' ? 1 : -1);
+    }
   });
   results.addEventListener('touchstart', event => {
     const sheet = event.target.closest('.notebook__sheet');
@@ -100,7 +141,10 @@
     current.sheet.style.removeProperty('--drag');
     if (event.type === 'touchcancel' || !current.dragging || !event.changedTouches.length) return;
     const dx = event.changedTouches[0].clientX - current.x;
-    if (Math.abs(dx) >= 55) turnPage(dx < 0 ? 1 : -1);
+    if (Math.abs(dx) >= 55) {
+      current.sheet.style.setProperty('--turn-start', (Math.max(-0.8, Math.min(0.8, dx / current.sheet.clientWidth)) * 55) + 'deg');
+      turnPage(dx < 0 ? 1 : -1);
+    }
   }
   results.addEventListener('touchend', finishSwipe, { passive:true });
   results.addEventListener('touchcancel', finishSwipe, { passive:true });
