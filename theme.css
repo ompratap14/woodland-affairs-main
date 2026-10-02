@@ -169,18 +169,6 @@ p{ margin:0; }
 .hero__scroll::after{ content:""; width:1px; height:40px; background:linear-gradient(var(--brass-2),transparent); animation:scrollpulse 2.4s var(--ease) infinite; }
 @keyframes scrollpulse{ 0%,100%{ opacity:.3; transform:scaleY(.6); transform-origin:top; } 50%{ opacity:1; transform:scaleY(1); } }
 @media (max-width:720px){ .hero__scroll{ display:none; } }
-/* On phones, give the landscape film its own full-width frame instead of cropping it to a tall hero. */
-@media (max-width:720px){
-  .hero--home{ min-height:100svh; flex-direction:column; align-items:stretch; justify-content:flex-start; background:radial-gradient(circle at 70% 72%,#1b5135,#0a2419 62%); }
-  .hero--home .hero__media{ position:relative; inset:auto; flex:none; width:100%; height:auto; aspect-ratio:16/9; margin-top:84px; overflow:hidden; scale:1; background:#0a2419; box-shadow:0 16px 36px #06191080; }
-  .hero--home .hero__media img,.hero--home .hero__media video{ object-fit:contain; object-position:center; }
-  .hero--home .hero__overlay{ display:none; }
-  .hero--home .hero__inner{ flex:1; display:flex; flex-direction:column; justify-content:center; padding-top:34px; padding-bottom:64px; }
-  .hero--home .hero__title{ font-size:clamp(50px,12vw,76px); line-height:.94; margin:18px 0 20px; }
-  .hero--home .hero__dek{ font-size:16px; line-height:1.55; }
-  .hero--home .hero__actions{ margin-top:28px; gap:12px; }
-}
-
 /* animated hero headline */
 .reveal-line{ display:block; overflow:hidden; }
 .reveal-line > span{ display:inline-block; transform:translateY(110%); transition:transform 1s var(--ease); }
