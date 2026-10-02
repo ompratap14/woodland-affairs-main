@@ -7,6 +7,18 @@
   // Never hold up the welcome or navigation while a slow connection buffers.
   var film = document.querySelector('.hero__media video');
   if (film) {
+    var filmVisible = true;
+    function syncFilm() {
+      if (document.hidden || !filmVisible || document.body.classList.contains('intro-active')) film.pause();
+      else film.play().catch(function () {});
+    }
+    document.addEventListener('wa:enter', syncFilm);
+    document.addEventListener('visibilitychange', syncFilm);
+    if ('IntersectionObserver' in window) {
+      var filmObserver = new IntersectionObserver(function (entries) { filmVisible = entries[0].isIntersecting; syncFilm(); }, { threshold:0 });
+      filmObserver.observe(film);
+    }
+    syncFilm();
     var waitingForFrame = false;
     function revealFilm() {
       if (waitingForFrame || film.classList.contains('film-ready')) return;

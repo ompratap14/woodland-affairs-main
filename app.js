@@ -208,7 +208,7 @@
         depthCards.delete(card);
         return;
       }
-      moving = true;
+      if (Math.abs(s.tx - s.x) > .004 || Math.abs(s.ty - s.y) > .004 || Math.abs(s.tl - s.l) > .004) moving = true;
       card.style.setProperty('--dx', s.x.toFixed(4));
       card.style.setProperty('--dy', s.y.toFixed(4));
       card.style.setProperty('--dl', s.l.toFixed(4));
@@ -224,7 +224,7 @@
         layer[0].style.translate = settled ? '' : (scene.x * layer[1]).toFixed(2) + 'px ' + (scene.y * layer[1]).toFixed(2) + 'px';
       });
       scene.live = !settled;
-      if (scene.live) moving = true;
+      if (scene.live && (Math.abs(scene.tx - scene.x) > .002 || Math.abs(scene.ty - scene.y) > .002)) moving = true;
     });
     if (moving) depthKick();
   }

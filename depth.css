@@ -19,9 +19,9 @@ body .cta-strip { box-shadow:0 8px 0 #d7dfcd,0 22px 45px #18382220; border-color
 /* Pointer 3D (driven by app.js): --dx/--dy are the cursor position from -1 to 1, --dl is lift from 0 to 1. */
 body .depth-active,
 body.menu-page .outlet-picker button.depth-active {
-  position:relative; z-index:2; will-change:transform,filter;
+  position:relative; z-index:2; will-change:transform;
   transform:perspective(900px) rotateX(calc(var(--dy,0) * -10deg)) rotateY(calc(var(--dx,0) * 10deg)) translateY(calc(var(--dl,0) * -10px)) scale(calc(1 + var(--dl,0) * .03));
-  filter:drop-shadow(calc(var(--dx,0) * -18px) calc(var(--dl,0) * 26px + var(--dy,0) * -8px) calc(var(--dl,0) * 26px) rgb(8 38 22 / calc(var(--dl,0) * .38)));
+  box-shadow:0 18px 32px #08261626;
   transition:none;
 }
 .depth-glare { display:none; }

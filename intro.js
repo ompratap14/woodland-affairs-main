@@ -124,12 +124,6 @@
   // Keep the welcome cinematic, but get visitors to the usable page sooner.
   var DURATION = 3600;
   var bar = intro.querySelector('.intro__bar');
-  var start = performance.now();
-  (function tick() {
-    if (finished) return;
-    var p = Math.min((performance.now() - start) / DURATION, 1);
-    if (bar) bar.style.width = (p * 100) + '%';
-    if (p >= 1) { enterSite(true); return; }
-    requestAnimationFrame(tick);
-  })();
+  if (bar) bar.animate([{ transform:'scaleX(0)' }, { transform:'scaleX(1)' }], { duration:DURATION, easing:'linear', fill:'forwards' });
+  setTimeout(function () { enterSite(true); }, DURATION);
 })();
